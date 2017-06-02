@@ -49,14 +49,10 @@ public class SendEmail {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("NoReply_Selenium@syxautomations.co.in"));
 			
-			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("nitesh.harit@syxautomations.co.in"));
-//			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse("Prakash.jha@syxautomations.co.in"));
-//			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse("Christof.Cuypers@syx.be"));
-			
-//			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(ExcelUtils.getCellData(1, "TO")));
-//			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse(ExcelUtils.getCellData(2, "CC")));
-//			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse(ExcelUtils.getCellData(3, "CC")));
-			message.setSubject("NG Platform Sanity Test Automation Result");
+			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("automation.qa.mobile@gmail.com"));
+//			message.addRecipients(Message.RecipientType.CC, InternetAddress.parse("automation.qa.mobile@gmail.com"));
+		
+			message.setSubject("Church App Sanity Test Automation Result");
 
 			MimeBodyPart messageBodyPart = new MimeBodyPart();	         
 			Multipart multipart = new MimeMultipart();
