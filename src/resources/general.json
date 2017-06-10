@@ -1,0 +1,18 @@
+{
+  "general": {
+    "HighightElement": true,
+    "AutoLog": true
+  },
+  "project": {
+    "url": "",
+    "browserName": "Android",
+    "APKFilePath": "C:/Users/Jsbot/Downloads/app-release.apk",
+    "saucelab": false
+  },
+  "saucelab": {
+    "userName": "",
+    "accessKey": "",
+    "platform": "linux",
+    "version": "48.0"
+  }
+}
