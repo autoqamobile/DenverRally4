@@ -1,6 +1,7 @@
 package test.tests.EventDetailsScreen;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.AbstractPage;
@@ -87,9 +88,27 @@ public class VerifyEvents extends AbstractPage {
         }
     }
 
-    public void verifyPageTitle() {
-
+    public void verifyBannerImageDisplay(String propertyFileName, String elementName) {
+        Methods methods = new Methods(driver);
+        assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
     }
+
+    public void verifyEventTimeDate(String Expected, String Actual) {
+        assertThat(Expected).contains(Actual);
+    }
+
+    public void verifyDescriptionDisplay(String propertyFileName, String elementName) {
+        Methods methods = new Methods(driver);
+        assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
+    }
+
+    public void verifyEventPinDisplay(String EventName, String EventLocation) {
+        assertThat(driver.findElement(By.id(EventName + ". " + EventLocation + ".")).isDisplayed()).isTrue();
+    }
+    public void verifyPurchaseTicketScreenName(String ScreenName, String Actual) {
+        assertThat(ScreenName).isEqualToIgnoringCase(Actual);
+    }
+
 
 
 }

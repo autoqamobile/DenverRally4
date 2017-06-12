@@ -96,6 +96,34 @@ public class JsonFileConfig {
         return bool;
 
     }
+    public String getdeviceName() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+
+        bool = ((JSONObject) object.get("project")).get("deviceName").toString();
+        return bool;
+
+    }
+
+    public String getAppiumVersion() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+
+        bool = ((JSONObject) object.get("project")).get("appiumVersion").toString();
+        return bool;
+
+    }
+    public String getPlatformVersion() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+
+        bool = ((JSONObject) object.get("project")).get("platformVersion").toString();
+        return bool;
+
+    }
 
     public String getBrowser() {
         String bool;

@@ -1,15 +1,16 @@
 {
   "run": {
-    "by": "class",
+    "by": "methods",
     "browsers": [
       "Android"
     ]
   },
   "class": [
-    "test.tests.EventModule.Tests"
+    "test.tests.EventDetailsScreen.Tests"
+
   ],
   "methods": {
-    "tests.EventModule.Tests": [
+    "test.tests.EventDetailsScreen.Tests": ["TC_22"
     ]
   },
   "groups": {

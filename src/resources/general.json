@@ -7,6 +7,9 @@
     "url": "",
     "browserName": "Android",
     "APKFilePath": "C:/Users/Jsbot/Downloads/app-release.apk",
+    "appiumVersion":"1.6.5",
+    "deviceName":"69EEKN4PGMLRGMHA",
+    "platformVersion":"6.0",
     "saucelab": false
   },
   "saucelab": {

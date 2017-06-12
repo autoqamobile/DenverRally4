@@ -42,9 +42,11 @@ public class BrowserConfig {
         DesiredCapabilities capability = null;
         String APKFilePath = fileConfig.getAPKFilePath();
 
-        String Browser = fileConfig.getBrowser();
+        String deviceName = fileConfig.getdeviceName();
+        String appiumVersion = fileConfig.getAppiumVersion();
+        String platformVersion = fileConfig.getPlatformVersion();
 
-        System.out.println("check" + fileConfig.checkForSauceLab());
+        String Browser = fileConfig.getBrowser();
 
         if (fileConfig.checkForSauceLab()) {
 
@@ -60,20 +62,13 @@ public class BrowserConfig {
 
                 DesiredCapabilities caps = DesiredCapabilities.android();
 
-               /* "platformName": "Android",
-                        "platformVersion": "6.0",
-                        "deviceName": "69EEKN4PGMLRGMHA",
-                        "app": "C:/Users/Jsbot/Downloads/app-release.apk",
-                        "noReset": true*/
-
-
-                caps.setCapability("appiumVersion", /*"1.4.13"*/"1.1.0-beta.1");
-                caps.setCapability("deviceName", "69EEKN4PGMLRGMHA");
+                caps.setCapability("appiumVersion", /*"1.4.13"*/appiumVersion);
+                caps.setCapability("deviceName", deviceName);
                 caps.setCapability("deviceType", "phone");
                 caps.setCapability("deviceOrientation", "portrait");
                 caps.setCapability("browserName", "");
                 //caps.setCapability("platformVersion", "4.4");
-                caps.setCapability("platformVersion", "6.0");
+                caps.setCapability("platformVersion", platformVersion);
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("app", APKFilePath);
                 //caps.setCapability("noReset",true);
@@ -84,9 +79,7 @@ public class BrowserConfig {
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
-                System.out.println("HERE1");
                 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-                System.out.println("Here");
             }
         }
         Methods methods = new Methods(driver);

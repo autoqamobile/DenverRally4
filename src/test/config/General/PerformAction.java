@@ -1,5 +1,6 @@
 package test.config.General;
 
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -99,7 +100,7 @@ public class PerformAction extends AbstractPage {
 
 
         if (autoLog) {
-            methods.log("Text of " + ElementText + " is " + ElementText);
+            methods.log("Text : " + ElementText);
         }
         return ElementText;
     }
@@ -306,7 +307,7 @@ public class PerformAction extends AbstractPage {
     public void pause(int secs) {
         Methods methods = new Methods(driver);
         if (autoLog) {
-            methods.log("Pause for " + secs + " seconds");
+            //methods.log("Pause for " + secs + " seconds");
         }
 
         try {
@@ -325,8 +326,6 @@ public class PerformAction extends AbstractPage {
     public void clickOnElementFromList(String propertyFileName, String elementName, String text) {
         Methods methods = new Methods(driver);
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-
-        System.out.println(list.size());
 
         for (WebElement el : list) {
             if (el.getText().equals(text)) {
@@ -423,6 +422,18 @@ public class PerformAction extends AbstractPage {
      */
     public void goToPreviuosPage() {
         driver.navigate().back();
+    }
+
+    public void androidScrollToElement(int value) {
+
+
+        TouchAction action = new TouchAction(driver);
+        action.press(0, 600)
+                .waitAction(200)
+                .moveTo(0, value)
+                .release()
+                .perform();
+
     }
 
 
