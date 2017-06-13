@@ -115,6 +115,30 @@ public class JsonFileConfig {
         return bool;
 
     }
+    public String getProjectKey() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+        bool = ((JSONObject) object.get("vigoBot")).get("ProjectKey").toString();
+        return bool;
+    }
+
+    public String getReportDirectory() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+        bool = ((JSONObject) object.get("vigoBot")).get("ReportDirectory").toString();
+        return bool;
+    }
+
+    public String getExit() {
+        String bool;
+
+        JSONObject object = getGeneralFile();
+        bool = ((JSONObject) object.get("vigoBot")).get("Exit").toString();
+        return bool;
+    }
+
     public String getPlatformVersion() {
         String bool;
 

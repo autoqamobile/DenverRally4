@@ -28,12 +28,10 @@ public class BrowserConfig {
     protected String targetBrowser;
     JsonFileConfig fileConfig = new JsonFileConfig();
 
-
     @BeforeTest(alwaysRun = true)
     public void fetchSuiteConfiguration(ITestContext testContext) {
         targetBrowser = testContext.getCurrentXmlTest().getParameter("selenium.browser");
     }
-
 
     @BeforeMethod
     public void browserConfig() {

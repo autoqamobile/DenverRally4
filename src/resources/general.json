@@ -12,6 +12,11 @@
     "platformVersion":"6.0",
     "saucelab": false
   },
+  "vigoBot":{
+    "ProjectKey":"60fcb6007d4106c675034d4ca6bc3fa6cd1f641d",
+    "ReportDirectory":"F:/Projects/temp/DenverChurch/test-output",
+    "Exit":"yes"
+  },
   "saucelab": {
     "userName": "",
     "accessKey": "",

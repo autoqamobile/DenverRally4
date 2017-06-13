@@ -7,6 +7,7 @@ import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 import test.config.General.JsonFileConfig;
+import vigo.StartVigo;
 
 import java.util.*;
 
@@ -19,6 +20,10 @@ public class TestRunner {
     public static void main(String[] args) {
 
         JsonFileConfig config = new JsonFileConfig();
+
+        String ProjectKey = config.getProjectKey();
+        String ReportDirectory = config.getReportDirectory();
+        String Exit = config.getExit();
 
         TestRunner runner = new TestRunner();
 
@@ -39,6 +44,9 @@ public class TestRunner {
                 runner.runByGroups(Browser);
             }
         }
+
+        StartVigo vigo = new StartVigo();
+        vigo.generateVigoReports(ProjectKey, ReportDirectory, Exit);
     }
 
     public void runByMethod(String Browser) {

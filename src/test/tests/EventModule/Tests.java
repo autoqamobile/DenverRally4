@@ -1,6 +1,7 @@
 package test.tests.EventModule;
 
 import org.testng.annotations.Test;
+import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
 
 
@@ -11,6 +12,8 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_01() {
         VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify application launch.");
 
         performAction.pause(7);
 
@@ -22,6 +25,8 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_02() {
         VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify application launch.");
         performAction.pause(7);
         performAction.waitForElement(FileName, "LogoImage");
 
