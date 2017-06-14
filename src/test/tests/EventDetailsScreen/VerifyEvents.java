@@ -109,6 +109,10 @@ public class VerifyEvents extends AbstractPage {
         assertThat(ScreenName).isEqualToIgnoringCase(Actual);
     }
 
+    public void verifyTicketAmountwithEventDetailScrren()
+    {
+
+    }
 
 
 }

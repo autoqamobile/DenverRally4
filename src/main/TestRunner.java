@@ -1,5 +1,6 @@
 package main;
 
+import Main.StartVigo;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
@@ -7,7 +8,7 @@ import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 import test.config.General.JsonFileConfig;
-import vigo.StartVigo;
+
 
 import java.util.*;
 
@@ -47,7 +48,9 @@ public class TestRunner {
 
         StartVigo vigo = new StartVigo();
         vigo.generateVigoReports(ProjectKey, ReportDirectory, Exit);
+
     }
+
 
     public void runByMethod(String Browser) {
         JsonFileConfig config = new JsonFileConfig();

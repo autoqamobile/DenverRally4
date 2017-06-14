@@ -330,5 +330,126 @@ public class Tests extends BrowserConfig {
         verify.verifyEventPinDisplay(EventName, EventLocation);
     }
 
+    @Test
+    public void TC_35() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify register button display at event detail page.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify register button display.");
+        verify.verifyDescriptionDisplay(FileName,"RegisterButtonAtEventDetailScreen");
+    }
+
+    @Test
+    public void TC_37() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify register screen display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify register screen display.");
+        performAction.pause(2);
+        performAction.waitForElement(FileName,"PurchaseTicketScreenName");
+        String screenName = performAction.getText(FileName,"PurchaseTicketScreenName");
+        verify.verifyPurchaseTicketScreenName(screenName, "Free Registration");
+    }
+
+    @Test
+    public void TC_38() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify ticket amount should display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify register screen display.");
+        performAction.pause(2);
+        performAction.waitForElement(FileName,"TicketCost");
+        performAction.getText(FileName,"TicketCost");
+        verify.verifyDescriptionDisplay(FileName, "TicketCost");
+    }
+
+    @Test
+    public void TC_56() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify default quantity should display as 1.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify default quantity should display.");
+        performAction.pause(2);
+        performAction.waitForElement(FileName,"Quantity");
+        String Quantity = performAction.getText(FileName,"Quantity");
+        verify.verifyDescriptionDisplay(FileName,"Quantity");
+        methods.log("Verify default quantity should display as 1.");
+        performAction.pause(2);
+        verify.verifyPurchaseTicketScreenName(Quantity,"1");
+    }
+
+    @Test
+    public void TC_57() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify drop down list of quanity.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify default quantity should display.");
+        performAction.pause(2);
+        performAction.waitForElement(FileName,"Quantity");
+        /*String Quantity = performAction.getText(FileName,"Quantity");
+        verify.verifyDescriptionDisplay(FileName,"Quantity");*/
+        methods.log("Verify drop down list of quanity display.");
+        //verification.
+    }
+
+    @Test
+    public void TC_60() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify ticket amount should display correct as displaying in event detail screen.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+
+        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        methods.log("Verify default quantity should display.");
+        performAction.pause(2);
+        performAction.waitForElement(FileName,"Quantity");
+        /*String Quantity = performAction.getText(FileName,"Quantity");
+        verify.verifyDescriptionDisplay(FileName,"Quantity");*/
+        methods.log("Verify Verify ticket amount.");
+        //verification.
+    }
+
+
+
+
+
+
 
 }
