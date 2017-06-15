@@ -25,7 +25,7 @@ public class Verify extends AbstractPage {
         boolean bool;
         Methods methods = new Methods(driver);
         if (autoLog) {
-            methods.log("VerifyEvents " + elementName + " is displayed");
+            methods.log("VerifyVideoScreen " + elementName + " is displayed");
         }
         bool = methods.findElement(fileName, elementName).isDisplayed();
 

@@ -6,11 +6,14 @@
     ]
   },
   "class": [
-    "test.tests.EventDetailsScreen.Tests"
-
+    "test.tests.EventDetailsScreen.Tests",
+    "test.tests.AudioScreen.Tests",
+    "test.tests.EventModule.Tests",
+    "test.tests.VideoScreen.Tests"
   ],
   "methods": {
-    "test.tests.EventDetailsScreen.Tests": ["TC_22"
+    "test.tests.EventDetailsScreen.Tests": [
+      "TC_22"
     ]
   },
   "groups": {

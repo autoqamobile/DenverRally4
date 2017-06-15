@@ -435,21 +435,79 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
-
+        performAction.click(FileName,"FreeEventRegister");
         performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
-        methods.log("Verify default quantity should display.");
+        methods.log("Verify ticket amount display.");
         performAction.pause(2);
-        performAction.waitForElement(FileName,"Quantity");
+        performAction.waitForElement(FileName,"TicketCost");
         /*String Quantity = performAction.getText(FileName,"Quantity");
         verify.verifyDescriptionDisplay(FileName,"Quantity");*/
         methods.log("Verify Verify ticket amount.");
-        //verification.
+        verify.verifyDescriptionDisplay(FileName, "TicketCost");
     }
 
+    @Test
+    public void TC_61() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify If event is free then then 'FREE EVENT' text should display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.click(FileName,"FreeEventRegister");
+        performAction.pause(4);
+        performAction.waitForElement(FileName,"TicketAmountOnEventDeatilScreen");
+        String Text = performAction.getTagName(FileName,"TicketAmountOnEventDeatilScreen");
+        methods.log("Verify Verify ticket amount.");
+        verify.verifyFreeEvent(Text);
+    }
 
+    @Test
+    public void TC_62() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Once user will register for free event then confirmation message should display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.click(FileName,"FreeEventRegister");
+        performAction.pause(4);
+        performAction.waitForElement(FileName,"TicketAmountOnEventDeatilScreen");
+        String Text = performAction.getTagName(FileName,"TicketAmountOnEventDeatilScreen");
+        methods.log("Verify Verify ticket amount.");
+        /*verify.verifyFreeEvent(Text);*/
+    }
 
-
-
+    @Test
+    public void TC_63() {
+        VerifyEvents verify = new VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Once user will register for free event then confirmation message should display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.click(FileName,"FreeEventRegister");
+        performAction.pause(4);
+        performAction.waitForElement(FileName,"TicketAmountOnEventDeatilScreen");
+        String Text = performAction.getTagName(FileName,"TicketAmountOnEventDeatilScreen");
+        methods.log("Verify Verify ticket amount.");
+        /*verify.verifyFreeEvent(Text);*/
+    }
 
 
 }
