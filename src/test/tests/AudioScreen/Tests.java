@@ -76,7 +76,7 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName, "FirstAudio");
     }
 
-    @Test
+    //@Test
     public void TC_414() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
@@ -125,7 +125,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
         methods.log("Verify share icon.");
-        performAction.waitForElement(FileName, "FirstAudio");
+        performAction.waitForElement(FileName, "ShareIcon");
         verify.verifyElementDisplay(FileName, "ShareIcon");
     }
 
@@ -143,8 +143,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
         methods.log("Verify audio player.");
-        performAction.waitForElement(FileName, "TotalTimeDuration");
-        verify.verifyElementDisplay(FileName, "TotalTimeDuration");
+        performAction.waitForElement(FileName, "ShareIcon");
+        verify.verifyElementDisplay(FileName, "ShareIcon");
     }
 
     //Audio Player Screen//
@@ -181,25 +181,25 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName, "FirstPlayList");
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
-        methods.log("Verify Play.");
+        methods.log("Verify Play is dispaly.");
         performAction.waitForElement(FileName, "PlayButton");
         verify.verifyElementDisplay(FileName, "PlayButton");
         performAction.click(FileName, "PlayButton");
         performAction.pause(2);
-        methods.log("Verify Pause.");
+        methods.log("Verify Pause is display.");
         performAction.waitForElement(FileName, "PauseButton");
         verify.verifyElementDisplay(FileName, "PauseButton");
-        performAction.click(FileName, "PauseButton");
+        //performAction.click(FileName, "PauseButton");
         performAction.pause(2);
-        methods.log("Verify Next.");
+        methods.log("Verify Next is display.");
         performAction.waitForElement(FileName, "NextSongButton");
         verify.verifyElementDisplay(FileName, "NextSongButton");
-        performAction.click(FileName, "NextSongButton");
+       //performAction.click(FileName, "NextSongButton");
         performAction.pause(2);
-        methods.log("Verify Previous.");
+        methods.log("Verify Previous is display.");
         performAction.waitForElement(FileName, "PreviousSongButton");
         verify.verifyElementDisplay(FileName, "PreviousSongButton");
-        performAction.click(FileName, "PreviousSongButton");
+        //performAction.click(FileName, "PreviousSongButton");
         performAction.pause(2);
     }
 
@@ -217,9 +217,9 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
 
-        performAction.waitForElement(FileName, "PlayButton");
+       /* performAction.waitForElement(FileName, "PlayButton");
         performAction.click(FileName, "PlayButton");
-        performAction.pause(2);
+        performAction.pause(2);*/
 
         performAction.waitForElement(FileName, "NextSongButton");
         performAction.click(FileName, "NextSongButton");

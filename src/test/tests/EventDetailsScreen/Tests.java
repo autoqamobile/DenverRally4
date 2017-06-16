@@ -19,6 +19,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
 
+        methods.log("Verify event name.");
         verify.verifyListOfElementWithText(FileName, "EventPageHeader", "Automation Event Free");
     }
 
@@ -33,6 +34,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
 
+        methods.log("Verify event detail screen is display.");
         verify.verifyListOfElementWithText(FileName, "EventPageHeader", "Automation Event Free");
     }
 
@@ -47,11 +49,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
         performAction.pause(3);
+
+        methods.log("Verify event banner is display.");
         verify.verifyBannerImageDisplay(FileName, "EventBennerImage");
         performAction.pause(3);
     }
 
-    @Test
+    //@Test
     public void TC_13() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -65,7 +69,7 @@ public class Tests extends BrowserConfig {
         //attach image not display so verefication not compluted.
     }
 
-    @Test
+   // @Test
     public void TC_14() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -125,7 +129,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
         performAction.pause(5);
 
-        performAction.androidScrollToElement(200);
+        performAction.androidScrollToElement(250);
 
         methods.log("Verify Event Location is display.");
         verify.verifyDescriptionDisplay(FileName, "EventLocation");
@@ -232,7 +236,7 @@ public class Tests extends BrowserConfig {
         verify.verifyEventTimeDate(FreePurchaseTicketScreenDate, EventDate);
     }
 
-    @Test
+   // @Test
     public void TC_23() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -246,7 +250,7 @@ public class Tests extends BrowserConfig {
 
     }
 
-    @Test
+    //@Test
     public void TC_24() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -374,6 +378,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
         performAction.pause(5);
         performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        performAction.click(FileName,"RegisterButtonAtEventDetailScreen");
         methods.log("Verify register screen display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"TicketCost");
@@ -392,6 +397,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
         performAction.pause(5);
         performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
+        performAction.click(FileName,"RegisterButtonAtEventDetailScreen");
         methods.log("Verify default quantity should display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"Quantity");
@@ -402,7 +408,7 @@ public class Tests extends BrowserConfig {
         verify.verifyPurchaseTicketScreenName(Quantity,"1");
     }
 
-    @Test
+    //@Test
     public void TC_57() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -413,7 +419,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
         performAction.pause(5);
         performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
-        methods.log("Verify default quantity should display.");
+        performAction.click(FileName,"RegisterButtonAtEventDetailScreen");
         performAction.pause(2);
         performAction.waitForElement(FileName,"Quantity");
         /*String Quantity = performAction.getText(FileName,"Quantity");
@@ -436,7 +442,6 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.pause(2);
         performAction.click(FileName,"FreeEventRegister");
-        performAction.waitForElement(FileName,"RegisterButtonAtEventDetailScreen");
         methods.log("Verify ticket amount display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"TicketCost");
@@ -461,13 +466,12 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"FreeEventRegister");
         performAction.pause(4);
-        performAction.waitForElement(FileName,"TicketAmountOnEventDeatilScreen");
         String Text = performAction.getTagName(FileName,"TicketAmountOnEventDeatilScreen");
         methods.log("Verify Verify ticket amount.");
         verify.verifyFreeEvent(Text);
     }
 
-    @Test
+    //@Test
     public void TC_62() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -482,13 +486,12 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"FreeEventRegister");
         performAction.pause(4);
-        performAction.waitForElement(FileName,"TicketAmountOnEventDeatilScreen");
         String Text = performAction.getTagName(FileName,"TicketAmountOnEventDeatilScreen");
         methods.log("Verify Verify ticket amount.");
         /*verify.verifyFreeEvent(Text);*/
     }
 
-    @Test
+    //@Test
     public void TC_63() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);

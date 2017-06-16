@@ -329,6 +329,7 @@ public class PerformAction extends AbstractPage {
 
         for (WebElement el : list) {
             if (el.getText().equals(text)) {
+                methods.log("Click on "+text+".");
                 el.click();
                 break;
             }
@@ -360,7 +361,7 @@ public class PerformAction extends AbstractPage {
 
         for (WebElement el : list) {
             String text = el.getText().toString();
-            methods.log("- " + text);
+           // methods.log("- " + text);
         }
 
     }

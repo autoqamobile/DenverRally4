@@ -29,8 +29,6 @@ public class VerifyEvents extends AbstractPage {
         Methods methods = new Methods(driver);
         List<WebElement> list = methods.findElementList(fileName, elementName);
 
-
-        System.out.println(list.size());
         bool = list.get(Index).isDisplayed();
         if (bool == true) {
             methods.log("Element is display.");
@@ -43,8 +41,6 @@ public class VerifyEvents extends AbstractPage {
         Methods methods = new Methods(driver);
         boolean bool = false;
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-
-        System.out.println(list.size());
 
         for (WebElement el : list) {
             if (el.getText().equals(text)) {
@@ -62,8 +58,6 @@ public class VerifyEvents extends AbstractPage {
         Methods methods = new Methods(driver);
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
-        System.out.println(list.size());
-
         for (WebElement el : list) {
             String text = el.getText().toString();
             assertThat(text).doesNotContain("");
@@ -74,8 +68,6 @@ public class VerifyEvents extends AbstractPage {
     public void verifyNameDateTimeDisplay(String propertyFileName, String elementName) {
         Methods methods = new Methods(driver);
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-
-        System.out.println(list.size());
 
         for (WebElement el : list) {
             if (el.isDisplayed()) {

@@ -12,6 +12,68 @@
     "default": "",
     "textType": "",
     "auto": false
+  },
+  "FirstVideoPlayList": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "FirstVideo": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "VideoTime": {
+    "locatorType": "id",
+    "locatorValue": "com.google.android.youtube:id/time_bar",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ShareButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "PlayButton": {
+    "locatorType": "id",
+    "locatorValue": "com.google.android.youtube:id/player_control_play_pause_replay_button",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "PauseButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NextButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "PreviousButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BackButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
   }
-
 }
