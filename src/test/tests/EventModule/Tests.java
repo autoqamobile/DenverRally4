@@ -16,10 +16,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify application launch.");
 
         performAction.pause(7);
-        methods.log("Test Description : Verify application launch.");
         verify.elementIsDisplayed(FileName, "LogoImage", 1);
-
-        performAction.pause(2);
     }
 
     @Test
@@ -31,8 +28,6 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "LogoImage");
         methods.log("Verify activity screen display.");
         verify.elementIsDisplayed(FileName, "LogoImage", 1);
-
-        performAction.pause(2);
     }
 
     @Test
@@ -45,8 +40,6 @@ public class Tests extends BrowserConfig {
 
         methods.log("Verify event screen display.");
         verify.verifyListOfElementWithText(FileName, "EventPageHeader", "Events");
-
-        performAction.pause(2);
     }
 
     //@Test
@@ -57,7 +50,6 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify Event date is display.");
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
-        performAction.pause(5);
     }
 
     //@Test
@@ -70,7 +62,6 @@ public class Tests extends BrowserConfig {
 
         performAction.getListOfElementCount(FileName, "ListOfEvent");
 
-        performAction.pause(5);
     }
 
     //@Test
@@ -87,7 +78,6 @@ public class Tests extends BrowserConfig {
 
         performAction.getListOfElementCount(FileName, "ListOfEvent");
 
-        performAction.pause(5);
     }
 
     @Test
@@ -103,7 +93,6 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.getEveryElementtestIntoList(FileName, "ListOFMenu");
         verify.verifyNameDateTimeDisplay(FileName, "ListOFMenu");
-        performAction.pause(5);
     }
 
     //@Test
@@ -118,8 +107,6 @@ public class Tests extends BrowserConfig {
 
         performAction.pause(5);
         verify.verifyCurrentDayInListOfEvent(FileName, "ListOfEventDateTime");
-
-        performAction.pause(5);
     }
 
 

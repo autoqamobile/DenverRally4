@@ -61,7 +61,7 @@ public class VerifyEvents extends AbstractPage {
         for (WebElement el : list) {
             String text = el.getText().toString();
             assertThat(text).doesNotContain("");
-            methods.log("- " + text);
+            //methods.log("- " + text);
         }
     }
 
@@ -77,10 +77,6 @@ public class VerifyEvents extends AbstractPage {
                 break;
             }
         }
-    }
-
-    public void verifyPageTitle() {
-
     }
 
 

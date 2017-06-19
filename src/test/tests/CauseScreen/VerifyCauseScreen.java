@@ -1,4 +1,4 @@
-package test.tests.LiveStreamScreen;
+package test.tests.CauseScreen;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by Jsbot on 09-Jun-17.
  */
-public class VerifyLiveScreen extends AbstractPage {
+public class VerifyCauseScreen extends AbstractPage {
 
 
     /**
@@ -20,7 +20,7 @@ public class VerifyLiveScreen extends AbstractPage {
      *
      * @param driver .
      */
-    public VerifyLiveScreen(AndroidDriver driver) {
+    public VerifyCauseScreen(AndroidDriver driver) {
         super(driver);
     }
 
@@ -43,6 +43,18 @@ public class VerifyLiveScreen extends AbstractPage {
         String getText  = methods.findElement(propertyFileName, elementName).getText().toString();
 
         assertThat(getText).isEqualToIgnoringCase(text);
+    }
+
+    public void countListOfCause(String propertyFileName,String elementName){
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        methods.log("Total number of cause : "+list.size());
+    }
+
+    public void containText(String ActualText, String expectedText){
+
+        assertThat(ActualText).containsIgnoringCase(expectedText);
     }
 
 

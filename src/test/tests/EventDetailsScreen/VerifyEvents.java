@@ -105,12 +105,12 @@ public class VerifyEvents extends AbstractPage {
     public void verifyEventPinDisplay(String EventName, String EventLocation) {
         assertThat(driver.findElement(By.id(EventName + ". " + EventLocation + ".")).isDisplayed()).isTrue();
     }
+
     public void verifyPurchaseTicketScreenName(String ScreenName, String Actual) {
         assertThat(ScreenName).isEqualToIgnoringCase(Actual);
     }
 
-    public void verifyFreeEvent(String Text)
-    {
+    public void verifyFreeEvent(String Text) {
         assertThat(Text).isEqualToIgnoringCase("FREE EVENT");
     }
 

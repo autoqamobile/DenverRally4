@@ -194,12 +194,10 @@ public class Tests extends BrowserConfig {
         methods.log("Verify Next is display.");
         performAction.waitForElement(FileName, "NextSongButton");
         verify.verifyElementDisplay(FileName, "NextSongButton");
-       //performAction.click(FileName, "NextSongButton");
         performAction.pause(2);
         methods.log("Verify Previous is display.");
         performAction.waitForElement(FileName, "PreviousSongButton");
         verify.verifyElementDisplay(FileName, "PreviousSongButton");
-        //performAction.click(FileName, "PreviousSongButton");
         performAction.pause(2);
     }
 
@@ -216,10 +214,6 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName, "FirstPlayList");
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
-
-       /* performAction.waitForElement(FileName, "PlayButton");
-        performAction.click(FileName, "PlayButton");
-        performAction.pause(2);*/
 
         performAction.waitForElement(FileName, "NextSongButton");
         performAction.click(FileName, "NextSongButton");

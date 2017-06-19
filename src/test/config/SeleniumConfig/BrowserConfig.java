@@ -65,11 +65,9 @@ public class BrowserConfig {
                 caps.setCapability("deviceType", "phone");
                 caps.setCapability("deviceOrientation", "portrait");
                 caps.setCapability("browserName", "");
-                //caps.setCapability("platformVersion", "4.4");
                 caps.setCapability("platformVersion", platformVersion);
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("app", APKFilePath);
-                //caps.setCapability("noReset",true);
                 caps.setCapability("appPackage", "com.awesomeproject");
                 caps.setCapability("appActivity", "com.awesomeproject.MainActivity");
                 try {
@@ -83,7 +81,7 @@ public class BrowserConfig {
         Methods methods = new Methods(driver);
 
         if (autoLog) {
-            methods.log("Open Browser : " + Browser);
+            //methods.log("Open Browser : " + Browser);
         }
         performAction = new PerformAction(driver);
         verify = new Verify(driver);

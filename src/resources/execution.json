@@ -1,6 +1,6 @@
 {
   "run": {
-    "by": "methods",
+    "by": "class",
     "browsers": [
       "Android"
     ]

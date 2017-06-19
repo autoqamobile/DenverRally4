@@ -6,7 +6,7 @@
   "project": {
     "url": "",
     "browserName": "Android",
-    "APKFilePath": "C:/Users/Jsbot/Downloads/app-release.apk",
+    "APKFilePath": "C:/Users/JSBot/Desktop/v1.apk",
     "appiumVersion":"1.6.5",
     "deviceName":"69EEKN4PGMLRGMHA",
     "platformVersion":"6.0",
