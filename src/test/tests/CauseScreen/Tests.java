@@ -22,7 +22,7 @@ public class Tests extends BrowserConfig {
         verify.verifyText(FileName, "CauseScreenVerify", "Causes");
     }
 
-    @Test
+    //@Test
     public void TC_209() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -74,7 +74,7 @@ public class Tests extends BrowserConfig {
         verify.verifyText(FileName, "SearchBox", "AUTOMATION CAUSE");
     }
 
-    @Test
+    //@Test
     public void TC_216() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -93,6 +93,7 @@ public class Tests extends BrowserConfig {
         methods.log("Verify gives all responses starting with a.");
     }
 
+    @Test
     public void TC_218() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -111,6 +112,7 @@ public class Tests extends BrowserConfig {
         verify.verifyText(FileName, "SearchBox", "AUTOMATION CAUSE");
     }
 
+    @Test
     public void TC_220() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -124,6 +126,7 @@ public class Tests extends BrowserConfig {
         verify.countListOfCause(FileName, "NumberOfCause");
     }
 
+    @Test
     public void TC_221() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -138,6 +141,7 @@ public class Tests extends BrowserConfig {
         verify.elementIsDisplayed(FileName, "SearchBox");
     }
 
+    @Test
     public void TC_222() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -158,11 +162,12 @@ public class Tests extends BrowserConfig {
         verify.containText(searchResult, "AUTO");
     }
 
+    @Test
     public void TC_224() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
-        methods.log("Test Description : Cause name should display correct on search result..");
+        methods.log("Test Description : Cause name should display correct on search result.");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -173,9 +178,10 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "SearchButton");
         performAction.pause(5);
         methods.log("Verify Cause name is display.");
-        verify.elementIsDisplayed(FileName, "SearchCause");
+        verify.verifyElementDisplay(FileName, "SearchCause");
     }
 
+    @Test
     public void TC_225() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -189,11 +195,235 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
         performAction.pause(5);
-        performAction.waitForElement(FileName,"FirstSearchCause");
-        performAction.click(FileName,"FirstSearchCause");
+        performAction.waitForElement(FileName, "FirstSearchCause");
+        performAction.click(FileName, "FirstSearchCause");
         performAction.pause(7);
         methods.log("Verify church details screen is display.");
-        verify.elementIsDisplayed(FileName, "CreateFundraiserButton");
+        verify.verifyElementDisplay(FileName, "CreateFundraiserButton");
+    }
+
+    @Test
+    public void TC_226() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Search functionality should work fine after clikcing on search icon or during enter data in search text..");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "SearchBox");
+        performAction.click(FileName, "SearchBox");
+        performAction.pause(2);
+        performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
+        performAction.waitForElement(FileName, "SearchButton");
+        performAction.pause(5);
+        methods.log("Verify search result is display.");
+        verify.verifyElementDisplay(FileName, "SearchCause");
+    }
+
+    @Test
+    public void TC_227() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : After clicking on cause name then cause detail screen should display.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.waitForElement(FileName, "CreateFundraiserButton");
+        methods.log("Verify cause detail is display.");
+        verify.verifyElementDisplay(FileName, "CreateFundraiserButton");
+    }
+
+    @Test
+    public void TC_229() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Fundraiser should display in the fundraiser list.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.waitForElement(FileName, "FirstFundraiser");
+        methods.log("Verify fundraiser is display.");
+        verify.verifyElementDisplay(FileName, "FirstFundraiser");
+    }
+
+    //@Test
+    public void TC_231() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Currency symbol should display correct as configured in admin panel.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.waitForElement(FileName, "FirstFundraiser");
+        methods.log("Verify currency symbol is display.");
+        /*verify.elementIsDisplayed(FileName, "FirstFundraiser");*/
+    }
+
+    @Test
+    public void TC_234() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Fundraiser detail descrption screen should display after clicking on fundraiser name.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.waitForElement(FileName, "FirstFundraiser");
+        performAction.click(FileName, "FirstFundraiser");
+        performAction.pause(5);
+        methods.log("Verify fundraiser detail screen is display.");
+        verify.verifyElementDisplay(FileName, "GiveButton");
+    }
+
+    @Test
+    public void TC_235() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Fundraiser name and location name should display correct as per selected fundraiser.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        methods.log("Verify fundraiser Fundraiser name and location name is display.");
+        verify.elementTextDisplay(FileName, "FundraiserLocation");
+        verify.elementTextDisplay(FileName, "FundraiserName");
+    }
+
+    @Test
+    public void TC_236() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : The amount which is collected by fundraiser.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "FundraiserLocation");
+        methods.log("Verify total amount is display.");
+        verify.elementTextDisplay(FileName, "FundraiserLocation");
+    }
+
+    @Test
+    public void TC_237() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : The amount which is the present goal that need to collect amount.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "FundraiserTargetAmount");
+        methods.log("Verify target amount is display.");
+        verify.elementTextDisplay(FileName, "FundraiserTargetAmount");
+    }
+
+    @Test
+    public void TC_240() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Give button should display on fundraiser detail screen.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "GiveButton");
+        methods.log("Verify give button is display.");
+        verify.verifyElementDisplay(FileName, "GiveButton");
+    }
+
+    //@Test
+    public void TC_241() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Description text should display in description section.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "GiveButton");
+        methods.log("Verify Description text is display.");
+
+    }
+
+    //@Test
+    public void TC_242() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Overview text should display in overview section.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "GiveButton");
+        methods.log("Verify Overview text is display.");
+
+    }
+
+    //@Test
+    public void TC_243() {
+        VerifyCauseScreen verify = new VerifyCauseScreen(driver);
+
+        Methods methods = new Methods(driver);
+        methods.log("Test Description : Fundraiser should share after clicking on share icon.");
+        performAction.pause(7);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
+        performAction.pause(9);
+        performAction.waitForElement(FileName, "FirstCause");
+        performAction.click(FileName, "FirstCause");
+        performAction.pause(2);
+        performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "GiveButton");
+        methods.log("Verify share icon is display.");
     }
 
 }

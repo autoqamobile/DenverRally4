@@ -57,6 +57,11 @@ public class VerifyCauseScreen extends AbstractPage {
         assertThat(ActualText).containsIgnoringCase(expectedText);
     }
 
+    public void elementTextDisplay(String propertyFileName, String elementName){
+        Methods methods = new Methods(driver);
+        assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
+        methods.log("Text : "+ methods.findElement(propertyFileName, elementName).getText());
+    }
 
 
 }

@@ -6,10 +6,7 @@
     ]
   },
   "class": [
-    "test.tests.EventModule.Tests",
-    "test.tests.EventDetailsScreen.Tests",
-    "test.tests.AudioScreen.Tests",
-    "test.tests.VideoScreen.Tests"
+    "test.tests.CauseScreen.Tests"
   ],
   "methods": {
     "test.tests.AudioScreen.Tests": [
