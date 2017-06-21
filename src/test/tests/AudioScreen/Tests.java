@@ -76,7 +76,7 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName, "FirstAudio");
     }
 
-    //@Test
+    @Test
     public void TC_414() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
@@ -90,7 +90,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         methods.log("Verify playlist display.");
         performAction.waitForElement(FileName, "FirstAudio");
-        /*verify.verifyElementDisplay(FileName,"FirstAudio");*/
+        verify.verifyElementDisplay(FileName, "FirstAudio");
+        verify.printAudioName(FileName, "PlayListAudioName");
     }
 
     @Test

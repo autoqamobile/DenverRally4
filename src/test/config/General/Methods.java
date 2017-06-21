@@ -462,7 +462,7 @@ public class Methods extends AbstractPage {
 
 
     public void waitForElement(String fileName, String elementName) {
-        wait = new WebDriverWait(driver, 200);
+        wait = new WebDriverWait(driver, 70);
         try {
 
             JsonFileConfig jsonfile = new JsonFileConfig();

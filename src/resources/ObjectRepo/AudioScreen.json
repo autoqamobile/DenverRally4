@@ -75,5 +75,12 @@
     "default": "",
     "textType": "",
     "auto": false
+  },
+  "PlayListAudioName": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
   }
 }

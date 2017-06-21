@@ -38,5 +38,16 @@ public class VerifyVideoScreen extends AbstractPage {
         assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
     }
 
-
+    public void printText(String fileName, String elementName)
+    {
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(fileName, elementName);
+        for(WebElement e:list){
+            methods.log("Name : "+e.getText());
+        }
+    }
+    public void verifyText(String propertyFileName, String elementName,String text){
+        Methods methods = new Methods(driver);
+        assertThat(methods.findElement(propertyFileName, elementName).getText()).containsIgnoringCase(text);
+    }
 }

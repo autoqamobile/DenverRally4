@@ -1,12 +1,17 @@
 {
   "run": {
-    "by": "class",
+    "by": "methods",
     "browsers": [
       "Android"
     ]
   },
   "class": [
-    "test.tests.CauseScreen.Tests"
+    "test.tests.CauseScreen.Tests",
+    "test.tests.AudioScreen.Tests",
+    "test.tests.EventDetailsScreen.Tests",
+    "test.tests.EventModule.Tests",
+    "test.tests.LiveStreamScreen.Tests",
+    "test.tests.VideoScreen.Tests"
   ],
   "methods": {
     "test.tests.AudioScreen.Tests": [

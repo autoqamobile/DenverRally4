@@ -39,7 +39,7 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName, "FirstVideoPlayList");
     }
 
-   // @Test
+    @Test
     public void TC_429() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
@@ -50,7 +50,10 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
-        methods.log("Verify video alignment.");
+        methods.log("Verify video list.");
+        verify.verifyElementDisplay(FileName, "FirstVideoPlayList");
+        verify.printText(FileName, "VideoPlayListNames");
+
 
     }
 
@@ -65,12 +68,16 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "FirstVideoPlayList");
+        performAction.waitForElement(FileName, "VideoPlayList3Text");
+        String playListName = performAction.getText(FileName,"VideoPlayList3Text");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
         methods.log("Verify Video track detail screen should display.");
-        verify.verifyElementDisplay(FileName,"FirstVideo");
+        verify.verifyText(FileName,"VideoListScreenHeader",playListName);
+        verify.verifyText(FileName,"Videos","Videos");
+        verify.verifyElementDisplay(FileName, "VideoListScreenTracks");
+
     }
 
     @Test
@@ -86,9 +93,10 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
         methods.log("Verify Correct video list should display.");
-        verify.verifyElementDisplay(FileName,"FirstVideo");
+        verify.verifyElementDisplay(FileName, "FirstVideo");
+        verify.printText(FileName,"VideosName");
     }
 
     @Test
@@ -104,12 +112,12 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
         methods.log("Verify actual period of video is display.");
-        performAction.waitForElement(FileName,"VideoTime");
-        verify.verifyElementDisplay(FileName,"VideoTime");
+        performAction.waitForElement(FileName, "VideoTime");
+        verify.verifyElementDisplay(FileName, "VideoTime");
     }
 
     @Test
@@ -125,12 +133,12 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
         methods.log("Verify share icon is display.");
-        performAction.waitForElement(FileName,"ShareButton");
-        verify.verifyElementDisplay(FileName,"ShareButton");
+        performAction.waitForElement(FileName, "ShareButton");
+        verify.verifyElementDisplay(FileName, "ShareButton");
     }
 
     @Test
@@ -146,12 +154,12 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
         methods.log("Verify Video player is display.");
-        performAction.waitForElement(FileName,"ShareButton");
-        verify.verifyElementDisplay(FileName,"ShareButton");
+        performAction.waitForElement(FileName, "ShareButton");
+        verify.verifyElementDisplay(FileName, "ShareButton");
     }
 
     //Video Player Screen//
@@ -168,15 +176,15 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"PlayButton");
-        performAction.click(FileName,"PlayButton");
+        performAction.waitForElement(FileName, "PlayButton");
+        performAction.click(FileName, "PlayButton");
         performAction.pause(4);
         methods.log("Verify System is support video files.");
-        performAction.waitForElement(FileName,"PauseButton");
-        verify.verifyElementDisplay(FileName,"PauseButton");
+        performAction.waitForElement(FileName, "PauseButton");
+        verify.verifyElementDisplay(FileName, "PauseButton");
     }
 
     @Test
@@ -192,28 +200,28 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"PlayButton");
+        performAction.waitForElement(FileName, "PlayButton");
         methods.log("Verify play button.");
-        verify.verifyElementDisplay(FileName,"PlayButton");
-        performAction.click(FileName,"PlayButton");
+        verify.verifyElementDisplay(FileName, "PlayButton");
+        performAction.click(FileName, "PlayButton");
         performAction.pause(4);
         methods.log("Verify pause button.");
-        performAction.waitForElement(FileName,"PauseButton");
-        verify.verifyElementDisplay(FileName,"PauseButton");
-        performAction.click(FileName,"PauseButton");
+        performAction.waitForElement(FileName, "PauseButton");
+        verify.verifyElementDisplay(FileName, "PauseButton");
+        performAction.click(FileName, "PauseButton");
         performAction.pause(4);
         methods.log("Verify next button.");
-        performAction.waitForElement(FileName,"NextButton");
-        verify.verifyElementDisplay(FileName,"NextButton");
-        performAction.click(FileName,"NextButton");
+        performAction.waitForElement(FileName, "NextButton");
+        verify.verifyElementDisplay(FileName, "NextButton");
+        performAction.click(FileName, "NextButton");
         performAction.pause(4);
         methods.log("Verify Previous button.");
-        performAction.waitForElement(FileName,"PreviousButton");
-        verify.verifyElementDisplay(FileName,"PreviousButton");
-        performAction.click(FileName,"PreviousButton");
+        performAction.waitForElement(FileName, "PreviousButton");
+        verify.verifyElementDisplay(FileName, "PreviousButton");
+        performAction.click(FileName, "PreviousButton");
         performAction.pause(4);
     }
 
@@ -230,26 +238,26 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
         performAction.pause(7);
-        performAction.waitForElement(FileName,"FirstVideo");
-        performAction.click(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
+        performAction.click(FileName, "FirstVideo");
         performAction.pause(7);
 
-        performAction.waitForElement(FileName,"NextButton");
-        verify.verifyElementDisplay(FileName,"NextButton");
-        performAction.click(FileName,"NextButton");
+        performAction.waitForElement(FileName, "NextButton");
+        verify.verifyElementDisplay(FileName, "NextButton");
+        performAction.click(FileName, "NextButton");
         performAction.pause(4);
 
-        performAction.waitForElement(FileName,"PreviousButton");
-        verify.verifyElementDisplay(FileName,"PreviousButton");
-        performAction.click(FileName,"PreviousButton");
+        performAction.waitForElement(FileName, "PreviousButton");
+        verify.verifyElementDisplay(FileName, "PreviousButton");
+        performAction.click(FileName, "PreviousButton");
         performAction.pause(4);
 
-        performAction.waitForElement(FileName,"BackButton");
-        performAction.click(FileName,"BackButton");
+        performAction.waitForElement(FileName, "BackButton");
+        performAction.click(FileName, "BackButton");
         performAction.pause(4);
-        performAction.waitForElement(FileName,"FirstVideo");
+        performAction.waitForElement(FileName, "FirstVideo");
         methods.log("Verify video playlist is display correct.");
-        verify.elementIsDisplayed(FileName,"FirstVideo");
+        verify.elementIsDisplayed(FileName, "FirstVideo");
     }
 
 }

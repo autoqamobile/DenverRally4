@@ -20,6 +20,7 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "CauseScreenVerify");
         methods.log("Verify live stream screen is display.");
         verify.verifyText(FileName, "CauseScreenVerify", "Causes");
+        performAction.getText(FileName, "EventName");
     }
 
     //@Test
@@ -74,7 +75,7 @@ public class Tests extends BrowserConfig {
         verify.verifyText(FileName, "SearchBox", "AUTOMATION CAUSE");
     }
 
-    //@Test
+    @Test
     public void TC_216() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -86,11 +87,13 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "SearchBox");
         performAction.click(FileName, "SearchBox");
         performAction.pause(2);
-        performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
+        performAction.sendKeys(FileName, "SearchBox", "a**");
         performAction.waitForElement(FileName, "SearchButton");
         performAction.click(FileName, "SearchButton");
         performAction.pause(5);
-        methods.log("Verify gives all responses starting with a.");
+        methods.log("Verify gives all responses starting with a**.");
+        verify.verifyText(FileName, "ValidationMessage", "No Cause available for a**");
+        performAction.getText(FileName, "ValidationMessage");
     }
 
     @Test
@@ -254,6 +257,7 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstFundraiser");
         methods.log("Verify fundraiser is display.");
         verify.verifyElementDisplay(FileName, "FirstFundraiser");
+        verify.printText(FileName,"FundraisersName");
     }
 
     //@Test
@@ -288,10 +292,12 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.waitForElement(FileName, "FirstFundraiser");
+        String name = performAction.getText(FileName, "FundraiserName");
         performAction.click(FileName, "FirstFundraiser");
         performAction.pause(5);
         methods.log("Verify fundraiser detail screen is display.");
         verify.verifyElementDisplay(FileName, "GiveButton");
+        verify.containText(performAction.getText(FileName,"FundraiserNameFounderScreen"),name);
     }
 
     @Test
@@ -310,7 +316,10 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         methods.log("Verify fundraiser Fundraiser name and location name is display.");
         verify.elementTextDisplay(FileName, "FundraiserLocation");
-        verify.elementTextDisplay(FileName, "FundraiserName");
+        String name = performAction.getText(FileName, "FundraiserName");
+        performAction.click(FileName, "FirstFundraiser");
+        performAction.pause(5);
+        verify.containText(performAction.getText(FileName,"FundraiserNameFounderScreen"),name);
     }
 
     @Test
@@ -327,9 +336,11 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.waitForElement(FileName, "FundraiserLocation");
+        performAction.click(FileName,"FirstFundraiser");
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "FundraiserTotalAmount");
         methods.log("Verify total amount is display.");
-        verify.elementTextDisplay(FileName, "FundraiserLocation");
+        verify.elementTextDisplay(FileName, "FundraiserTotalAmount");
     }
 
     @Test
@@ -345,6 +356,8 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName, "FirstCause");
         performAction.pause(2);
         performAction.androidScrollToElement(200);
+        performAction.pause(5);
+        performAction.click(FileName,"FirstFundraiser");
         performAction.pause(5);
         performAction.waitForElement(FileName, "FundraiserTargetAmount");
         methods.log("Verify target amount is display.");
@@ -365,6 +378,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
+        performAction.click(FileName,"FirstFundraiser");
+        performAction.pause(5);
         performAction.waitForElement(FileName, "GiveButton");
         methods.log("Verify give button is display.");
         verify.verifyElementDisplay(FileName, "GiveButton");
@@ -384,8 +399,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.waitForElement(FileName, "GiveButton");
+        performAction.waitForElement(FileName, "FounderScreenDetailTab");
+        performAction.click(FileName, "FounderScreenDetailTab");
         methods.log("Verify Description text is display.");
+        performAction.pause(5);
+        performAction.androidScrollToElement(200);
+        verify.verifyElementDisplay(FileName, "FounderScreenDetailText");
+        performAction.getText(FileName, "FounderScreenDetailText");
 
     }
 

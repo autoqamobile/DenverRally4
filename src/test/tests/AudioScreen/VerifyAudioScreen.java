@@ -39,5 +39,14 @@ public class VerifyAudioScreen extends AbstractPage {
         assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
     }
 
+    public void printAudioName(String fileName, String elementName)
+    {
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(fileName, elementName);
+        for(WebElement e:list){
+            methods.log("Audio Name : "+e.getText());
+        }
+    }
+
 
 }

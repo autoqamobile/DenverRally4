@@ -15,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class VerifyEvents extends AbstractPage {
 
 
+
     /**
      * Initialize UserAbstractPage.
      *
@@ -78,6 +79,7 @@ public class VerifyEvents extends AbstractPage {
             }
         }
     }
+
 
 
 }

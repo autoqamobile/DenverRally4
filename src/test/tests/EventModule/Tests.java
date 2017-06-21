@@ -109,5 +109,4 @@ public class Tests extends BrowserConfig {
         verify.verifyCurrentDayInListOfEvent(FileName, "ListOfEventDateTime");
     }
 
-
 }

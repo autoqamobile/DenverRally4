@@ -62,6 +62,14 @@ public class VerifyCauseScreen extends AbstractPage {
         assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
         methods.log("Text : "+ methods.findElement(propertyFileName, elementName).getText());
     }
+    public void printText(String fileName, String elementName) {
+        boolean bool;
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(fileName, elementName);
+        for(WebElement e:list){
+            methods.log("Text : "+e.getText());
+        }
+    }
 
 
 }
