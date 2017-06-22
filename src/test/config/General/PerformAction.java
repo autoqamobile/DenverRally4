@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import test.config.SeleniumConfig.AbstractPage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -364,6 +365,25 @@ public class PerformAction extends AbstractPage {
            // methods.log("- " + text);
         }
 
+    }
+
+    public ArrayList getEveryElementtestIntoList1(String propertyFileName, String elementName) {
+        Methods methods = new Methods(driver);
+
+
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        ArrayList<String> eventNameList = new ArrayList<>();
+
+        System.out.println(list.size());
+
+        for (WebElement el : list) {
+            String text = el.getText().toString();
+            eventNameList.add(text);
+
+        }
+
+        return eventNameList;
     }
 
     public void waitForElement(String propertyFileName, String elementName) {

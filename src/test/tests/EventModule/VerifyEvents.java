@@ -2,9 +2,11 @@ package test.tests.EventModule;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.AbstractPage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -66,18 +68,33 @@ public class VerifyEvents extends AbstractPage {
         }
     }
 
-    public void verifyNameDateTimeDisplay(String propertyFileName, String elementName) {
+    public void verifyNameDateTimeDisplay(ArrayList<String> eventName) {
         Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
-        for (WebElement el : list) {
-            if (el.isDisplayed()) {
-                methods.log(el.getText() + " is display.");
+        int i =0;
+
+        System.out.println(eventName.size());
+        for (String el : eventName) {
+
+            if (el.equalsIgnoreCase("Automation Event Free") || el.equalsIgnoreCase("Test Event 1") ) {
+                methods.log(el + " is display.");
+                i++;
             } else {
                 assertThat(false).isFalse();
-                break;
+
             }
         }
+        System.out.println( "i " + i);
+        if(i==2)
+        {
+
+        }else
+        {
+            System.out.println("Here");
+            Assert.assertTrue(false);
+        }
+
+
     }
 
 

@@ -104,21 +104,20 @@ public class TestRunner {
 
     public void classExecution(String Browser) {
         JsonFileConfig config = new JsonFileConfig();
-
-        ArrayList<String> classList = config.getExecutionClass();
-
-        List<XmlSuite> suites = new ArrayList<XmlSuite>();
-
         XmlSuite suite = new XmlSuite();
+        List<XmlSuite> suites = new ArrayList<XmlSuite>();
+        ArrayList<String> classList = config.getExecutionClass();
 
         Map<String, String> testClassParameters = new HashMap<>();
         testClassParameters.put("selenium.browser", Browser);
         suite.setParameters(testClassParameters);
 
+        XmlTest test = new XmlTest(suite);
+        List<XmlClass> classes = new ArrayList<XmlClass>();
+
         for (String className : classList) {
 
             System.out.println(className);
-            System.out.println(className.split("\\."));
             String suiteName = className.split("\\.")[0];
             String testName = className.split("\\.")[1];
 
@@ -126,17 +125,15 @@ public class TestRunner {
             suite.setParallel("methods");
             suite.setThreadCount(1);
 
-            XmlTest test = new XmlTest(suite);
-
-            List<XmlClass> classes = new ArrayList<XmlClass>();
+            test.setName(testName);
 
             XmlClass classNa = new XmlClass(className);
 
             classes.add(classNa);
             test.setXmlClasses(classes);
-            suites.add(suite);
+            /*suites.add(suite);*/
         }
-
+        suites.add(suite);
         System.out.println(suite.toXml());
 
         TestNG tng = new TestNG();

@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
 
+import java.util.ArrayList;
+
 
 public class Tests extends BrowserConfig {
     public String FileName = "EventList";
@@ -52,7 +54,7 @@ public class Tests extends BrowserConfig {
 
     }
 
-    //@Test
+    @Test
     public void TC_07() {
         String FileName = "EventList";
         performAction.pause(7);
@@ -61,6 +63,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
         performAction.getListOfElementCount(FileName, "ListOfEvent");
+
 
     }
 
@@ -83,16 +86,17 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_08() {
 
+        ArrayList<String> eventName;
         VerifyEvents verify = new VerifyEvents(driver);
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify all Event name, day and month should get.");
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
-
         performAction.pause(5);
-        performAction.getEveryElementtestIntoList(FileName, "ListOFMenu");
-        verify.verifyNameDateTimeDisplay(FileName, "ListOFMenu");
+        eventName = performAction.getEveryElementtestIntoList1(FileName, "ListOFMenu");
+        verify.verifyNameDateTimeDisplay(eventName);
+
     }
 
     //@Test
