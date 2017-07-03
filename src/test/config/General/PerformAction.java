@@ -457,5 +457,17 @@ public class PerformAction extends AbstractPage {
 
     }
 
+    public void androidScrollToElementManually(int start, int end) {
+
+
+        TouchAction action = new TouchAction(driver);
+        action.press(0, start)
+                .waitAction(200)
+                .moveTo(0, end)
+                .release()
+                .perform();
+
+    }
+
 
 }
