@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by dell on 7/6/2017.
  */
-public class NewsVerify extends AbstractPage {
+public class VerifyNews extends AbstractPage {
 
 
 
@@ -18,7 +18,7 @@ public class NewsVerify extends AbstractPage {
      *
      * @param driver .
      */
-    public NewsVerify(AndroidDriver driver) {
+    public VerifyNews(AndroidDriver driver) {
         super(driver);
     }
     public void verifyElementDisplay(String propertyFileName, String elementName){

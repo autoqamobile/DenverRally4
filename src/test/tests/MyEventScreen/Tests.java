@@ -13,7 +13,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "MyEventScreen";
 
     @Test
-    public void TC_054() {
+    public void TC_103() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -44,7 +44,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_055() {
+    public void TC_114() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -78,7 +78,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_058() {
+    public void TC_115() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -114,7 +114,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_059() {
+    public void TC_116() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -150,7 +150,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_060() {
+    public void TC_117() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -187,7 +187,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_061() {
+    public void TC_118() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -221,7 +221,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_062() {
+    public void TC_119() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -257,7 +257,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_064() {
+    public void TC_120() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -293,7 +293,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_068() {
+    public void TC_121() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -329,7 +329,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_069() {
+    public void TC_122() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -365,7 +365,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_070() {
+    public void TC_123() {
         ArrayList<String> eventName;
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
@@ -402,7 +402,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_075() {
+    public void TC_124() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);

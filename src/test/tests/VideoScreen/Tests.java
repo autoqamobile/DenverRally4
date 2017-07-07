@@ -10,7 +10,7 @@ public class Tests extends BrowserConfig {
 
     //Video Playlist//
     @Test
-    public void TC_427() {
+    public void TC_53() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -27,7 +27,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_428() {
+    public void TC_54() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify individual video alignment.");
@@ -44,7 +44,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_429() {
+    public void TC_55() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify The video which are labeled as active in database, Only those active video should display in video list screen.");
@@ -65,7 +65,7 @@ public class Tests extends BrowserConfig {
 
     //Video Tracks Screen//
     @Test
-    public void TC_434() {
+    public void TC_56() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Video track detail screen should display.");
@@ -89,7 +89,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_435() {
+    public void TC_57() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Correct video list should display.");
@@ -110,7 +110,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_437() {
+    public void TC_58() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify The actual period of video file should display");
@@ -133,7 +133,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_438() {
+    public void TC_59() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify share icon should display");
@@ -156,7 +156,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_440() {
+    public void TC_60() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Video player should display after clicking on video file");
@@ -180,7 +180,7 @@ public class Tests extends BrowserConfig {
 
     //Video Player Screen//
     @Test
-    public void TC_441() {
+    public void TC_61() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify System should support video files.");
@@ -206,7 +206,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_442() {
+    public void TC_62() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Check Play, Pause, Stop, Next, Previous, Close button should display.");
@@ -246,7 +246,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_445() {
+    public void TC_63() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify video playlist should display correct after clicking on back and forword button..");

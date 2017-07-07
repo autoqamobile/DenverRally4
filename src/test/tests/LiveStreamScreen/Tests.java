@@ -11,7 +11,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "LiveStreamScreen";
 
     @Test
-    public void TC_294() {
+    public void TC_64() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -29,7 +29,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_296() {
+    public void TC_65() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -47,7 +47,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_298() {
+    public void TC_66() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -71,7 +71,7 @@ public class Tests extends BrowserConfig {
 
 
     @Test
-    public void TC_300() {
+    public void TC_67() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -94,7 +94,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_301() {
+    public void TC_68() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -113,7 +113,7 @@ public class Tests extends BrowserConfig {
 
 
     @Test
-    public void TC_302() {
+    public void TC_69() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);

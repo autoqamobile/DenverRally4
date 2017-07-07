@@ -83,7 +83,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_06() {
+   /* public void TC_06() {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
@@ -96,10 +96,10 @@ public class Tests extends BrowserConfig {
 
         performAction.getListOfElementCount(FileName, "ListOfEvent");
 
-    }
+    }*/
 
     @Test
-    public void TC_08() {
+    public void TC_06() {
 
         ArrayList<String> eventName;
         VerifyEvents verify = new VerifyEvents(driver);

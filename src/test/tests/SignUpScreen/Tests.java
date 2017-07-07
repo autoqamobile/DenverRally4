@@ -13,7 +13,7 @@ public class Tests extends BrowserConfig {
 
 
     @Test
-    public void TC_028() {
+    public void TC_091() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -28,7 +28,7 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_029() {
+    public void TC_092() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -47,7 +47,7 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_031() {
+    public void TC_093() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -96,7 +96,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_032() {
+    public void TC_094() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -144,7 +144,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_034() {
+    public void TC_095() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -163,7 +163,7 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_043() {
+    public void TC_096() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -182,7 +182,7 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_045() {
+    public void TC_097() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -203,7 +203,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_046() {
+    public void TC_098() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -273,7 +273,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_049() {
+    public void TC_099() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -322,7 +322,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_050() {
+    public void TC_100() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -374,9 +374,77 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);*/
 
     }
+   // @Test
+    public void TC_101() {
+        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        performAction.pause(10);
+        performAction.click(FileName,"ProfileLink");
+        performAction.pause(3);
+        String Email= step.RendomEmail();
+        performAction.click(FileName,"MyProfileEmail");
+        performAction.sendKeys(FileName,"MyProfileEmail",Email);
+        performAction.click(FileName,"MyProfileText");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.waitForElement(FileName, "FirstNameField");
+        performAction.click(FileName,"FirstNameField");
+        performAction.sendKeys(FileName,"FirstNameField","Test");
+
+        performAction.pause(2);
+        // performAction.click(FileName,"SignUpText");
+        performAction.waitForElement(FileName, "LastNameField");
+        performAction.click(FileName,"LastNameField");
+        performAction.sendKeys(FileName,"LastNameField","Test1");
+        performAction.pause(2);
+        performAction.waitForElement(FileName, "LastNameText");
+        //performAction.click(FileName,"LastNameText");
+        driver.hideKeyboard();
+        performAction.waitForElement(FileName, "PasswordField");
+        performAction.click(FileName,"PasswordField");
+        performAction.sendKeys(FileName,"PasswordField","123456");
+        performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
+        performAction.waitForElement(FileName, "ConfirmPasswordField");
+        performAction.click(FileName,"ConfirmPasswordField");
+        performAction.pause(2);
+        performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
+        performAction.pause(2);
+        performAction.tap(FileName,"SubmitButton");
+        performAction.tap(FileName,"SubmitButton1");
+        performAction.pause(5);
+        performAction.click(FileName,"VerifyUserName");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.click(FileName,"LogoutButton");
+
+        performAction.click(FileName,"MyProfileEmail");
+        performAction.sendKeys(FileName,"MyProfileEmail",Email);
+        performAction.click(FileName,"MyProfileText");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.waitForElement(FileName, "LoginPassword");
+        performAction.click(FileName,"LoginPassword");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
+        // performAction.pause(2);
+        // performAction.androidScrollToElementManually(550,330);
+        driver.hideKeyboard();
+        performAction.pause(2);
+        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");
+        performAction.pause(10);
+        methods.log("Verify user profile image is display.");
+        verify.elementIsDisplayed(FileName,"VerifyUserProfileImage",0);
+        methods.log("Verify user name is display.");
+        verify.verifyText(FileName,"VerifyUserName","Test Test1");
+        performAction.pause(3);
+
+    }
 
     @Test
-    public void TC_052() {
+    public void TC_102() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -437,6 +505,75 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LoginButton");
         performAction.pause(10);
        methods.log("Verify user profile image is display.");
+        verify.elementIsDisplayed(FileName,"VerifyUserProfileImage",0);
+        methods.log("Verify user name is display.");
+        verify.verifyText(FileName,"VerifyUserName","Test Test1");
+        performAction.pause(3);
+
+    }
+
+    //@Test
+    public void TC_103() {
+        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        Methods methods = new Methods(driver);
+        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        performAction.pause(10);
+        performAction.click(FileName,"ProfileLink");
+        performAction.pause(3);
+        String Email= step.RendomEmail();
+        performAction.click(FileName,"MyProfileEmail");
+        performAction.sendKeys(FileName,"MyProfileEmail",Email);
+        performAction.click(FileName,"MyProfileText");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.waitForElement(FileName, "FirstNameField");
+        performAction.click(FileName,"FirstNameField");
+        performAction.sendKeys(FileName,"FirstNameField","Test");
+
+        performAction.pause(2);
+        // performAction.click(FileName,"SignUpText");
+        performAction.waitForElement(FileName, "LastNameField");
+        performAction.click(FileName,"LastNameField");
+        performAction.sendKeys(FileName,"LastNameField","Test1");
+        performAction.pause(2);
+        performAction.waitForElement(FileName, "LastNameText");
+        //performAction.click(FileName,"LastNameText");
+        driver.hideKeyboard();
+        performAction.waitForElement(FileName, "PasswordField");
+        performAction.click(FileName,"PasswordField");
+        performAction.sendKeys(FileName,"PasswordField","123456");
+        performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
+        performAction.waitForElement(FileName, "ConfirmPasswordField");
+        performAction.click(FileName,"ConfirmPasswordField");
+        performAction.pause(2);
+        performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
+        performAction.pause(2);
+        performAction.tap(FileName,"SubmitButton");
+        performAction.tap(FileName,"SubmitButton1");
+        performAction.pause(5);
+        performAction.click(FileName,"VerifyUserName");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.click(FileName,"LogoutButton");
+
+        performAction.click(FileName,"MyProfileEmail");
+        performAction.sendKeys(FileName,"MyProfileEmail",Email);
+        performAction.click(FileName,"MyProfileText");
+        performAction.pause(3);
+        performAction.androidScrollToElement(50);
+        performAction.waitForElement(FileName, "LoginPassword");
+        performAction.click(FileName,"LoginPassword");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
+        // performAction.pause(2);
+        // performAction.androidScrollToElementManually(550,330);
+        driver.hideKeyboard();
+        performAction.pause(2);
+        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");
+        performAction.pause(10);
+        methods.log("Verify user profile image is display.");
         verify.elementIsDisplayed(FileName,"VerifyUserProfileImage",0);
         methods.log("Verify user name is display.");
         verify.verifyText(FileName,"VerifyUserName","Test Test1");

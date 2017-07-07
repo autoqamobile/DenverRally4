@@ -14,7 +14,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "CommunityScreen";
 
     @Test
-    public void TC_139() {
+    public void TC_133() {
 
         //ArrayList<String> eventName;
         VerifyCommunity verify = new VerifyCommunity(driver);
@@ -35,7 +35,7 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_140() {
+    public void TC_134() {
 
         //ArrayList<String> eventName;
         VerifyCommunity verify = new VerifyCommunity(driver);
@@ -54,7 +54,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
     }
     @Test
-    public void TC_141() {
+    public void TC_135() {
 
         //ArrayList<String> eventName;
         VerifyCommunity verify = new VerifyCommunity(driver);
@@ -80,7 +80,7 @@ public class Tests extends BrowserConfig {
     //Group Detail Screen
 
     @Test
-    public void TC_142() {
+    public void TC_136() {
 
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
@@ -99,7 +99,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_144() {
+    public void TC_137() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
@@ -115,7 +115,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_145() {
+    public void TC_138() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
@@ -144,7 +144,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_146() {
+    public void TC_139() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -173,7 +173,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
     }
     @Test
-    public void TC_147() {
+    public void TC_140() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -204,7 +204,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_148() {
+    public void TC_141() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
@@ -234,7 +234,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_150() {
+    public void TC_142() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
@@ -265,7 +265,7 @@ public class Tests extends BrowserConfig {
 
 
     @Test
-    public void TC_151() {
+    public void TC_143() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
@@ -299,7 +299,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_152() {
+    public void TC_144() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -333,7 +333,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_153() {
+    public void TC_145() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -367,7 +367,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_154() {
+    public void TC_146() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -400,7 +400,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_155() {
+    public void TC_147() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -432,7 +432,7 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_157() {
+    public void TC_148() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -461,7 +461,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_159() {
+    public void TC_149() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -496,7 +496,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_160() {
+    public void TC_150() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -540,7 +540,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_163() {
+    public void TC_151() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);
@@ -577,7 +577,7 @@ public class Tests extends BrowserConfig {
     //Group Event RSVP
 
     @Test
-    public void TC_165() {
+    public void TC_152() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step=new Steps(driver);
         Methods methods = new Methods(driver);

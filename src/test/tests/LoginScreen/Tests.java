@@ -10,7 +10,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "LoginScreen";
 
     @Test
-    public void TC_02() {
+    public void TC_104() {
         Verify verify = new Verify(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check guest user get login screen.");
@@ -24,7 +24,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_04() {
+    public void TC_105() {
         Verify verify = new Verify(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check user get Email address text field.");
@@ -48,7 +48,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_05() {
+    public void TC_106() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -77,7 +77,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_06() {
+    public void TC_107() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -97,7 +97,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_15() {
+    public void TC_108() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -116,7 +116,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_17() {
+    public void TC_109() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -135,7 +135,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_19() {
+    public void TC_110() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -165,7 +165,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_21() {
+    public void TC_111() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);
@@ -189,7 +189,7 @@ public class Tests extends BrowserConfig {
 
 
     @Test
-    public void TC_25() {
+    public void TC_112() {
         Verify verify = new Verify(driver);
         Steps step = new Steps();
         Methods methods = new Methods(driver);

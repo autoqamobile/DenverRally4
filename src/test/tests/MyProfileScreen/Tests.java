@@ -11,7 +11,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "MyProfileScreen";
 
     @Test
-    public void TC_305() {
+    public void TC_175() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -44,7 +44,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_306() {
+    public void TC_176() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -92,7 +92,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_307() {
+    public void TC_177() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -139,7 +139,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
     }
     @Test
-    public void TC_308() {
+    public void TC_178() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -216,7 +216,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_309() {
+    public void TC_179() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -270,7 +270,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
     }
     @Test
-    public void TC_310() {
+    public void TC_180() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -325,7 +325,7 @@ public class Tests extends BrowserConfig {
     }
 
    // @Test
-    public void TC_311() {
+    public void TC_181() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -378,7 +378,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_312() {
+    public void TC_182() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
@@ -418,7 +418,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_313() {
+    public void TC_183() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);

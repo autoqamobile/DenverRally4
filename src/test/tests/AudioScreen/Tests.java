@@ -11,7 +11,7 @@ public class Tests extends BrowserConfig {
 
     //Audio Playlist//
     @Test
-    public void TC_406() {
+    public void TC_42() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -31,7 +31,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_407() {
+    public void TC_43() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -51,7 +51,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_408() {
+    public void TC_44() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -72,7 +72,7 @@ public class Tests extends BrowserConfig {
 
     //Audio Tracks Screen//
     @Test
-    public void TC_413() {
+    public void TC_45() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio track detail screen should display.");
@@ -92,7 +92,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_414() {
+    public void TC_46() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -113,7 +113,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_416() {
+    public void TC_47() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
@@ -134,7 +134,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_417() {
+    public void TC_48() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify share icon.");
@@ -155,7 +155,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_419() {
+    public void TC_49() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio player should display after clicking on audio file.");
@@ -177,7 +177,7 @@ public class Tests extends BrowserConfig {
 
     //Audio Player Screen//
     @Test
-    public void TC_420() {
+    public void TC_50() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify system should support audio files.");
@@ -200,7 +200,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_421() {
+    public void TC_41() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify All buttons should work fine.");
@@ -236,7 +236,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_422() {
+    public void TC_52() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify audio playlist should display correct after clicking on back and forword button..");

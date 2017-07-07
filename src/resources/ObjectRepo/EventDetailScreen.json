@@ -1,4 +1,11 @@
 {
+  "MenuButton": {
+    "locatorType": "xpath",
+    "locatorValue":"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
   "LogoImage": {
     "locatorType": "className",
     "locatorValue": "android.widget.ImageView"

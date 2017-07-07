@@ -3,11 +3,6 @@ package test.tests.NewsScreen;
 import org.testng.annotations.Test;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
-import test.tests.CommunityScreen.VerifyCommunity;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by dell on 7/6/2017.
@@ -16,8 +11,8 @@ public class Tests extends BrowserConfig {
     public String FileName = "NewsScreen";
 
     @Test
-    public void TC_201() {
-        NewsVerify verify = new NewsVerify(driver);
+    public void TC_163() {
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -29,9 +24,9 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_202() {
+    public void TC_164() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -45,9 +40,9 @@ public class Tests extends BrowserConfig {
 
     }
     @Test
-    public void TC_203() {
+    public void TC_165() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -62,9 +57,9 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_204() {
+    public void TC_166() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -79,9 +74,9 @@ public class Tests extends BrowserConfig {
 
     }
     //@Test
-    public void TC_205() {
+    public void TC_167() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -96,9 +91,9 @@ public class Tests extends BrowserConfig {
     }
 
    // @Test
-    public void TC_206() {
+    public void TC_168() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -120,9 +115,9 @@ public class Tests extends BrowserConfig {
     }
 
      @Test
-    public void TC_207() {
+    public void TC_169() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");
@@ -142,9 +137,9 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_208() {
+    public void TC_170() {
 
-        NewsVerify verify = new NewsVerify(driver);
+        VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
         performAction.pause(10);
         performAction.click(FileName,"MenuLink");

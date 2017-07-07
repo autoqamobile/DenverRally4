@@ -9,10 +9,12 @@ public class Tests extends BrowserConfig {
     public String FileName = "EventDetailScreen";
 
     @Test
-    public void TC_10() {
+    public void TC_08() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event name.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
@@ -24,10 +26,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_11() {
+    public void TC_9() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event detail screen display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
@@ -39,10 +43,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_12() {
+    public void TC_10() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event banner display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
@@ -56,10 +62,12 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_13() {
+    public void TC_11() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify attach image count.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
@@ -70,10 +78,12 @@ public class Tests extends BrowserConfig {
     }
 
    // @Test
-    public void TC_14() {
+    public void TC_12() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify user redirected to attach image.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
@@ -84,10 +94,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_15() {
+    public void TC_13() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event date and time display in proper format.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -104,10 +116,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_16() {
+    public void TC_14() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Print event description.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -119,10 +133,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_17() {
+    public void TC_15() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Print event location.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -138,10 +154,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_18() {
+    public void TC_16() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event location pin display on map.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -160,10 +178,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_19() {
+    public void TC_17() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify free event register button is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -178,10 +198,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_20() {
+    public void TC_18() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify free event ticket screen display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -198,10 +220,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_21() {
+    public void TC_19() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify free event ticket cost.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(3);
@@ -217,10 +241,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_22() {
+    public void TC_20() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event date format.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(3);
@@ -237,10 +263,12 @@ public class Tests extends BrowserConfig {
     }
 
    // @Test
-    public void TC_23() {
+    public void TC_21() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify 'view more' link is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(3);
@@ -251,10 +279,12 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_24() {
+    public void TC_22() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify 3 different photos are display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -266,10 +296,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_26() {
+    public void TC_23() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event description is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -281,10 +313,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_28() {
+    public void TC_24() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event start and end time is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -296,10 +330,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_31() {
+    public void TC_25() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event Location is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -313,10 +349,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_32() {
+    public void TC_26() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event Location in display on map.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -335,10 +373,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_35() {
+    public void TC_27() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify register button display at event detail page.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -350,10 +390,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_37() {
+    public void TC_28() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify register screen display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -368,10 +410,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_38() {
+    public void TC_29() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify ticket amount should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -387,10 +431,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_56() {
+    public void TC_30() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify default quantity should display as 1.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -409,10 +455,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_57() {
+    public void TC_31() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify drop down list of quanity.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -427,10 +475,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_60() {
+    public void TC_32() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify ticket amount should display correct as displaying in event detail screen.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -450,10 +500,12 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_61() {
+    public void TC_33() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify If event is free then then 'FREE EVENT' text should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -470,10 +522,12 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_62() {
+    public void TC_34() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Once user will register for free event then confirmation message should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
@@ -490,10 +544,12 @@ public class Tests extends BrowserConfig {
     }
 
     //@Test
-    public void TC_63() {
+    public void TC_35() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Once user will register for free event then confirmation message should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);

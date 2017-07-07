@@ -9,7 +9,7 @@ public class Tests extends BrowserConfig {
     public String FileName = "CauseScreen";
 
     @Test
-    public void TC_207() {
+    public void TC_70() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -42,7 +42,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_213() {
+    public void TC_71() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -65,7 +65,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_215() {
+    public void TC_72() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -87,7 +87,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_216() {
+    public void TC_73() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -110,7 +110,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_218() {
+    public void TC_74() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -131,7 +131,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_220() {
+    public void TC_75() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -147,7 +147,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_221() {
+    public void TC_76() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -164,7 +164,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_222() {
+    public void TC_77() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -189,7 +189,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_224() {
+    public void TC_78() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -216,7 +216,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_225() {
+    public void TC_79() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -244,7 +244,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_226() {
+    public void TC_80() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -267,7 +267,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_227() {
+    public void TC_81() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -286,7 +286,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_229() {
+    public void TC_82() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -327,7 +327,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_234() {
+    public void TC_83() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -351,7 +351,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_235() {
+    public void TC_84() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -375,7 +375,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_236() {
+    public void TC_85() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -398,7 +398,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_237() {
+    public void TC_86() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -421,7 +421,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_240() {
+    public void TC_87() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -444,7 +444,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_241() {
+    public void TC_88() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
@@ -472,11 +472,12 @@ performAction.androidScrollToElement(300);
     }
 
     //@Test
-    public void TC_242() {
+    public void TC_89() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Overview text should display in overview section.");
+
         performAction.pause(7);
         performAction.click(FileName,"MenuButton");
         performAction.pause(7);
@@ -493,7 +494,7 @@ performAction.androidScrollToElement(300);
     }
 
     @Test
-    public void TC_243() {
+    public void TC_90() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
