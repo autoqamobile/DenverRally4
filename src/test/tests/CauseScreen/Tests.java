@@ -87,12 +87,12 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "SearchBox");
         performAction.click(FileName, "SearchBox");
         performAction.pause(2);
-        performAction.sendKeys(FileName, "SearchBox", "a**");
+        performAction.sendKeys(FileName, "SearchBox", "a*");
         performAction.waitForElement(FileName, "SearchButton");
         performAction.click(FileName, "SearchButton");
         performAction.pause(5);
-        methods.log("Verify gives all responses starting with a**.");
-        verify.verifyText(FileName, "ValidationMessage", "No Cause available for a**");
+        methods.log("Verify gives all responses starting with a*.");
+        verify.verifyText(FileName, "ValidationMessage", "Search Text should be atleast 3 character long");
         performAction.getText(FileName, "ValidationMessage");
     }
 
@@ -385,7 +385,7 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName, "GiveButton");
     }
 
-    //@Test
+    @Test
     public void TC_241() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -397,7 +397,9 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstCause");
         performAction.click(FileName, "FirstCause");
         performAction.pause(2);
-        performAction.androidScrollToElement(200);
+       // performAction.androidScrollToElement(200);
+        performAction.waitForElement(FileName, "FirstFounderCause");
+        performAction.click(FileName, "FirstFounderCause");
         performAction.pause(5);
         performAction.waitForElement(FileName, "FounderScreenDetailTab");
         performAction.click(FileName, "FounderScreenDetailTab");
@@ -428,7 +430,7 @@ public class Tests extends BrowserConfig {
 
     }
 
-    //@Test
+    @Test
     public void TC_243() {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
@@ -440,9 +442,11 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstCause");
         performAction.click(FileName, "FirstCause");
         performAction.pause(2);
-        performAction.androidScrollToElement(200);
+       // performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.waitForElement(FileName, "GiveButton");
+        performAction.waitForElement(FileName, "FounderShare");
+        performAction.click(FileName, "FounderShare");
+        verify.verifyElementDisplay(FileName, "FounderShare");
         methods.log("Verify share icon is display.");
     }
 

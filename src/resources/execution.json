@@ -1,6 +1,6 @@
 {
   "run": {
-    "by": "class",
+    "by": "methods",
     "browsers": [
       "Android"
     ]
@@ -11,11 +11,12 @@
     "test.tests.EventDetailsScreen.Tests",
     "test.tests.EventModule.Tests",
     "test.tests.LiveStreamScreen.Tests",
-    "test.tests.VideoScreen.Tests"
+    "test.tests.VideoScreen.Tests",
+    "test.tests.LoginScreen.Tests"
   ],
   "methods": {
-    "test.tests.AudioScreen.Tests": [
-      "TC_422"
+    "test.tests.LoginScreen.Tests": [
+      "TC_21"
     ]
   },
   "groups": {

@@ -1,0 +1,149 @@
+{
+  "ProfileLink": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View[3]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "MyProfileText": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "MyProfileEmail": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "LoginPassword":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.widget.EditText[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "LoginButton":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SettingIcon":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[4]/android.view.View",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SettingPage":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[1]/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "FirstName":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.EditText[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "LastName":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.EditText[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "Password":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[6]/android.widget.EditText[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ConfirmPassword":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[6]/android.widget.EditText[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "PhoneNumber":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "Location":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[4]/android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "Privacy":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[6]/android.view.View[2]/android.view.View[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SelectedPrivacy":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[6]/android.view.View[2]/android.view.View[1]/android.view.View",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "UpdateButton":{
+    "locatorType": "xpath",
+    "locatorValue": "	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[7]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BackButton":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "LogOutButton":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[7]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "Email": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "TopBackButton":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "VerifyUserName":{
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}

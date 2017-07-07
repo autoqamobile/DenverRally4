@@ -6,7 +6,7 @@
   "project": {
     "url": "",
     "browserName": "Android",
-    "APKFilePath": "C:/Users/JSBot/Desktop/v1.apk",
+    "APKFilePath": "E:/ProjectAPK/DenverChurch/v3.apk",
     "appiumVersion":"1.6.5",
     "deviceName":"69EEKN4PGMLRGMHA",
     "platformVersion":"6.0",
@@ -14,7 +14,7 @@
   },
   "vigoBot":{
     "ProjectKey":"60fcb6007d4106c675034d4ca6bc3fa6cd1f641d",
-    "ReportDirectory":"F:/Projects/temp/DenverChurch/test-output",
+    "ReportDirectory":"E:/Projects/temp/DenverChurch/test-output",
     "Exit":"yes"
   },
   "saucelab": {

@@ -1,4 +1,4 @@
-package test.tests.EventModule;
+package test.tests.MyEventScreen;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -12,18 +12,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by Jsbot on 09-Jun-17.
+ * Created by dell on 7/4/2017.
  */
-public class VerifyEvents extends AbstractPage {
-
-
-
-    /**
-     * Initialize UserAbstractPage.
-     *
-     * @param driver .
-     */
-    public VerifyEvents(AndroidDriver driver) {
+public class VerifyMyEvent extends AbstractPage {
+    public VerifyMyEvent(AndroidDriver driver) {
         super(driver);
     }
 
@@ -35,37 +27,31 @@ public class VerifyEvents extends AbstractPage {
         bool = list.get(Index).isDisplayed();
         if (bool == true) {
             methods.log("Element is display.");
+            //methods.log(list.get(Index).getText()));
         }
 
         assertThat(bool).isEqualTo(true);
     }
 
-    public void verifyListOfElementWithText(String propertyFileName, String elementName, String text) {
+    public void verifyElementDisplay(String propertyFileName, String elementName){
         Methods methods = new Methods(driver);
-        boolean bool = false;
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-
-        for (WebElement el : list) {
-            if (el.getText().equals(text)) {
-                bool = el.isDisplayed();
-                methods.log("Element is display.");
-                break;
-            }
-        }
-
-        assertThat(bool).isEqualTo(true);
-
+        assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
     }
 
-    public void verifyCurrentDayInListOfEvent(String propertyFileName, String elementName) {
+    public void verifyText(String propertyFileName, String elementName, String text){
         Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        String getText  = methods.findElement(propertyFileName, elementName).getText().toString();
+        // System.out.println(getText);
+        assertThat(getText).isEqualToIgnoringCase(text);
+    }
+    public void verifyLength(String propertyFileName, String elementName){
 
-        for (WebElement el : list) {
-            String text = el.getText().toString();
-            assertThat(text).doesNotContain("");
-            //methods.log("- " + text);
-        }
+        Methods methods = new Methods(driver);
+        String getText  = methods.findElement(propertyFileName, elementName).getText().toString();
+        System.out.println(getText);
+        System.out.println(getText.length());
+
+        //assertThat(getText).isEqualToIgnoringCase(text);
     }
 
     public void verifyNameDateTimeDisplay(ArrayList<String> eventName) {
@@ -76,7 +62,7 @@ public class VerifyEvents extends AbstractPage {
         System.out.println(eventName.size());
         for (String el : eventName) {
 
-            if (el.equalsIgnoreCase("Automation Event Free") || el.equalsIgnoreCase("Test Event 1") ) {
+            if (el.equalsIgnoreCase("New Test Event") || el.equalsIgnoreCase("Automation Event Free") ) {
                 methods.log(el + " is display.");
                 i++;
             } else {
@@ -84,7 +70,7 @@ public class VerifyEvents extends AbstractPage {
 
             }
         }
-        System.out.println( "i " + i);
+       // System.out.println( "i " + i);
         if(i==2)
         {
 
@@ -96,12 +82,4 @@ public class VerifyEvents extends AbstractPage {
 
 
     }
-
-    public void dateContains(String actual, String date){
-        assertThat(actual).containsIgnoringCase(date);
-    }
-
-
-
-
 }

@@ -19,6 +19,7 @@ public class Tests extends BrowserConfig {
 
         performAction.pause(7);
         verify.elementIsDisplayed(FileName, "LogoImage", 1);
+        performAction.pause(7);
     }
 
     @Test
@@ -44,13 +45,19 @@ public class Tests extends BrowserConfig {
         verify.verifyListOfElementWithText(FileName, "EventPageHeader", "Events");
     }
 
-    //@Test
+    @Test
     public void TC_04() {
         String FileName = "EventList";
+        VerifyEvents verify = new VerifyEvents(driver);
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Event date is display.");
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.pause(5);
+        String actual = performAction.getText(FileName,"EventDateTime");
+        methods.log("Date Verify.");
+        verify.dateContains(actual,"November 22");
+
 
     }
 

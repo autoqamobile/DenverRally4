@@ -1,0 +1,93 @@
+{
+  "MenuLink": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsMenu": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[8]/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsPage": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsListImage": {
+    "locatorType": "xpath",
+    "locatorValue": "	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.ImageView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsList": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsList1": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsDate": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SearchText": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.view.View[1]/android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SearchButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "NewsText": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "Share": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ShareMenu": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/com.android.internal.widget.ResolverDrawerLayout/android.widget.LinearLayout",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BackButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}

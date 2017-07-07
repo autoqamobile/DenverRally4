@@ -408,7 +408,7 @@ public class Tests extends BrowserConfig {
         verify.verifyPurchaseTicketScreenName(Quantity,"1");
     }
 
-    //@Test
+    @Test
     public void TC_57() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
@@ -422,10 +422,8 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"RegisterButtonAtEventDetailScreen");
         performAction.pause(2);
         performAction.waitForElement(FileName,"Quantity");
-        /*String Quantity = performAction.getText(FileName,"Quantity");
-        verify.verifyDescriptionDisplay(FileName,"Quantity");*/
         methods.log("Verify drop down list of quanity display.");
-        //verification.
+        verify.verifyDescriptionDisplay(FileName,"Quantity");
     }
 
     @Test

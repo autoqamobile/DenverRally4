@@ -56,12 +56,15 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "FirstLiverVideo");
         performAction.click(FileName, "FirstLiverVideo");
         performAction.pause(2);
-        methods.log("Verify the Video time.");
+        methods.log("Verify the Video Date.");
+        performAction.getText(FileName,"Broadcasted");
+       // System.out.println(methods.findElement(propertyFileName, elementName).getText().toString());
+
 
     }
 
 
-    //@Test
+    @Test
     public void TC_300() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
@@ -77,8 +80,9 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.waitForElement(FileName, "ShareButton");
         performAction.click(FileName, "ShareButton");
-        methods.log("Verify share video.");
 
+        methods.log("Verify share video.");
+        verify.verifyElementDisplay(FileName, "SharePenal");
     }
 
     //@Test

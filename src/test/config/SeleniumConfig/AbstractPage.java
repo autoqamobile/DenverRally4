@@ -23,4 +23,5 @@ public abstract class AbstractPage extends BrowserConfig {
         PageFactory.initElements(finder, this);
 
     }
+
 }

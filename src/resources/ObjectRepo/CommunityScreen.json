@@ -1,0 +1,150 @@
+{
+
+  "MenuLink": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityMenu": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[6]/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityGroupDetail": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ListOFMenu": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityGroupImage1": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityGroupImage2": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityGroupImage3": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[3]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityDetailPage": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityDetailPageImage": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CommunityDetailPageDescription": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[1]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "UpcomingMeetingDate": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[4]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "UpcomingMeetingDay": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[4]/android.widget.TextView[3]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "UpcomingMeetingGoingMemers": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[4]/android.widget.TextView[4]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEvent": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[5]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEventDetailPage": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEventDate": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.view.View[1]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEventTime": {
+    "locatorType": "xpath",
+    "locatorValue": "	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.view.View[1]/android.widget.TextView[3]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEventImage": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GroupEventLocation": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.view.View[2]/android.widget.TextView[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "RSVPButton": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.view.View[4]/android.view.View",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "FreeRegistration": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}

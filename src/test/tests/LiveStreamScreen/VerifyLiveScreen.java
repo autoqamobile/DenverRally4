@@ -35,14 +35,19 @@ public class VerifyLiveScreen extends AbstractPage {
 
     public void verifyElementDisplay(String propertyFileName, String elementName){
         Methods methods = new Methods(driver);
-        assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
+       assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
+      /* boolean x=methods.findElement(propertyFileName, elementName).isDisplayed();
+       if(x==true)
+           System.out.println("True");
+       else
+           System.out.println("False");*/
     }
 
     public void verifyText(String propertyFileName, String elementName, String text){
         Methods methods = new Methods(driver);
         String getText  = methods.findElement(propertyFileName, elementName).getText().toString();
-
         assertThat(getText).isEqualToIgnoringCase(text);
+
     }
 
 
