@@ -16,12 +16,18 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
+
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Audio");
-        performAction.waitForElement(FileName, "AudioScreenVerify");
+        performAction.pause(5);
+        performAction.waitForElement(FileName, "FirstPlayList");
         methods.log("Verify playlist display.");
-        verify.verifyElementDisplay(FileName, "AudioScreenVerify");
+        verify.verifyElementDisplay(FileName, "FirstPlayList");
+        performAction.getText(FileName, "FirstPlayList");
     }
 
     @Test
@@ -29,6 +35,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -46,6 +55,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -65,6 +77,9 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio track detail screen should display.");
         performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Audio");
@@ -81,6 +96,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -100,6 +118,9 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Audio");
@@ -108,7 +129,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.click(FileName, "FirstAudio");
         methods.log("Verify playlist display.");
-        performAction.waitForElement(FileName, "FirstAudio");
+        performAction.waitForElement(FileName, "TotalTimeDuration");
         verify.verifyElementDisplay(FileName, "TotalTimeDuration");
     }
 
@@ -117,6 +138,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify share icon.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -135,6 +159,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio player should display after clicking on audio file.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -155,6 +182,9 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify system should support audio files.");
         performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Audio");
@@ -174,6 +204,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify All buttons should work fine.");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -207,6 +240,9 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify audio playlist should display correct after clicking on back and forword button..");
+        performAction.pause(7);
+        performAction.waitForElement(FileName,"MenuButton");
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);

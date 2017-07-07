@@ -6,15 +6,15 @@
   "project": {
     "url": "",
     "browserName": "Android",
-    "APKFilePath": "E:/ProjectAPK/DenverChurch/v3.apk",
+    "APKFilePath": "C:/Users/dell/Downloads/v0.0.18.apk",
     "appiumVersion":"1.6.5",
-    "deviceName":"69EEKN4PGMLRGMHA",
-    "platformVersion":"6.0",
+    "deviceName":"V5120411006328",
+    "platformVersion":"5.1",
     "saucelab": false
   },
   "vigoBot":{
     "ProjectKey":"60fcb6007d4106c675034d4ca6bc3fa6cd1f641d",
-    "ReportDirectory":"E:/Projects/temp/DenverChurch/test-output",
+    "ReportDirectory":"E:/Projects/New folder/qa-rally4-android/test-output",
     "Exit":"yes"
   },
   "saucelab": {

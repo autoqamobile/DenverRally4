@@ -28,6 +28,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Activity screen should open and verified successfully.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.waitForElement(FileName, "LogoImage");
         methods.log("Verify activity screen display.");
         verify.elementIsDisplayed(FileName, "LogoImage", 1);
@@ -39,6 +41,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event screen display.");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
         methods.log("Verify event screen display.");
@@ -52,6 +56,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Event date is display.");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
         String actual = performAction.getText(FileName,"EventDateTime");
@@ -67,6 +73,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Available count of event list should display.");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
         performAction.getListOfElementCount(FileName, "ListOfEvent");
@@ -99,6 +107,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify all Event name, day and month should get.");
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
         performAction.pause(5);
         eventName = performAction.getEveryElementtestIntoList1(FileName, "ListOFMenu");

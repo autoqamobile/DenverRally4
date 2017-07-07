@@ -121,7 +121,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
-        String Email= "auto38183@mailinator.com";
+        String Email= "auto96311@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
@@ -393,7 +393,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
 
         methods.log("Verify upcoming events name is display.");
-        eventName = performAction.getEveryElementtestIntoList1(FileName, "ListOFMenu");
+        eventName = performAction.getEveryElementtestIntoList(FileName, "ListOFMenu");
         verify.verifyNameDateTimeDisplay(eventName);
 
         performAction.pause(2);

@@ -40,5 +40,12 @@
     "default": "",
     "textType": "",
     "auto": false
-  }
+  },
+  "MenuButton": {
+  "locatorType": "xpath",
+  "locatorValue":"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup[2]",
+  "default": "",
+  "textType": "",
+  "auto": false
+}
 }

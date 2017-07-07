@@ -76,7 +76,7 @@ public class VerifyEvents extends AbstractPage {
         System.out.println(eventName.size());
         for (String el : eventName) {
 
-            if (el.equalsIgnoreCase("Automation Event Free") || el.equalsIgnoreCase("Test Event 1") ) {
+            if (el.equalsIgnoreCase("Automation Event Free") ) {
                 methods.log(el + " is display.");
                 i++;
             } else {
@@ -85,7 +85,7 @@ public class VerifyEvents extends AbstractPage {
             }
         }
         System.out.println( "i " + i);
-        if(i==2)
+        if(i==1)
         {
 
         }else

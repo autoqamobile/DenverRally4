@@ -70,7 +70,7 @@ public class Tests extends BrowserConfig {
         methods.log("Verify Community detail page is display.");
         verify.verifyElementDisplay(FileName,"CommunityDetailPage");
         methods.log("Verify Community detail page heading is display.");
-        verify.verifyText(FileName,"CommunityDetailPage","Automation Community Group");
+        performAction.getText(FileName,"CommunityDetailPage");
 
         performAction.pause(2);
 
@@ -122,8 +122,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
-
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
         performAction.androidScrollToElement(50);
@@ -145,8 +152,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
-
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
         performAction.androidScrollToElement(50);
@@ -167,7 +181,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -189,7 +211,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -211,7 +241,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -235,6 +273,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
         performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
         //performAction.androidScrollToElement(50);
         //performAction.pause(2);
         performAction.click(FileName,"CommunityGroupDetail");
@@ -261,7 +307,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
        // performAction.androidScrollToElement(50);
        // performAction.pause(2);
         performAction.click(FileName,"CommunityGroupDetail");
@@ -287,7 +341,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
         //performAction.androidScrollToElement(50);
        // performAction.pause(2);
         performAction.click(FileName,"CommunityGroupDetail");
@@ -313,7 +375,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -339,6 +409,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
         performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -364,7 +442,13 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"CommunityMenu");
         performAction.pause(15);
         performAction.androidScrollToElement(50);
-        performAction.pause(2);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
         performAction.androidScrollToElement(50);
@@ -385,7 +469,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -412,7 +504,17 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -446,7 +548,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
 
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
@@ -475,11 +585,15 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MenuLink");
         performAction.pause(3);
         performAction.click(FileName,"CommunityMenu");
-        performAction.pause(10);
+        performAction.pause(15);
         performAction.androidScrollToElement(50);
-        performAction.pause(2);
+        performAction.pause(15);
         performAction.androidScrollToElement(50);
-        performAction.pause(2);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(15);
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
         performAction.click(FileName,"CommunityGroupDetail");
         performAction.pause(5);
         performAction.androidScrollToElement(50);

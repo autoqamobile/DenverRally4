@@ -46,9 +46,8 @@ public class TestRunner {
             }
         }
 
-      /*  StartVigo vigo = new StartVigo();
-        vigo.generateVigoReports(ProjectKey, ReportDirectory, Exit);*/
-
+      StartVigo vigo = new StartVigo();
+        vigo.generateVigoReports(ProjectKey, ReportDirectory, Exit);
     }
 
     public void runByMethod(String Browser) {

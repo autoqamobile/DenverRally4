@@ -17,13 +17,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify live stream screen.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
         performAction.pause(7);
         performAction.waitForElement(FileName, "VerifyLiveScreen");
         methods.log("Verify live stream screen is display.");
-        verify.verifyText(FileName, "VerifyLiveScreen", "Live");
+        verify.verifyText(FileName, "VerifyLiveScreen", "Automation Live Stream");
     }
 
     //@Test
@@ -32,6 +34,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify  live video in schedule time.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -48,6 +52,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify the Video time is displayed.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
@@ -71,6 +77,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify  share video  functionality.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
@@ -92,6 +100,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify  live video in schedule time.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
@@ -108,6 +118,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify broadcast date is displayed.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
         performAction.pause(7);

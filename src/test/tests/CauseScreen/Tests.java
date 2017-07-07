@@ -13,14 +13,17 @@ public class Tests extends BrowserConfig {
         VerifyCauseScreen verify = new VerifyCauseScreen(driver);
 
         Methods methods = new Methods(driver);
+
         methods.log("Test Description : Verify live stream screen.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
         performAction.waitForElement(FileName, "CauseScreenVerify");
         methods.log("Verify live stream screen is display.");
         verify.verifyText(FileName, "CauseScreenVerify", "Causes");
-        performAction.getText(FileName, "EventName");
+        performAction.getText(FileName, "CauseScreenVerify");
     }
 
     //@Test
@@ -29,6 +32,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify active cause is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
@@ -43,6 +48,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify search cause with valid name is display.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
         performAction.waitForElement(FileName, "SearchBox");
@@ -51,6 +58,8 @@ public class Tests extends BrowserConfig {
         performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
         performAction.waitForElement(FileName, "SearchButton");
         performAction.click(FileName, "SearchButton");
+        driver.hideKeyboard();
+        performAction.pause(3);
         methods.log("Verify search cause with valid name.");
         verify.verifyText(FileName, "SearchResultText", "AUTOMATION CAUSE");
     }
@@ -61,6 +70,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify place holder in search text field is display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
@@ -81,6 +92,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search with special characters.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
@@ -103,6 +116,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : The blank space should trimmed on starting of the first word in the text box.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(7);
         performAction.waitForElement(FileName, "SearchBox");
@@ -122,6 +137,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check number of result on first load.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
 
@@ -135,6 +152,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search text box should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -151,6 +170,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : If data will enter in search text box then auto listing cause should display.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "SearchBox");
@@ -158,7 +179,9 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.sendKeys(FileName, "SearchBox", "AUTO");
         performAction.pause(5);
+        driver.hideKeyboard();
 
+        performAction.pause(2);
         String searchResult = performAction.getText(FileName, "SearchCause");
 
         methods.log("Verify Search cause text display.");
@@ -172,6 +195,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Cause name should display correct on search result.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "SearchBox");
@@ -180,7 +205,13 @@ public class Tests extends BrowserConfig {
         performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
         performAction.waitForElement(FileName, "SearchButton");
         performAction.pause(5);
+        driver.hideKeyboard();
+        performAction.pause(2);
+
+performAction.androidScrollToElement(300);
+        performAction.pause(2);
         methods.log("Verify Cause name is display.");
+        performAction.waitForElement(FileName, "SearchButton");
         verify.verifyElementDisplay(FileName, "SearchCause");
     }
 
@@ -191,6 +222,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : After clikcing on search cause name, screen should redirect on cause detail screen.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "SearchBox");
@@ -198,7 +231,12 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
         performAction.pause(5);
+        driver.hideKeyboard();
+        performAction.pause(2);
         performAction.waitForElement(FileName, "FirstSearchCause");
+        performAction.click(FileName, "FirstSearchCause");
+        performAction.pause(2);
+
         performAction.click(FileName, "FirstSearchCause");
         performAction.pause(7);
         methods.log("Verify church details screen is display.");
@@ -212,6 +250,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search functionality should work fine after clikcing on search icon or during enter data in search text..");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "SearchBox");
@@ -220,6 +260,8 @@ public class Tests extends BrowserConfig {
         performAction.sendKeys(FileName, "SearchBox", "AUTOMATION CAUSE");
         performAction.waitForElement(FileName, "SearchButton");
         performAction.pause(5);
+        driver.hideKeyboard();
+        performAction.pause(2);
         methods.log("Verify search result is display.");
         verify.verifyElementDisplay(FileName, "SearchCause");
     }
@@ -230,6 +272,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : After clicking on cause name then cause detail screen should display.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -247,6 +291,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser should display in the fundraiser list.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -267,6 +313,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Currency symbol should display correct as configured in admin panel.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "FirstCause");
@@ -284,6 +332,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser detail descrption screen should display after clicking on fundraiser name.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -307,6 +357,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser name and location name should display correct as per selected fundraiser.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "FirstCause");
@@ -328,7 +380,9 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : The amount which is collected by fundraiser.");
+        performAction.pause(7);performAction.click(FileName,"MenuButton");
         performAction.pause(7);
+
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "FirstCause");
@@ -349,6 +403,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : The amount which is the present goal that need to collect amount.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -371,6 +427,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Give button should display on fundraiser detail screen.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "FirstCause");
@@ -391,6 +449,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Description text should display in description section.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
@@ -418,6 +478,8 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Overview text should display in overview section.");
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);
         performAction.waitForElement(FileName, "FirstCause");
@@ -436,6 +498,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser should share after clicking on share icon.");
+        performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Give");
         performAction.pause(9);

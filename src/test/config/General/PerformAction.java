@@ -318,6 +318,16 @@ public class PerformAction extends AbstractPage {
         }
     }
 
+    public void tap(String fileName, String elementName) {
+        Methods methods = new Methods(driver);
+        if (autoLog) {
+            methods.log("Click on " + elementName);
+        }
+
+        driver.tap(1, methods.findElement(fileName, elementName),2);
+
+
+    }
     /**
      * @param propertyFileName : name of file where element is declared
      * @param elementName      : name of element defined into propertyfile
@@ -354,16 +364,23 @@ public class PerformAction extends AbstractPage {
      *                         Get every element text.
      */
 
-    public void getEveryElementtestIntoList(String propertyFileName, String elementName) {
+    public ArrayList getEveryElementtestIntoList(String propertyFileName, String elementName) {
         Methods methods = new Methods(driver);
+
+
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
-        System.out.println(list.size());
+        ArrayList<String> eventNameList = new ArrayList<>();
+
+        //System.out.println(list.size());
 
         for (WebElement el : list) {
             String text = el.getText().toString();
-           // methods.log("- " + text);
+            eventNameList.add(text);
+
         }
+
+        return eventNameList;
 
     }
 
