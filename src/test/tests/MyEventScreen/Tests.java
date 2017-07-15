@@ -17,6 +17,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : User should get 'My Events' option on slider menu.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -48,6 +50,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Event listing screen should open after clicking on ''My Events'.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -82,6 +86,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : User should get 'Past' & 'Upcoming' tab on 'My Event' screen.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -118,6 +124,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : If 'Past' tab is empty' then 'No event avaiable' text should display.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -154,10 +162,12 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
-        String Email= "auto38183@mailinator.com";
+        String Email= "auto12345@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
@@ -191,6 +201,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Date format should display like : 'MMM DD, YYYY'");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -225,6 +237,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Only past events should display in the listing..");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -261,6 +275,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Currently past event should display on top and old events should move to down. ");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -297,6 +313,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Past event date should same as date in database.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -333,6 +351,8 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : If 'Upcoming' tab is empty then 'No event avaiable' text should display.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -370,10 +390,12 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
-        String Email= "auto38183@mailinator.com";
+        String Email= "auto12345@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
@@ -406,10 +428,12 @@ public class Tests extends BrowserConfig {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Correct venue name should display as per associated events.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
-        String Email= "auto38183@mailinator.com";
+        String Email= "auto12345@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");

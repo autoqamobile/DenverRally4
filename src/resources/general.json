@@ -6,7 +6,7 @@
   "project": {
     "url": "",
     "browserName": "Android",
-    "APKFilePath": "C:/Users/dell/Downloads/v0.0.18.apk",
+    "APKFilePath": "C:\Users\dell\Downloads\app-release.apk",
     "appiumVersion":"1.6.5",
     "deviceName":"V5120411006328",
     "platformVersion":"5.1",

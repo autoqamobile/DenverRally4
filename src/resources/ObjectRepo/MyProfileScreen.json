@@ -57,7 +57,7 @@
   },
   "LastName":{
     "locatorType": "xpath",
-    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.EditText[2]",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.EditText[2]",
     "default": "",
     "textType": "",
     "auto": false
@@ -106,7 +106,7 @@
   },
   "UpdateButton":{
     "locatorType": "xpath",
-    "locatorValue": "	/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[7]",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[9]",
     "default": "",
     "textType": "",
     "auto": false

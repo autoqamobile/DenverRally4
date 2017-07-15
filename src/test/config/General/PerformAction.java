@@ -43,7 +43,15 @@ public class PerformAction extends AbstractPage {
         }
         methods.findElement(fileName, elementName).click();
     }
+    public WebElement getElement(String fileName, String elementName) {
+        Methods methods = new Methods(driver);
+        if (autoLog) {
+            methods.log("Click on " + elementName);
 
+        }
+
+        return methods.findElement(fileName, elementName);
+    }
 
     /**
      * @param propertyFileName : name of file where element is declared
@@ -307,6 +315,7 @@ public class PerformAction extends AbstractPage {
      */
     public void pause(int secs) {
         Methods methods = new Methods(driver);
+
         if (autoLog) {
             //methods.log("Pause for " + secs + " seconds");
         }
@@ -346,6 +355,54 @@ public class PerformAction extends AbstractPage {
             }
         }
 
+    }
+
+    /**
+     * @param propertyFileName : name of file where element is declared
+     * @param elementName      : name of element defined into propertyfile
+     * @param text             : text of element to be select
+     */
+
+    public void sendKeyOnElementFromList(String propertyFileName, String elementName, String text,String sendKey) {
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        for (WebElement el : list) {
+            if (el.getText().equals(text)) {
+                methods.log("Click on "+text+".");
+                el.sendKeys(sendKey);
+                break;
+            }
+        }
+
+    }
+
+
+    /**
+     * @param propertyFileName : name of file where element is declared
+     * @param elementName      : name of element defined into propertyfile
+     * @param index             : index of element to be select
+     */
+
+    public void clickOnElementFromListIndex(String propertyFileName, String elementName, int index) {
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        list.get(index).click();
+
+    }
+
+    /**
+     * @param propertyFileName : name of file where element is declared
+     * @param elementName      : name of element defined into propertyfile
+     * @param index             : index of element to be select
+     */
+
+    public WebElement getElementFromElementList(String propertyFileName, String elementName, int index) {
+        Methods methods = new Methods(driver);
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        return list.get(index);
     }
 
     public int getListOfElementCount(String propertyFileName, String elementName) {

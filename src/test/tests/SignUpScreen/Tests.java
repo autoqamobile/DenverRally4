@@ -16,6 +16,7 @@ public class Tests extends BrowserConfig {
     public void TC_091() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
+        methods.log("Test Description : Verify User should get Sign Up link on login screen.");
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
@@ -32,6 +33,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify User should redirect on Sign Up screen.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -51,6 +54,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify User should able to enter valid data in name text field.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -60,6 +65,7 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
         performAction.androidScrollToElement(50);
+
         performAction.waitForElement(FileName, "FirstNameField");
         performAction.click(FileName,"FirstNameField");
         performAction.sendKeys(FileName,"FirstNameField","Test");
@@ -76,15 +82,18 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "PasswordField");
         performAction.click(FileName,"PasswordField");
         performAction.sendKeys(FileName,"PasswordField","123456");
+        performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
         performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.click(FileName,"ConfirmPasswordField");
-        performAction.pause(2);
+
         performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
         performAction.pause(2);
-
         performAction.tap(FileName,"SubmitButton");
+        performAction.pause(2);
         performAction.tap(FileName,"SubmitButton1");
         performAction.pause(15);
 
@@ -95,11 +104,13 @@ public class Tests extends BrowserConfig {
 
     }
 
-    @Test
+    //@Test
     public void TC_094() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify name field and should not accept any special character with space and dash and dots.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -125,6 +136,9 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "PasswordField");
         performAction.click(FileName,"PasswordField");
         performAction.sendKeys(FileName,"PasswordField","123456");
+        performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
         performAction.waitForElement(FileName, "ConfirmPasswordField");
@@ -148,6 +162,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify email with valid data like : <name>@domain.com");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -162,11 +178,14 @@ public class Tests extends BrowserConfig {
 
 
     }
-    @Test
+
+    //@Test
     public void TC_096() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify space used in initial of email like : (space given) name@gmail.com.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -186,6 +205,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify space used in the end of email like : name@gmail.com (space given).");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -207,6 +228,7 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify User should able to enter valid \"Minimum 6 characters\" password ");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -235,6 +257,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.click(FileName,"ConfirmPasswordField");
         performAction.pause(2);
@@ -259,6 +283,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.clear(FileName, "ConfirmPasswordField");
         performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.click(FileName,"ConfirmPasswordField");
@@ -277,6 +303,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify Once user will fill valid data  in all fileds and click on 'Sign Up' button then it should redirected on Thanks screen.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -286,6 +314,7 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
         performAction.androidScrollToElement(50);
+        performAction.pause(2);
         performAction.waitForElement(FileName, "FirstNameField");
         performAction.click(FileName,"FirstNameField");
         performAction.sendKeys(FileName,"FirstNameField","Test");
@@ -305,6 +334,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.click(FileName,"ConfirmPasswordField");
         performAction.pause(2);
@@ -321,11 +352,13 @@ public class Tests extends BrowserConfig {
 
     }
 
-    @Test
+    //@Test
     public void TC_100() {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify Once user will sign up successfully then user should get confirmation email on registered email address.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -379,6 +412,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify Email address should be validated before sending email under successful page.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -448,6 +483,8 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : Verify After confirmation user should able to login to the application with valid credentials.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -476,12 +513,15 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
+        performAction.androidScrollToElementManually(550,330);
+        performAction.pause(2);
         performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.click(FileName,"ConfirmPasswordField");
         performAction.pause(2);
         performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
+        performAction.pause(2);
         performAction.tap(FileName,"SubmitButton1");
         performAction.pause(5);
         performAction.click(FileName,"VerifyUserName");
@@ -517,6 +557,7 @@ public class Tests extends BrowserConfig {
         test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("user entry should update in database before and after activate the account.");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);

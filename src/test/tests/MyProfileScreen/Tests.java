@@ -15,6 +15,8 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : My Profile details screen should open after clicking on 'Settings' icon.");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -48,7 +50,9 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update first name after clicking on the update button");
         performAction.pause(10);
+        performAction.waitForElement(FileName,"ProfileLink");
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
         String Email= "auto38183@mailinator.com";
@@ -96,6 +100,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update last name after clicking on the update button");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -117,6 +122,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName,"SettingIcon");
         performAction.pause(5);
+        performAction.click(FileName,"LastName");
+        performAction.pause(2);
         performAction.clear(FileName,"LastName");
         performAction.sendKeys(FileName,"LastName","TestUpdate1");
         performAction.pause(2);
@@ -143,10 +150,12 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update password after clicking on the update button");
+
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
-        String Email= "auto38183@mailinator.com";
+        String Email= "auto00221@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
@@ -168,8 +177,9 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         driver.hideKeyboard();
         performAction.pause(2);
+        performAction.click(FileName,"ConfirmPassword");
         performAction.sendKeys(FileName,"ConfirmPassword","1234567");
-        performAction.pause(2);
+        performAction.pause(5);
         driver.hideKeyboard();
         performAction.pause(2);
         performAction.androidScrollToElement(50);
@@ -190,16 +200,16 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"LogOutButton");
 
-        performAction.click(FileName,"LogOutButton");
+        //performAction.click(FileName,"LogOutButton");
         performAction.pause(3);
 
 
         methods.log("Verify password is Updated.");
-        performAction.pause(5);
-        performAction.click(FileName,"MyProfileText");
+        performAction.pause(10);
+       // performAction.click(FileName,"MyProfileText");
         performAction.pause(2);
-        performAction.click(FileName,"Email");
-        performAction.sendKeys(FileName,"Email",Email);
+        performAction.click(FileName,"MyProfileEmail");
+        performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
 
@@ -220,6 +230,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update phone number after clicking on the update button");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -232,7 +243,7 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
-        performAction.sendKeys(FileName,"LoginPassword","1234567");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
 
         driver.hideKeyboard();
         performAction.pause(2);
@@ -274,6 +285,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update location after clicking on the update button");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -286,7 +298,7 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
-        performAction.sendKeys(FileName,"LoginPassword","1234567");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
 
         driver.hideKeyboard();
         performAction.pause(2);
@@ -329,6 +341,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should update privacy radio button field after clicking on the update button");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -341,7 +354,7 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
-        performAction.sendKeys(FileName,"LoginPassword","1234567");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
 
         driver.hideKeyboard();
         performAction.pause(2);
@@ -382,6 +395,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should redirect to my profile main page");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -394,7 +408,7 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
-        performAction.sendKeys(FileName,"LoginPassword","1234567");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
 
         driver.hideKeyboard();
         performAction.pause(2);
@@ -422,6 +436,7 @@ public class Tests extends BrowserConfig {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
         test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        methods.log("Test Description : The system should back to the profile main page screen");
         performAction.pause(10);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
@@ -434,7 +449,7 @@ public class Tests extends BrowserConfig {
         performAction.androidScrollToElement(50);
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
-        performAction.sendKeys(FileName,"LoginPassword","1234567");
+        performAction.sendKeys(FileName,"LoginPassword","123456");
 
         driver.hideKeyboard();
         performAction.pause(2);

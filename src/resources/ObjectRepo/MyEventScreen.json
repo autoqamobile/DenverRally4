@@ -85,7 +85,7 @@
   },
   "Event": {
     "locatorType": "xpath",
-    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View[2]/android.widget.TextView[1]",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View/android.widget.ScrollView/android.view.View/android.view.View/android.widget.TextView[1]",
     "default": "",
     "textType": "",
     "auto": false

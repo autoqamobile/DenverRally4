@@ -1,4 +1,4 @@
-package test.tests.AudioScreen;
+package test.tests.Fundraiser;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
@@ -11,9 +11,10 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by Jsbot on 09-Jun-17.
+ * Created by dell on 7/14/2017.
  */
-public class VerifyAudioScreen extends AbstractPage {
+public class VerifyFundraiser extends AbstractPage {
+
 
 
     /**
@@ -21,17 +22,8 @@ public class VerifyAudioScreen extends AbstractPage {
      *
      * @param driver .
      */
-    public VerifyAudioScreen(AndroidDriver driver) {
+    public VerifyFundraiser(AndroidDriver driver) {
         super(driver);
-    }
-
-    public void elementIsDisplayed(String fileName, String elementName) {
-        boolean bool;
-        Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(fileName, elementName);
-        for(WebElement e:list){
-            assertThat(e.isDisplayed()).isTrue();
-        }
     }
 
     public void verifyElementDisplay(String propertyFileName, String elementName){
@@ -39,18 +31,21 @@ public class VerifyAudioScreen extends AbstractPage {
         assertThat(methods.findElement(propertyFileName, elementName).isDisplayed()).isTrue();
     }
 
-    public void printAudioName(String fileName, String elementName)
-    {
+    public void verifyText(String propertyFileName, String elementName, String text){
         Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(fileName, elementName);
-        for(WebElement e:list){
-            methods.log("Audio Name : "+e.getText());
-        }
+        String getText  = methods.findElement(propertyFileName, elementName).getText().toString();
+        assertThat(getText).isEqualToIgnoringCase(text);
+        System.out.println("Text : "+getText);
+
     }
+    public void verifyEventPinDisplay(String EventName, String EventLocation) {
+        assertThat(driver.findElement(By.id(EventName + ". " + EventLocation + ".")).isDisplayed()).isTrue();
+    }
+
     public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
         Methods methods = new Methods(driver);
         boolean flag=false;
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        List<WebElement> list = methods.findElementList(propertyFileName, "CauseList");
 
         for (WebElement el : list) {
             if (el.getText().equalsIgnoreCase(text)) {
@@ -65,30 +60,25 @@ public class VerifyAudioScreen extends AbstractPage {
 
 
     }
-    public void verifyElementDisplayByText1(String propertyFileName, String elementName, String text) {
+
+    public String getText(String propertyFileName, String elementName, String text) {
         Methods methods = new Methods(driver);
         boolean flag=false;
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        String Text="";
+        List<WebElement> list = methods.findElementList(propertyFileName, "EventDetailList");
 
         for (WebElement el : list) {
             if (el.getText().equalsIgnoreCase(text)) {
                 flag=true;
-                //methods.log("Text "+el.getText());
-                //el.click();
+                Text =el.getText();
+                el.click();
                 break;
             }
 
         }
         assertThat(!flag).isFalse();
 
-
+        return Text;
     }
 
-    public void verifyElementDisplayByIndex(String propertyFileName, String elementName, int Index) {
-        Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-        assertThat(list.get(Index).isDisplayed()).isTrue();
-
-
-    }
 }

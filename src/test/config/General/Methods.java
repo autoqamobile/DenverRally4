@@ -648,5 +648,23 @@ public class Methods extends AbstractPage {
         return text;
     }
 
+    public WebElement getElement(String fileName, String elementName) {
+        Methods methods = new Methods(driver);
+        if (autoLog) {
+            methods.log("Click on " + elementName);
 
+        }
+
+        return methods.findElement(fileName, elementName);
+    }
+    public String getText(String propertyFileName, String elementName) {
+        Methods methods = new Methods(driver);
+        String ElementText = methods.findElement(propertyFileName, elementName).getText();
+
+
+        if (autoLog) {
+            methods.log("Text : " + ElementText);
+        }
+        return ElementText;
+    }
 }

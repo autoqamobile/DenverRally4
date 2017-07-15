@@ -71,7 +71,7 @@
   },
   "SubmitButton1":{
     "locatorType": "xpath",
-    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View/android.view.View/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.widget.TextView",
     "default": "",
     "textType": "",
     "auto": false

@@ -18,6 +18,8 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify application launch.");
 
         performAction.pause(7);
+        performAction.click(FileName,"MenuButton");
+        performAction.pause(7);
         verify.elementIsDisplayed(FileName, "LogoImage", 1);
         performAction.pause(7);
     }
@@ -68,7 +70,7 @@ public class Tests extends BrowserConfig {
     }
 
     @Test
-    public void TC_07() {
+    public void TC_06() {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
@@ -82,24 +84,8 @@ public class Tests extends BrowserConfig {
 
     }
 
-    //@Test
-   /* public void TC_06() {
-        String FileName = "EventList";
-        performAction.pause(7);
-        Methods methods = new Methods(driver);
-        methods.log("Test Description : Verify past date events should not display..");
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
-
-        performAction.pause(5);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Past");
-
-
-        performAction.getListOfElementCount(FileName, "ListOfEvent");
-
-    }*/
-
     @Test
-    public void TC_06() {
+    public void TC_07() {
 
         ArrayList<String> eventName;
         VerifyEvents verify = new VerifyEvents(driver);
@@ -123,7 +109,7 @@ public class Tests extends BrowserConfig {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
-        methods.log("Test Description : Verify Activity screen should open and verified successfully.");
+        methods.log("Test Description : Verify The event which are on current date should display on top and future date events should move to down.");
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
 
         performAction.pause(5);

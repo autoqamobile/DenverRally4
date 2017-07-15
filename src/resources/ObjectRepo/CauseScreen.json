@@ -5,10 +5,17 @@
     "default": "",
     "textType": "",
     "auto": false
-  }
+  },
   "ListOFMenu": {
     "locatorType": "className",
     "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "SearchText": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.EditText",
     "default": "",
     "textType": "",
     "auto": false

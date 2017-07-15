@@ -105,15 +105,36 @@ public class VerifyEvents extends AbstractPage {
     public void verifyEventPinDisplay(String EventName, String EventLocation) {
         assertThat(driver.findElement(By.id(EventName + ". " + EventLocation + ".")).isDisplayed()).isTrue();
     }
+    public void verifyEventPinNoDotDisplay(String EventName, String EventLocation) {
+        System.out.println(EventName + ". " + EventLocation);
+        assertThat(driver.findElement(By.id(EventName + ". " + EventLocation)).isDisplayed()).isTrue();
+    }
 
     public void verifyPurchaseTicketScreenName(String ScreenName, String Actual) {
         assertThat(ScreenName).isEqualToIgnoringCase(Actual);
     }
 
     public void verifyFreeEvent(String Text) {
-        assertThat(Text).isEqualToIgnoringCase("FREE EVENT");
+        assertThat(Text).isEqualToIgnoringCase("Event Free");
     }
 
+    public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
+    }
 
 }

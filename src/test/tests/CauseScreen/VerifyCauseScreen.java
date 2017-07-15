@@ -71,5 +71,22 @@ public class VerifyCauseScreen extends AbstractPage {
         }
     }
 
+    public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
+    }
 }

@@ -21,8 +21,8 @@ public class ExcelFileConfig {
     public static void main(String[] args) {
 
         ExcelFileConfig excel = new ExcelFileConfig();
+        System.out.println(excel.getCellFromExcel("E:\\Projects\\New folder\\qa-rally4-android\\src\\resources\\TestData", "TestData.xls", "Sheet1", 4,1));
 
-        System.out.println(excel.getRowFromExcel("C:\\Users\\admin\\Desktop", "DEC-16_2_2.xls", "clinic", 1));
 
 
     }
@@ -78,6 +78,13 @@ public class ExcelFileConfig {
 
         return cell;
     }
+
+
+
+
+
+
+
 
 
 }

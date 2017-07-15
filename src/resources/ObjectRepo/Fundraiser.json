@@ -1,0 +1,72 @@
+{
+  "MenuTextList": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "TextList": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "MenuLink": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "TopElement": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.widget.ImageView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BottomElement": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View/android.view.View/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BottomElement1": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "BottomElement2": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[1]/android.view.View/android.view.View[2]/android.view.View[2]/android.widget.ScrollView/android.view.View/android.view.View[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "CauseList": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "LoginPopUp": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GoToLogin": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.Button",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}
