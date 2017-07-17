@@ -11,15 +11,10 @@ import test.tests.EventDetailsScreen.VerifyEvents;
 public class Tests extends BrowserConfig {
 
     public String FileName = "AudioScreen";
-    ExcelFileConfig excel = new ExcelFileConfig();
-    public String ExcelFilePath = "src\\resources\\TestData";
-    public String ExcelFileName = "TestData.xls";
 
-    public String MenuName = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Media",4,1).toString();
-    public String MenuTabName = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Media",5,1).toString();
-    public String AudioPlayList =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Media",6,1).toString();
-    public String AudioTracks =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Media",7,1).toString();
-    public String AudioTrackTimeDuration =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Media",8,1).toString();
+
+    public String MenuName = "Media";
+    public String MenuTabName = "Audio";
 
     //Audio Playlist//
     @Test
@@ -28,7 +23,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
@@ -36,7 +31,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         // performAction.waitForElement(FileName, "FirstPlayList");
         methods.log("Verify playlist display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",AudioPlayList);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",4);
         //performAction.getText(FileName, "FirstPlayList");
     }
 
@@ -46,7 +41,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
@@ -55,7 +50,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);*/
         performAction.pause(3);
         methods.log("Verify playlist display.");
-        verify.verifyElementDisplayByText1(FileName, "ListOFMenu",AudioPlayList);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",4);
     }
 
     @Test
@@ -63,17 +58,17 @@ public class Tests extends BrowserConfig {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
-        performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.pause(10);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-       /* performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
-        performAction.pause(3)*/;
+       performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
+        performAction.pause(3);
         methods.log("Verify playlist display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",AudioPlayList);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
     }
 
     //Audio Tracks Screen//
@@ -83,16 +78,16 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio track detail screen should display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
         methods.log("Verify audio track detail display.");
-        verify.verifyElementDisplayByText1(FileName, "ListOFMenu",AudioTracks);
+        verify.verifyElementDisplayByIndex2(FileName, "ListOFMenu",0);
     }
 
     @Test
@@ -101,16 +96,17 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
         methods.log("Verify playlist display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",AudioTracks);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
+
     }
 
     @Test
@@ -119,18 +115,19 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : The actual period of audio file should display in time.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);;
         performAction.pause(3);
         methods.log("Verify The actual period of audio file should display in time.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",AudioTrackTimeDuration);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",4);
+
     }
 
     @Test
@@ -139,15 +136,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify share icon.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);
         performAction.pause(3);
         methods.log("Verify share icon.");
         verify.verifyElementDisplayByText1(FileName, "ListOFMenu","share");
@@ -159,43 +156,37 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Audio player should display after clicking on audio file.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);
         performAction.pause(3);
         methods.log("Verify audio player.");
-        verify.verifyElementDisplayByText1(FileName, "ListOFMenu",AudioTracks);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",0);
+
     }
 
     //Audio Player Screen//
     @Test
     public void TC_50() {
-
-
-
-
-
-
-
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify system should support audio files.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);
         performAction.pause(15);
         methods.log("Verify system should support audio files.");
 
@@ -210,15 +201,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify All buttons should work fine.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);
         performAction.pause(3);
         methods.log("Verify Play is dispaly.");
         verify.verifyElementDisplayByIndex(FileName, "ListOFMenu",8);
@@ -245,23 +236,23 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify audio playlist should display correct after clicking on back and forword button..");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuTabName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioPlayList);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",4);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",AudioTracks);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",3);
         performAction.pause(3);
 
-        performAction.waitForElement(FileName, "NextSongButton");
-        performAction.click(FileName, "NextSongButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",9);
+
         performAction.pause(2);
 
-        performAction.waitForElement(FileName, "PreviousSongButton");
-        performAction.click(FileName, "PreviousSongButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+
         performAction.pause(2);
 
         performAction.waitForElement(FileName, "BackButton");
@@ -269,7 +260,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
 
         methods.log("Verify Verify audio playlist should display correct.");
-        verify.verifyElementDisplay(FileName, "FirstAudio");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
+
         performAction.pause(2);
     }
 

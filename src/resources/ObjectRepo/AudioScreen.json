@@ -1,9 +1,5 @@
 {
 
-
-
-
-
   "ListOFMenu": {
     "locatorType": "className",
     "locatorValue": "android.widget.TextView",

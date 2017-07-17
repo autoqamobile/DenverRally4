@@ -29,7 +29,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : All community list should display ");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -50,7 +50,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(10);
         methods.log("Test Description : Each Community design should not overlap.");
 
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -71,7 +71,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : After clicking on community group, group detail screen should display.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -98,11 +98,13 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Group image should display as configured by admin manager.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
+
         performAction.pause(2);
         methods.log("Verify image is display.");
         verify.verifyElementDisplay(FileName,"CommunityDetailPageImage");
@@ -120,11 +122,12 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Group description should display as configured by admin manager.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(2);
         methods.log("Verify Description is display.");
         verify.verifyElementDisplay(FileName,"CommunityDetailPageDescription");
@@ -143,16 +146,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Meeting date should display correct as configured by admin.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunity(EventName);
+        step.ScrollCommunity();
+
         performAction.pause(2);
         methods.log("Verify upcoming meeting date is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventDate);
+        verify.verifyElementDisplayByIndex1(FileName,"MenuTextList",10);
         //performAction.getText(FileName,"UpcomingMeetingDate");
         performAction.pause(2);
     }
@@ -168,16 +173,17 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Meeting day should display correct.");
 
         performAction.pause(20);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(10);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(5);
-        step.ScrollCommunity(EventName);
+        step.ScrollCommunity();
         performAction.pause(2);
         methods.log("Verify upcoming meeting day is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",Eventday);
+        verify.verifyElementDisplayByIndex1(FileName,"MenuTextList",11);
 
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingDay");
         //step.getSplitText(FileName,"UpcomingMeetingDay",0);
@@ -194,16 +200,17 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Meeting time should display correct.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(5);
-        step.ScrollCommunity(EventName);
+        step.ScrollCommunity();
         performAction.pause(2);
         methods.log("Verify upcoming meeting Time is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventTime);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",11);
 
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingDay");
         //step.getSplitText(FileName,"UpcomingMeetingDay",2);
@@ -221,17 +228,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Number of going members should display correct.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
 
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(5);
-        step.ScrollCommunity(EventName);
+        step.ScrollCommunity();
         performAction.pause(2);
         methods.log("Verify upcoming meeting going memers is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventGoingGembers);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",12);
 
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingGoingMemers");
         //performAction.getText(FileName,"UpcomingMeetingGoingMemers");
@@ -248,17 +256,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Check group event should display correct.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(5);
-        step.ScrollCommunity(EventName);
+        step.ScrollCommunity();
         performAction.pause(2);
 
         methods.log("Verify group event is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventName);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",9);
 
         //verify.verifyElementDisplay(FileName,"GroupEvent");
         performAction.pause(2);
@@ -277,17 +286,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : After clicking on group event name, then group event detail scren should display.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
-
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify group event detail page is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventName);
+        verify.verifyElementDisplayByIndex1(FileName,"MenuTextList",0);
 
 
         performAction.pause(2);
@@ -304,16 +314,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Event day should display as per calender date.");
 
         performAction.pause(5);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify event day is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",Eventday);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",5);
         //verify.verifyElementDisplay(FileName,"GroupEventDate");
         //step.getSplitText1(FileName,"GroupEventDate",0);
         performAction.pause(2);
@@ -330,16 +342,19 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Event date should display correct and as per date day should display.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify event date is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventDate);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",5);
+
 
         //verify.verifyElementDisplay(FileName,"GroupEventDate");
         //step.getSplitText1(FileName,"GroupEventDate",1);
@@ -357,16 +372,18 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Event start and end time should display correct.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify event time is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventTime);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",6);
         // verify.verifyElementDisplay(FileName,"GroupEventTime");
        // performAction.getText(FileName,"GroupEventTime");
         performAction.pause(2);
@@ -382,13 +399,15 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Correct event photo should display.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify event image is display.");
         verify.verifyElementDisplay(FileName,"GroupEventImage");
@@ -405,7 +424,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Once user will click on 'View More' link then same event photo should display.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(10);
@@ -428,18 +447,22 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Location address should display correct.");
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
         methods.log("Verify event location is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",EventLocation);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",5);
 
         //verify.verifyElementDisplay(FileName,"GroupEventLocation");
         //performAction.getText(FileName,"GroupEventLocation");
@@ -449,7 +472,6 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_150() {
         String CommunityName ="Youth & Family";
-        String EventName ="Teens - Bowling Night";
         String EventLocation ="15755 E Arapahoe Rd, Centennial, CO 80016";
 
         VerifyCommunity verify = new VerifyCommunity(driver);
@@ -458,20 +480,24 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Location pin should display as per defined address.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
+
         performAction.pause(3);
 
-        step.ScrollCommunityEvent(EventName);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
+        performAction.pause(5);
         String EventName1 = performAction.getText(FileName, "GroupEventDetailPage");
         performAction.pause(3);
         performAction.androidScrollToElement(50);
 
         performAction.pause(2);
-        String EventLocation1 = verify.getText(FileName,"GroupEventLocation",EventLocation);
+        String EventLocation1 = performAction.getText(FileName,"GroupEventLocation");
         performAction.pause(2);
 
         methods.log("Verify event location pin is display.");
@@ -491,18 +517,20 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : RSVP button should display event detail screen.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
-        performAction.pause(3);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
+        performAction.pause(5);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
         methods.log("Verify RSVP button is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",RSVPButton);
+        verify.verifyElementDisplayByText(FileName,"EventDetailList","RSVP");
 
         //verify.verifyElementDisplay(FileName, "RSVPButton");
         performAction.pause(2);
@@ -521,21 +549,23 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : RSVP detail screen should display after clicking on RSVP button.");
 
         performAction.pause(10);
-        performAction.click(FileName,"MenuLink");
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
-        step.ScrollAndClick(CommunityName);
+        step.Scroll();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",1);
         performAction.pause(3);
-        step.ScrollCommunityEvent(EventName);
-        performAction.pause(3);
+        step.ScrollCommunity();
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
+        performAction.pause(5);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
-        performAction.click(FileName,"RSVPButton");
+        performAction.clickOnElementFromList(FileName,"MenuTextList","RSVP");
         performAction.pause(2);
 
         methods.log("Verify Free Registration page is display.");
-        verify.verifyElementDisplayByText(FileName,"EventDetailList",RSVPPage);
+        verify.verifyElementDisplayByText(FileName,"EventDetailList","RSVP Event");
 
         //verify.verifyElementDisplay(FileName, "FreeRegistration");
         performAction.pause(2);

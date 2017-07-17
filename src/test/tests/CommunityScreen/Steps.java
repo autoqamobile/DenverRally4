@@ -40,6 +40,20 @@ public class Steps extends AbstractPage{
         return ElementText;
     }
 
+    public void Scroll()
+    {
+        Methods methods = new Methods(driver);
+        boolean Flag=false;
+        String FileName = "CommunityScreen";
+
+        WebElement bottomElement=methods.getElement(FileName,"BottomElement");
+
+        WebElement topElement= methods.getElement(FileName,"TopElement");
+        TouchAction action = new TouchAction(driver);
+        action.longPress(bottomElement).moveTo(topElement).release().perform();
+
+    }
+
     public void ScrollAndClick(String text)
     {
         Methods methods = new Methods(driver);
@@ -115,19 +129,19 @@ public class Steps extends AbstractPage{
         }*/
     }
 
-    public void ScrollCommunity(String text)
+    public void ScrollCommunity()
     {
         Methods methods = new Methods(driver);
         boolean Flag=false;
         String FileName = "CommunityScreen";
         methods.pause(5);
-        for(int i=0; i<50;i++) {
+        //for(int i=0; i<50;i++) {
             TouchAction action = new TouchAction(driver);
 
                 WebElement topElement=methods.getElement(FileName,"CommunityTop");
                 WebElement bottomElement=methods.getElement(FileName,"CommunityBottomt");
                 action.longPress(bottomElement).moveTo(topElement).release().perform();
-                List<WebElement> list = methods.findElementList(FileName, "EventTextList");
+                /*List<WebElement> list = methods.findElementList(FileName, "EventTextList");
 
                 for (WebElement el : list) {
                     if (el.getText().equalsIgnoreCase(text)) {
@@ -140,12 +154,12 @@ public class Steps extends AbstractPage{
                 if(Flag)
                 {
                     break;
-                }
+                }*/
 
 
 
 
-        }
+        //}
 
 
     }

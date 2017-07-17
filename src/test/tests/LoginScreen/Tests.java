@@ -2,6 +2,7 @@ package test.tests.LoginScreen;
 
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
+import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
 
@@ -9,18 +10,25 @@ import test.config.SeleniumConfig.BrowserConfig;
 public class Tests extends BrowserConfig {
     public String FileName = "LoginScreen";
 
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+
+    public String Email =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",4,1).toString();
+    public String EmailForRegistration =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",6,1).toString();
+    public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",7,1).toString();
+
+
     @Test
     public void TC_104() {
         Verify verify = new Verify(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check guest user get login screen.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
         performAction.pause(7);
         methods.log("Verify login screen display.");
-        verify.verifyElementDisplay(FileName, "MyProfileText");
-        performAction.getText(FileName, "MyProfileText");
+        verify.verifyElementDisplayByText(FileName, "ListOFMenu", "MyProfileText");
     }
 
     @Test
@@ -29,11 +37,10 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check user get Email address text field.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         performAction.pause(2);
@@ -54,11 +61,10 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check registered email address.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test" + step.invalidEmail() + "@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", EmailForRegistration);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         methods.log("Verify with unregister email address.");
@@ -68,7 +74,7 @@ public class Tests extends BrowserConfig {
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.clear(FileName, "MyProfileEmail");
         performAction.pause(2);
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         performAction.pause(2);
@@ -83,11 +89,10 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check email with valid data like : <name>@domain.com.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         methods.log("Verify System should accept email with valid email address format.");
@@ -103,11 +108,10 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check space used in initial of email like : (space given) name@gmail.com");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "   test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", " "+Email);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         methods.log("Verify If user will give space in the starting of email and write valid email then system should not accept email with spacing.");
@@ -122,11 +126,10 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check space used in the end of email like : name@gmail.com (space given)");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com   ");
+        performAction.sendKeys(FileName, "MyProfileEmail", " "+Email);
         performAction.pause(2);
         performAction.click(FileName, "MyProfileText");
         methods.log("Verify If user will give space in the end of email then system should not accept email address without space.");
@@ -141,18 +144,17 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check user get password text field.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName, "MyProfileText");
         performAction.pause(2);
         performAction.click(FileName, "PasswordBox");
         performAction.androidScrollToElementManually(550, 330);
         performAction.waitForElement(FileName, "PasswordBox");
-        performAction.sendKeys(FileName, "PasswordBox", "test123");
+        performAction.sendKeys(FileName, "PasswordBox", Password);
         performAction.androidScrollToElementManually(550, 330);
         performAction.waitForElement(FileName, "SubmitButton");
         performAction.click(FileName, "SubmitButton");
@@ -171,18 +173,17 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName, "MyProfileText");
         performAction.pause(2);
         performAction.click(FileName, "PasswordBox");
         performAction.androidScrollToElementManually(550, 330);
         performAction.waitForElement(FileName, "PasswordBox");
-        performAction.sendKeys(FileName, "PasswordBox", "test123");
+        performAction.sendKeys(FileName, "PasswordBox", Password);
         performAction.pause(2);
         performAction.getText(FileName, "PasswordBox");
     }
@@ -195,18 +196,17 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
-        performAction.waitForElement(FileName, "ProfileLink");
-        performAction.click(FileName, "ProfileLink");
-        performAction.pause(4);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
-        performAction.sendKeys(FileName, "MyProfileEmail", "test@mailinator.com");
+        performAction.sendKeys(FileName, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName, "MyProfileText");
         performAction.pause(2);
         performAction.click(FileName, "PasswordBox");
         performAction.androidScrollToElementManually(550, 330);
         performAction.waitForElement(FileName, "PasswordBox");
-        performAction.sendKeys(FileName, "PasswordBox", "test123");
+        performAction.sendKeys(FileName, "PasswordBox", Password);
         performAction.androidScrollToElementManually(550, 330);
         performAction.waitForElement(FileName, "SubmitButton");
         performAction.click(FileName, "SubmitButton");

@@ -1,6 +1,7 @@
 package test.tests.LiveStreamScreen;
 
 import org.testng.annotations.Test;
+import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.General.PerformAction;
 import test.config.SeleniumConfig.BrowserConfig;
@@ -9,23 +10,29 @@ import test.tests.VideoScreen.VerifyVideoScreen;
 
 public class Tests extends BrowserConfig {
     public String FileName = "LiveStreamScreen";
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+
+    public String MenuName = "Media";
 
     @Test
     public void TC_64() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-
+        Steps steps = new Steps(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify live stream screen.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
-        performAction.pause(7);
-        performAction.waitForElement(FileName, "VerifyLiveScreen");
+        steps.Scroll();
+        performAction.pause(3);
         methods.log("Verify live stream screen is display.");
-        verify.verifyText(FileName, "VerifyLiveScreen", "Automation Live Stream");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu", 5);
     }
 
     //@Test
@@ -49,22 +56,25 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_66() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-
+        Steps steps = new Steps(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify the Video time is displayed.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
+
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
-        performAction.pause(7);
-        performAction.waitForElement(FileName, "FirstLiverVideo");
-        performAction.click(FileName, "FirstLiverVideo");
+        steps.Scroll();
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 4);
+
+
         performAction.pause(2);
         methods.log("Verify the Video Date.");
-        performAction.getText(FileName,"Broadcasted");
-       // System.out.println(methods.findElement(propertyFileName, elementName).getText().toString());
+       // performAction.getText(FileName,"Broadcasted");
+       // verify.verifyElementDisplayByText(FileName, "ListOFMenu", VideoDate);
 
 
     }
@@ -73,21 +83,22 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_67() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-
+        Steps steps = new Steps(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify  share video  functionality.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
-        performAction.pause(7);
-        performAction.waitForElement(FileName, "FirstLiverVideo");
-        performAction.click(FileName, "FirstLiverVideo");
+        steps.Scroll();
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
+
         performAction.pause(2);
-        performAction.waitForElement(FileName, "ShareButton");
-        performAction.click(FileName, "ShareButton");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Share");
 
         methods.log("Verify share video.");
         verify.verifyElementDisplay(FileName, "SharePenal");
@@ -115,21 +126,25 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_69() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-
+        Steps steps = new Steps(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify broadcast date is displayed.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Live");
-        performAction.pause(7);
-        performAction.waitForElement(FileName, "FirstLiverVideo");
-        performAction.click(FileName, "FirstLiverVideo");
+        steps.Scroll();
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
+
         performAction.pause(2);
-        methods.log("Verify broadcast date.");
-        verify.verifyElementDisplay(FileName, "Broadcasted");
+        methods.log("Verify broadcast Date.");
+        // performAction.getText(FileName,"Broadcasted");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu", 5);
+
     }
 
 

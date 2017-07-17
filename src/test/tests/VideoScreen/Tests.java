@@ -1,12 +1,16 @@
 package test.tests.VideoScreen;
 
 import org.testng.annotations.Test;
+import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
 
 
 public class Tests extends BrowserConfig {
     public String FileName = "VideoScreen";
+
+    public String MenuName = "Media";
+    public String  TabName= "Video";
 
     //Video Playlist//
     @Test
@@ -15,11 +19,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "VideoScreenVerify");
         methods.log("Verify playlist display.");
@@ -32,11 +36,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify individual video alignment.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         methods.log("Verify video alignment.");
@@ -49,11 +53,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify The video which are labeled as active in database, Only those active video should display in video list screen.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         methods.log("Verify video list.");
@@ -70,11 +74,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Video track detail screen should display.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "VideoPlayList3Text");
         String playListName = performAction.getText(FileName,"VideoPlayList3Text");
@@ -94,11 +98,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Correct video list should display.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -115,11 +119,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify The actual period of video file should display");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -138,11 +142,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify share icon should display");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -161,11 +165,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Video player should display after clicking on video file");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -185,11 +189,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify System should support video files.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -211,11 +215,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify Check Play, Pause, Stop, Next, Previous, Close button should display.");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");
@@ -251,11 +255,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify video playlist should display correct after clicking on back and forword button..");
         performAction.pause(7);
-        performAction.click(FileName,"MenuButton");
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Media");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Video");
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", TabName);
         performAction.pause(7);
         performAction.waitForElement(FileName, "FirstVideoPlayList");
         performAction.click(FileName, "FirstVideoPlayList");

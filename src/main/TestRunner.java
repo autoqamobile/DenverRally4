@@ -7,6 +7,7 @@ import org.testng.xml.XmlClass;
 import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
+import test.config.General.ExcelFileConfig;
 import test.config.General.JsonFileConfig;
 
 
@@ -20,11 +21,15 @@ public class TestRunner {
 
     public static void main(String[] args) {
 
+        ExcelFileConfig excel = new ExcelFileConfig();
+        String ExcelFilePath = "src\\resources\\TestData";
+        String ExcelFileName = "TestData.xls";
+
         JsonFileConfig config = new JsonFileConfig();
 
-        String ProjectKey = config.getProjectKey();
-        String ReportDirectory = config.getReportDirectory();
-        String Exit = config.getExit();
+        String ProjectKey = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",11,1).toString();
+        String ReportDirectory = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",12,1).toString();
+        String Exit = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",13,1).toString();
 
         TestRunner runner = new TestRunner();
 

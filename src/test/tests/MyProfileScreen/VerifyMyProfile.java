@@ -3,8 +3,11 @@ package test.tests.MyProfileScreen;
 import io.appium.java_client.android.AndroidDriver;
 import javafx.scene.control.RadioButton;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.AbstractPage;
+
+import java.util.List;
 
 import static com.thoughtworks.selenium.SeleneseTestNgHelper.assertEquals;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -36,5 +39,41 @@ public class VerifyMyProfile extends AbstractPage {
         assertEquals(GetText,true);
         //assertThat(getText).isEqualToIgnoringCase(true);
         ///assertEquals(name.isSelected(),true);
+    }
+    public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
+    }
+    public void verifyElementDisplayByText1(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                //methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
     }
 }

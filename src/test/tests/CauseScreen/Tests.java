@@ -1,6 +1,7 @@
 package test.tests.CauseScreen;
 
 import org.testng.annotations.Test;
+import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
 
@@ -8,12 +9,17 @@ import test.config.SeleniumConfig.BrowserConfig;
 public class Tests extends BrowserConfig {
     public String FileName = "CauseScreen";
 
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String SearchBox = "Find a cause";
+    public String SearchText =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Give",4,1).toString();
+    public String SearchText2 =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Give",5,1).toString();
+
+
     public String MenuName = "Give";
-    public String ScreenName ="Causes";
-    public String SearchBox ="Find a cause";
-    public String  SearchText="Hope Worldwide";
-    public String SearchText2 ="auto";
-    public String FundraiserName ="test";
+
+
 
     @Test
     public void TC_70() {
@@ -23,12 +29,12 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Verify live stream screen.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(7);
         methods.log("Verify live stream screen is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",ScreenName);
+        verify.verifyElementDisplayByIndex2(FileName, "ListOFMenu",0);
 
     }
 
@@ -54,11 +60,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify search cause with valid name is display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "SearchText",SearchBox);
+        performAction.clickOnElementFromListIndex(FileName, "SearchText",0);
         performAction.pause(2);
         performAction.sendKeyOnElementFromList(FileName, "SearchText", SearchBox,SearchText);
         //performAction.waitForElement(FileName, "SearchButton");
@@ -66,7 +72,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(5);
         methods.log("Verify search cause with valid name.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu", SearchText);
+        verify.verifyElementDisplayByTextContent(FileName, "ListOFMenu", SearchText);
     }
 
     @Test
@@ -76,13 +82,13 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify place holder in search text field is display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
 
         methods.log("Verify place holder in search text field.");
-        verify.verifyElementDisplayByText(FileName, "SearchText", SearchBox);
+        verify.verifyElementDisplayByIndex2(FileName, "SearchText", 0);
     }
 
     @Test
@@ -92,11 +98,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search with special characters.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "SearchText",SearchBox);
+        performAction.clickOnElementFromListIndex(FileName, "SearchText",0);
         performAction.pause(2);
         performAction.sendKeyOnElementFromList(FileName, "SearchText", SearchBox,"a*");
         //performAction.waitForElement(FileName, "SearchButton");
@@ -115,7 +121,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : The blank space should trimmed on starting of the first word in the text box.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -126,7 +132,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(5);
         methods.log("Verify search text field cause is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu", SearchText);
+        verify.verifyElementDisplayByTextContent(FileName, "ListOFMenu", SearchText);
     }
 
     @Test
@@ -136,7 +142,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Check number of result on first load.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(5);
@@ -152,13 +158,13 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search text box should display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
 
         methods.log("Verify Search text box should display.");
-        verify.elementIsDisplayed(FileName, "SearchBox");
+        verify.verifyElementDisplayByIndex1(FileName, "SearchText",0);
     }
 
     @Test
@@ -168,7 +174,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : If data will enter in search text box then auto listing cause should display.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -192,7 +198,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Cause name should display correct on search result.");
         performAction.pause(7);
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -217,7 +223,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : After clikcing on search cause name, screen should redirect on cause detail screen.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -227,11 +233,11 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
 
         performAction.pause(5);
-        performAction.waitForElement(FileName, "FirstSearchCause");
-        performAction.click(FileName, "FirstSearchCause");
+
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu",1);
         performAction.pause(2);
 
-        performAction.click(FileName, "FirstSearchCause");
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu",1);
         performAction.pause(7);
         methods.log("Verify church details screen is display.");
         verify.verifyElementDisplay(FileName, "CreateFundraiserButton");
@@ -244,7 +250,7 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Search functionality should work fine after clikcing on search icon or during enter data in search text..");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -264,15 +270,15 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : After clicking on cause name then cause detail screen should display.");
-        performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.pause(10);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         methods.log("Verify cause detail is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",SearchText);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",0);
     }
 
     @Test
@@ -281,17 +287,17 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser should display in the fundraiser list.");
-        performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.pause(10);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
-        performAction.waitForElement(FileName, "FirstFundraiser");
+
         methods.log("Verify fundraiser is display.");
-        verify.verifyElementDisplay(FileName, "FirstFundraiser");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",7);
         verify.printText(FileName,"FundraisersName");
     }
 
@@ -321,8 +327,8 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser detail descrption screen should display after clicking on fundraiser name.");
-        performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.pause(10);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
@@ -345,11 +351,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser name and location name should display correct as per selected fundraiser.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
@@ -368,11 +374,11 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : The amount which is collected by fundraiser.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
@@ -389,19 +395,19 @@ public class Tests extends BrowserConfig {
 
         Methods methods = new Methods(driver);
         methods.log("Test Description : The amount which is the present goal that need to collect amount.");
-        performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.pause(10);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", FundraiserName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
         performAction.pause(5);
         methods.log("Verify target amount is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",FundraiserName);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",5);
     }
 
     @Test
@@ -411,15 +417,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Give button should display on fundraiser detail screen.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", FundraiserName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
         performAction.pause(5);
         methods.log("Verify give button is display.");
         verify.verifyElementDisplayByText(FileName, "ListOFMenu","Give");
@@ -432,15 +438,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Description text should display in description section.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", FundraiserName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
         performAction.pause(5);
         methods.log("Verify Description text is display.");
         performAction.androidScrollToElement(200);
@@ -479,15 +485,15 @@ public class Tests extends BrowserConfig {
         Methods methods = new Methods(driver);
         methods.log("Test Description : Fundraiser should share after clicking on share icon.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",1);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", SearchText);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 1);
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", FundraiserName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
         performAction.pause(5);
         verify.verifyElementDisplay(FileName, "FounderShare");
         methods.log("Verify share icon is display.");

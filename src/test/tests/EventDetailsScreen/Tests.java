@@ -8,15 +8,8 @@ import test.config.SeleniumConfig.BrowserConfig;
 
 public class Tests extends BrowserConfig {
     public String FileName = "EventDetailScreen";
-    ExcelFileConfig excel = new ExcelFileConfig();
-    public String ExcelFilePath = "src\\resources\\TestData";
-    public String ExcelFileName = "TestData.xls";
-    String MenuName = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",4,1).toString();
-    public String EventName =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",5,1).toString();
-    public String EventDate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",6,1).toString();
-    public String  EventTime=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",7,1).toString();
-    public String EventLocation =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",8,1).toString();
-    public String  RegisterButton =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Events",9,1).toString();
+
+    String MenuName = "Events";
 
     @Test
     public void TC_08() {
@@ -31,7 +24,7 @@ public class Tests extends BrowserConfig {
        // performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
        // performAction.pause(3);
         methods.log("Verify event name.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu", EventName);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu", 3);
     }
 
     @Test
@@ -39,15 +32,15 @@ public class Tests extends BrowserConfig {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify event detail screen display.");
-        performAction.pause(5);
+        performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         methods.log("Verify event detail screen is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu", EventName);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu", 0);
     }
 
     @Test
@@ -60,7 +53,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
+
         performAction.pause(3);
         methods.log("Verify event banner is display.");
         verify.verifyBannerImageDisplay(FileName, "EventBennerImage");
@@ -75,7 +69,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.click(FileName,"MenuButton");
         performAction.pause(7);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Events");
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
+
 
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", "Automation Event Free");
@@ -110,14 +105,15 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
+
         performAction.pause(3);
 
 
-        methods.log("Verify Event Date.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventDate);
-        methods.log("Verify Event Time.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventTime);
+        methods.log("Verify Event Date And Time.");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
+        //methods.log("Verify Event Time.");
+        //verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventTime);
     }
 
     @Test
@@ -130,10 +126,10 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         methods.log("Verify Description is display.");
-        verify.verifyDescriptionDisplay(FileName, "EventDescription");
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",8);
        // performAction.getText(FileName, "EventDescription");
     }
 
@@ -147,13 +143,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
 
         performAction.androidScrollToElement(250);
 
         methods.log("Verify Event Location is display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventLocation);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
     }
 
     @Test
@@ -166,11 +162,12 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
-
+        String EventName=performAction.getText(FileName,"EventName");
         performAction.androidScrollToElement(200);
-
+        performAction.pause(3);
+        String EventLocation=performAction.getText(FileName,"EventLocation");
         methods.log("Verify event location pin is display.");
         performAction.pause(2);
         verify.verifyEventPinDisplay(EventName, EventLocation);
@@ -186,14 +183,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
 
         performAction.androidScrollToElement(100);
         methods.log("Verify event register button is display.");
         performAction.androidScrollToElement(100);
         performAction.pause(2);
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",RegisterButton);
+        verify.verifyElementDisplayByText(FileName, "ListOFMenu","Register");
     }
 
     @Test
@@ -206,14 +203,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(50);
         performAction.androidScrollToElement(50);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",RegisterButton);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",5);
         methods.log("Verify event purchase ticket screen is display.");
         performAction.pause(2);
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventName);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",0);
     }
 
     @Test
@@ -226,12 +223,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
         performAction.androidScrollToElement(50);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",RegisterButton);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",5);
+
         methods.log("Verify free event ticket cost.");
         performAction.pause(2);
         String screenName = performAction.getText(FileName,"FreeTicketTotalCost");
@@ -248,16 +246,17 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(50);
         performAction.pause(2);
         performAction.androidScrollToElement(50);
-        performAction.clickOnElementFromList(FileName,"ListOFMenu",RegisterButton);
+        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",5);
+
         methods.log("Verify event Date.");
         performAction.pause(2);
         String FreePurchaseTicketScreenDate = performAction.getText(FileName,"FreePurchaseTicketScreenDate");
-        verify.verifyEventTimeDate(FreePurchaseTicketScreenDate, EventDate);
+        //verify.verifyEventTimeDate(FreePurchaseTicketScreenDate, 5);
     }
 
    // @Test
@@ -303,7 +302,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
 
         performAction.pause(3);;
 
@@ -322,11 +321,11 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         methods.log("Verify event start and end date display.");
 
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventTime);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
     }
 
     @Test
@@ -339,7 +338,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
@@ -347,7 +346,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
 
         methods.log("Verify event Location display.");
-        verify.verifyElementDisplayByText(FileName, "ListOFMenu",EventLocation);
+        verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu",3);
     }
 
     @Test
@@ -360,7 +359,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
@@ -369,7 +368,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Verify event location pin is display.");
 
-        verify.verifyEventPinDisplay(EventName, EventLocation);
+        //verify.verifyEventPinDisplay(EventName, EventLocation);
     }
 
     @Test
@@ -382,14 +381,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         methods.log("Verify register button display.");
-        verify.verifyElementDisplayByText(FileName,"ListOFMenu",RegisterButton);
+        verify.verifyElementDisplayByText(FileName,"ListOFMenu","Register");
     }
 
     @Test
@@ -402,16 +401,16 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", RegisterButton);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Register");
         methods.log("Verify register screen display.");
         performAction.pause(2);
-        verify.verifyElementDisplayByText(FileName,"ListOFMenu",EventName);
+        verify.verifyElementDisplayByIndex1(FileName,"ListOFMenu",0);
 
     }
 
@@ -425,13 +424,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", RegisterButton);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Register");
         methods.log("Verify register screen display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"TicketCost");
@@ -449,13 +448,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", RegisterButton);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Register");
         methods.log("Verify default quantity should display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"Quantity");
@@ -476,13 +475,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", RegisterButton);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Register");
         performAction.pause(2);
         performAction.waitForElement(FileName,"Quantity");
         methods.log("Verify drop down list of quanity display.");
@@ -499,13 +498,13 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
         performAction.androidScrollToElement(200);
         performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", RegisterButton);
+        performAction.clickOnElementFromList(FileName, "ListOFMenu", "Register");
         methods.log("Verify ticket amount display.");
         performAction.pause(2);
         performAction.waitForElement(FileName,"TicketCost");
@@ -525,7 +524,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(7);
         performAction.clickOnElementFromList(FileName, "ListOFMenu", MenuName);
         performAction.pause(3);
-        performAction.clickOnElementFromList(FileName, "ListOFMenu", EventName);
+        performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(3);
         performAction.androidScrollToElement(200);
         performAction.pause(2);

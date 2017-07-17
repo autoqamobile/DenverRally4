@@ -50,4 +50,42 @@ public class Verify extends AbstractPage {
         Methods methods = new Methods(driver);
         assertThat(methods.findElement(propertyFileName, elementName).getText()).containsIgnoringCase(text);
     }
+
+    public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
+    }
+
+    public void verifyElementDisplayByText1(String propertyFileName, String elementName, String text) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        for (WebElement el : list) {
+            if (el.getText().equalsIgnoreCase(text)) {
+                flag=true;
+                //methods.log("Text "+el.getText());
+                //el.click();
+                break;
+            }
+
+        }
+        assertThat(!flag).isFalse();
+
+
+    }
 }

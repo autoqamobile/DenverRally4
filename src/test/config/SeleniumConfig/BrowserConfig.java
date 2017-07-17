@@ -6,10 +6,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import test.config.General.JsonFileConfig;
-import test.config.General.Methods;
-import test.config.General.PerformAction;
-import test.config.General.Verify;
+import test.config.General.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,13 +33,15 @@ public class BrowserConfig {
     @BeforeMethod
     public void browserConfig() {
         autoLog = fileConfig.getAutoLog();
+        ExcelFileConfig excel = new ExcelFileConfig();
+        String ExcelFilePath = "src\\resources\\TestData";
+        String ExcelFileName = "TestData.xls";
 
         DesiredCapabilities capability = null;
-        String APKFilePath = fileConfig.getAPKFilePath();
-
-        String deviceName = fileConfig.getdeviceName();
-        String appiumVersion = fileConfig.getAppiumVersion();
-        String platformVersion = fileConfig.getPlatformVersion();
+        String APKFilePath = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",4,1).toString();
+        String deviceName = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",6,1).toString();
+        String appiumVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",5,1).toString();
+        String platformVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",7,1).toString();
 
         String Browser = fileConfig.getBrowser();
 
