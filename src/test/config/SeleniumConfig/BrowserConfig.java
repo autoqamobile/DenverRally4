@@ -3,9 +3,7 @@ package test.config.SeleniumConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import test.config.General.*;
 
 import java.net.MalformedURLException;
@@ -25,12 +23,13 @@ public class BrowserConfig {
     protected String targetBrowser;
     JsonFileConfig fileConfig = new JsonFileConfig();
 
-    @BeforeTest(alwaysRun = true)
+
+/*@BeforeTest(alwaysRun = true)
     public void fetchSuiteConfiguration(ITestContext testContext) {
         targetBrowser = testContext.getCurrentXmlTest().getParameter("selenium.browser");
-    }
+    }*/
 
-    @BeforeMethod
+    @BeforeClass(alwaysRun = true)
     public void browserConfig() {
         autoLog = fileConfig.getAutoLog();
         ExcelFileConfig excel = new ExcelFileConfig();
@@ -67,8 +66,8 @@ public class BrowserConfig {
                 caps.setCapability("platformVersion", platformVersion);
                 caps.setCapability("platformName", "Android");
                 caps.setCapability("app", APKFilePath);
-                caps.setCapability("appPackage", "com.awesomeproject");
-                caps.setCapability("appActivity", "com.awesomeproject.MainActivity");
+                caps.setCapability("appPackage", "com.rally4");
+                caps.setCapability("appActivity", "com.rally4.MainActivity");
                 try {
                     driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
                 } catch (MalformedURLException e) {
@@ -87,8 +86,7 @@ public class BrowserConfig {
 
     }
 
-
-    @AfterMethod
+    @AfterClass
     public void close() {
         driver.quit();
     }

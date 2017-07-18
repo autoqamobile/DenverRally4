@@ -11,13 +11,18 @@ import test.tests.EventModule.*;
  */
 public class Tests extends BrowserConfig {
     public String FileName = "SignUpScreen";
-
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
     @Test
     public void TC_091() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should get Sign Up link on login screen.");
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
 
@@ -31,9 +36,11 @@ public class Tests extends BrowserConfig {
     }
     @Test
     public void TC_092() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should redirect on Sign Up screen.");
 
         performAction.pause(10);
@@ -53,9 +60,11 @@ public class Tests extends BrowserConfig {
     }
     @Test
     public void TC_093() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should able to enter valid data in name text field.");
 
         performAction.pause(10);
@@ -109,9 +118,11 @@ public class Tests extends BrowserConfig {
 
     //@Test
     public void TC_094() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify name field and should not accept any special character with space and dash and dots.");
 
         performAction.pause(10);
@@ -163,9 +174,11 @@ public class Tests extends BrowserConfig {
 
     @Test
     public void TC_095() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify email with valid data like : <name>@domain.com");
 
         performAction.pause(10);
@@ -186,9 +199,11 @@ public class Tests extends BrowserConfig {
 
     //@Test
     public void TC_096() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify space used in initial of email like : (space given) name@gmail.com.");
 
         performAction.pause(10);
@@ -231,9 +246,11 @@ public class Tests extends BrowserConfig {
 
     @Test
     public void TC_098() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should able to enter valid \"Minimum 6 characters\" password ");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -307,9 +324,11 @@ public class Tests extends BrowserConfig {
 
     @Test
     public void TC_099() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Once user will fill valid data  in all fileds and click on 'Sign Up' button then it should redirected on Thanks screen.");
 
         performAction.pause(10);
@@ -361,9 +380,11 @@ public class Tests extends BrowserConfig {
 
     //@Test
     public void TC_100() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Once user will sign up successfully then user should get confirmation email on registered email address.");
 
         performAction.pause(10);
@@ -416,9 +437,11 @@ public class Tests extends BrowserConfig {
     }
    // @Test
     public void TC_101() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Email address should be validated before sending email under successful page.");
 
         performAction.pause(10);
@@ -487,9 +510,11 @@ public class Tests extends BrowserConfig {
 
     @Test
     public void TC_102() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify After confirmation user should able to login to the application with valid credentials.");
 
         performAction.pause(10);
@@ -561,9 +586,11 @@ public class Tests extends BrowserConfig {
 
     //@Test
     public void TC_103() {
-        test.tests.SignUpScreen.VerifyEvents verify = new test.tests.SignUpScreen.VerifyEvents(driver);
+        VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("user entry should update in database before and after activate the account.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);

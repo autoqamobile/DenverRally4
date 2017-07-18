@@ -12,6 +12,10 @@ import test.tests.CommunityScreen.*;
 public class Tests extends BrowserConfig {
 
     ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
     public String FileName = "Fundraiser";
     public String MenuText = "Give";
@@ -27,6 +31,8 @@ public class Tests extends BrowserConfig {
         VerifyFundraiser verify = new VerifyFundraiser(driver);
         Methods methods = new Methods(driver);
         Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : 'Create Fundraiser' button should display on screen");
 
         performAction.pause(10);
@@ -49,6 +55,8 @@ public class Tests extends BrowserConfig {
         VerifyFundraiser verify = new VerifyFundraiser(driver);
         Methods methods = new Methods(driver);
         Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Check that If user not login than display popup menu");
 
         performAction.pause(10);
@@ -73,6 +81,8 @@ public class Tests extends BrowserConfig {
         VerifyFundraiser verify = new VerifyFundraiser(driver);
         Methods methods = new Methods(driver);
         Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Click on Go To Login the system should redirect to Login page");
 
         performAction.pause(10);

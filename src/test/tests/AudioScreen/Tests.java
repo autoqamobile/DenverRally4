@@ -1,26 +1,31 @@
 package test.tests.AudioScreen;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.testng.annotations.Test;
 import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
-import test.tests.EventDetailsScreen.VerifyEvents;
+
 
 
 public class Tests extends BrowserConfig {
-
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
     public String FileName = "AudioScreen";
 
 
     public String MenuName = "Media";
     public String MenuTabName = "Audio";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
     //Audio Playlist//
     @Test
     public void TC_42() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -39,6 +44,9 @@ public class Tests extends BrowserConfig {
     public void TC_43() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -57,6 +65,9 @@ public class Tests extends BrowserConfig {
     public void TC_44() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -76,6 +87,9 @@ public class Tests extends BrowserConfig {
     public void TC_45() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Audio track detail screen should display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -94,6 +108,9 @@ public class Tests extends BrowserConfig {
     public void TC_46() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -113,6 +130,9 @@ public class Tests extends BrowserConfig {
     public void TC_47() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The actual period of audio file should display in time.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -134,6 +154,9 @@ public class Tests extends BrowserConfig {
     public void TC_48() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify share icon.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -154,6 +177,9 @@ public class Tests extends BrowserConfig {
     public void TC_49() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Audio player should display after clicking on audio file.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -176,6 +202,9 @@ public class Tests extends BrowserConfig {
     public void TC_50() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify system should support audio files.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -199,6 +228,9 @@ public class Tests extends BrowserConfig {
     public void TC_51() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify All buttons should work fine.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -234,6 +266,9 @@ public class Tests extends BrowserConfig {
     public void TC_52() {
         VerifyAudioScreen verify = new VerifyAudioScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify audio playlist should display correct after clicking on back and forword button..");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);

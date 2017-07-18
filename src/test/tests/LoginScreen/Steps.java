@@ -1,16 +1,32 @@
 package test.tests.LoginScreen;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.WebDriver;
+import test.config.General.Methods;
+import test.config.SeleniumConfig.AbstractPage;
 
 /**
  * Created by Jsbot on 09-Jun-17.
  */
-public class Steps {
+public class Steps extends AbstractPage {
 
-    public String invalidEmail()
+    /**
+     * Initialize UserAbstractPage.
+     *
+     * @param driver .
+     */
+    public Steps(WebDriver driver) {
+        super(driver);
+    }
+
+    public void startActivity(String AppVersion)
     {
-        String index = RandomStringUtils.randomNumeric(4);
-        return index;
+        Methods method = new Methods(driver);
+
+        method.log("Application  Version : "+AppVersion);
+
+        performAction.pause(2);
+        driver.startActivity("com.rally4","com.rally4.MainActivity");
     }
 
 

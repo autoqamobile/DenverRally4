@@ -6,20 +6,7 @@
     ]
   },
   "class": [
-
-    "test.tests.SignUpScreen.Tests",
-    "test.tests.LoginScreen.Tests",
-    "test.tests.MyProfileScreen.Tests",
-    "test.tests.MyEventScreen.Tests",
-    "test.tests.NewsScreen.Tests",
-    "test.tests.CommunityScreen.Tests",
-    "test.tests.CauseScreen.Tests",
-    "test.tests.AudioScreen.Tests",
-    "test.tests.EventDetailsScreen.Tests",
-    "test.tests.EventModule.Tests",
-    "test.tests.LiveStreamScreen.Tests",
-    "test.tests.VideoScreen.Tests"
-
+    "test.tests.LoginScreen.Tests"
   ],
   "methods": {
     "test.tests.LoginScreen.Tests": [

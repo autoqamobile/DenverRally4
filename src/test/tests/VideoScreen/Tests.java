@@ -11,12 +11,19 @@ public class Tests extends BrowserConfig {
 
     public String MenuName = "Media";
     public String  TabName= "Video";
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
     //Video Playlist//
     @Test
     public void TC_53() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify playlist screen display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -34,6 +41,9 @@ public class Tests extends BrowserConfig {
     public void TC_54() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify individual video alignment.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -51,6 +61,9 @@ public class Tests extends BrowserConfig {
     public void TC_55() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify The video which are labeled as active in database, Only those active video should display in video list screen.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -72,6 +85,9 @@ public class Tests extends BrowserConfig {
     public void TC_56() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Video track detail screen should display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -96,6 +112,9 @@ public class Tests extends BrowserConfig {
     public void TC_57() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Correct video list should display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -117,6 +136,9 @@ public class Tests extends BrowserConfig {
     public void TC_58() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify The actual period of video file should display");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -140,6 +162,9 @@ public class Tests extends BrowserConfig {
     public void TC_59() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify share icon should display");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -163,6 +188,9 @@ public class Tests extends BrowserConfig {
     public void TC_60() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Video player should display after clicking on video file");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -187,6 +215,9 @@ public class Tests extends BrowserConfig {
     public void TC_61() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify System should support video files.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -213,6 +244,9 @@ public class Tests extends BrowserConfig {
     public void TC_62() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Check Play, Pause, Stop, Next, Previous, Close button should display.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -253,6 +287,9 @@ public class Tests extends BrowserConfig {
     public void TC_63() {
         VerifyVideoScreen verify = new VerifyVideoScreen(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify video playlist should display correct after clicking on back and forword button..");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);

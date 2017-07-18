@@ -20,13 +20,16 @@ public class Tests extends BrowserConfig {
     public String MenuName = "My Events";
     public String Email =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",4,1).toString();
     public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",5,1).toString();
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
 
     @Test
     public void TC_103() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : User should get 'My Events' option on slider menu.");
 
         performAction.pause(7);
@@ -59,7 +62,9 @@ public class Tests extends BrowserConfig {
     public void TC_114() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Event listing screen should open after clicking on ''My Events'.");
 
         performAction.pause(7);
@@ -95,7 +100,9 @@ public class Tests extends BrowserConfig {
     public void TC_115() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : User should get 'Past' & 'Upcoming' tab on 'My Event' screen.");
 
         performAction.pause(7);
@@ -133,7 +140,9 @@ public class Tests extends BrowserConfig {
     public void TC_116() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : If 'Past' tab is empty' then 'No event avaiable' text should display.");
 
         performAction.pause(7);
@@ -171,7 +180,9 @@ public class Tests extends BrowserConfig {
     public void TC_117() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
 
         performAction.pause(7);
@@ -209,7 +220,9 @@ public class Tests extends BrowserConfig {
     public void TC_118() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Date format should display like : 'MMM DD, YYYY'");
 
         performAction.pause(10);
@@ -245,7 +258,9 @@ public class Tests extends BrowserConfig {
     public void TC_119() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Only past events should display in the listing..");
 
         performAction.pause(10);
@@ -283,7 +298,9 @@ public class Tests extends BrowserConfig {
     public void TC_120() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Currently past event should display on top and old events should move to down. ");
 
         performAction.pause(10);
@@ -321,7 +338,9 @@ public class Tests extends BrowserConfig {
     public void TC_121() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Past event date should same as date in database.");
 
         performAction.pause(10);
@@ -359,7 +378,9 @@ public class Tests extends BrowserConfig {
     public void TC_122() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : If 'Upcoming' tab is empty then 'No event avaiable' text should display.");
 
         performAction.pause(7);
@@ -397,7 +418,9 @@ public class Tests extends BrowserConfig {
         ArrayList<String> eventName;
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
 
         performAction.pause(7);
@@ -434,7 +457,9 @@ public class Tests extends BrowserConfig {
     public void TC_124() {
         VerifyMyEvent verify = new VerifyMyEvent(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Correct venue name should display as per associated events.");
 
         performAction.pause(7);

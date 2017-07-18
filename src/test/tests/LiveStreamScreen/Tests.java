@@ -13,13 +13,15 @@ public class Tests extends BrowserConfig {
     ExcelFileConfig excel = new ExcelFileConfig();
     public String ExcelFilePath = "src\\resources\\TestData";
     public String ExcelFileName = "TestData.xls";
-
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
     public String MenuName = "Media";
 
     @Test
     public void TC_64() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-        Steps steps = new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify live stream screen.");
         performAction.pause(7);
@@ -29,7 +31,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        steps.Scroll();
+        step.Scroll();
         performAction.pause(3);
         methods.log("Verify live stream screen is display.");
         verify.verifyElementDisplayByIndex1(FileName, "ListOFMenu", 5);
@@ -40,6 +42,9 @@ public class Tests extends BrowserConfig {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify  live video in schedule time.");
         performAction.pause(7);
         performAction.click(FileName,"MenuButton");
@@ -56,7 +61,9 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_66() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-        Steps steps = new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify the Video time is displayed.");
         performAction.pause(7);
@@ -67,7 +74,7 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
 
         performAction.pause(7);
-        steps.Scroll();
+        step.Scroll();
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 4);
 
 
@@ -83,7 +90,9 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_67() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-        Steps steps = new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify  share video  functionality.");
         performAction.pause(7);
@@ -93,7 +102,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        steps.Scroll();
+        step.Scroll();
         performAction.pause(3);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
 
@@ -109,6 +118,9 @@ public class Tests extends BrowserConfig {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
 
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify  live video in schedule time.");
         performAction.pause(7);
         performAction.click(FileName,"MenuButton");
@@ -126,7 +138,9 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_69() {
         VerifyLiveScreen verify = new VerifyLiveScreen(driver);
-        Steps steps = new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Verify broadcast date is displayed.");
         performAction.pause(7);
@@ -136,7 +150,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 3);
         performAction.pause(7);
-        steps.Scroll();
+        step.Scroll();
         performAction.pause(3);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 5);
 

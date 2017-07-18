@@ -11,13 +11,19 @@ import java.util.ArrayList;
 public class Tests extends BrowserConfig {
     public String FileName = "EventList";
 
-
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
     public String MenuName = "Events";
 
     @Test
     public void TC_01() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify application launch.");
         performAction.pause(5);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -30,6 +36,9 @@ public class Tests extends BrowserConfig {
     public void TC_02() {
         VerifyEvents verify = new VerifyEvents(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Activity screen should open and verified successfully.");
         performAction.pause(5);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -44,6 +53,9 @@ public class Tests extends BrowserConfig {
         VerifyEvents verify = new VerifyEvents(driver);
         performAction.pause(7);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify event screen display.");
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
@@ -59,6 +71,9 @@ public class Tests extends BrowserConfig {
         VerifyEvents verify = new VerifyEvents(driver);
         performAction.pause(7);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Event date is display.");
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
@@ -76,6 +91,9 @@ public class Tests extends BrowserConfig {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify Available count of event list should display.");
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
@@ -95,6 +113,9 @@ public class Tests extends BrowserConfig {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify all Event name, day and month should get.");
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);
@@ -112,6 +133,9 @@ public class Tests extends BrowserConfig {
         String FileName = "EventList";
         performAction.pause(7);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Verify The event which are on current date should display on top and future date events should move to down.");
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
         performAction.pause(7);

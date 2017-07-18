@@ -1,6 +1,5 @@
 package test.tests.LoginScreen;
 
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
@@ -15,14 +14,18 @@ public class Tests extends BrowserConfig {
     public String ExcelFileName = "TestData.xls";
 
     public String Email =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",4,1).toString();
-    public String EmailForRegistration =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",6,1).toString();
-    public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",7,1).toString();
-
+    public String EmailForRegistration =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",5,1).toString();
+    public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",6,1).toString();
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
     @Test
     public void TC_104() {
         Verify verify = new Verify(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Check guest user get login screen.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -35,6 +38,10 @@ public class Tests extends BrowserConfig {
     public void TC_105() {
         Verify verify = new Verify(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Check user get Email address text field.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -57,8 +64,11 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_106() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Check registered email address.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -85,8 +95,12 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_107() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
+
         methods.log("Test Description : Check email with valid data like : <name>@domain.com.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -104,8 +118,11 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_108() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Check space used in initial of email like : (space given) name@gmail.com");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -122,8 +139,11 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_109() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Check space used in the end of email like : name@gmail.com (space given)");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -140,8 +160,10 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_110() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Check user get password text field.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -169,8 +191,10 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_111() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -192,8 +216,10 @@ public class Tests extends BrowserConfig {
     @Test
     public void TC_112() {
         Verify verify = new Verify(driver);
-        Steps step = new Steps();
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);

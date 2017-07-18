@@ -1,23 +1,20 @@
 package test.tests.CommunityScreen;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSElement;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.Test;
+import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
-import test.tests.MyEventScreen.VerifyMyEvent;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by dell on 7/5/2017.
  */
 public class Tests extends BrowserConfig {
+
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
     public String FileName = "CommunityScreen";
     public String MenuText="Community";
 
@@ -26,6 +23,9 @@ public class Tests extends BrowserConfig {
 
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : All community list should display ");
 
         performAction.pause(10);
@@ -47,6 +47,9 @@ public class Tests extends BrowserConfig {
     public void TC_134() {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         performAction.pause(10);
         methods.log("Test Description : Each Community design should not overlap.");
 
@@ -68,6 +71,8 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : After clicking on community group, group detail screen should display.");
 
         performAction.pause(10);
@@ -95,6 +100,7 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+        step.startActivity(AppVersion);
         methods.log("Test Description : Group image should display as configured by admin manager.");
 
         performAction.pause(10);
@@ -119,6 +125,8 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Group description should display as configured by admin manager.");
 
         performAction.pause(10);
@@ -143,6 +151,8 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Meeting date should display correct as configured by admin.");
 
         performAction.pause(10);
@@ -168,7 +178,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String Eventday ="Friday at 07:30 pm";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Meeting day should display correct.");
 
@@ -195,7 +207,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String EventTime ="Friday at 07:30 pm";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Meeting time should display correct.");
 
@@ -224,7 +238,9 @@ public class Tests extends BrowserConfig {
         String EventGoingGembers ="0 going";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Number of going members should display correct.");
 
         performAction.pause(10);
@@ -252,7 +268,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Check group event should display correct.");
 
         performAction.pause(10);
@@ -282,7 +300,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : After clicking on group event name, then group event detail scren should display.");
 
         performAction.pause(10);
@@ -309,7 +329,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String Eventday ="undefined, undefined undefined";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Event day should display as per calender date.");
 
@@ -337,7 +359,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String EventDate ="undefined, undefined undefined";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Event date should display correct and as per date day should display.");
 
@@ -367,7 +391,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String EventTime ="00:00 AM - 00:00 AM";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Event start and end time should display correct.");
 
@@ -394,7 +420,9 @@ public class Tests extends BrowserConfig {
         String CommunityName ="Youth & Family";
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Correct event photo should display.");
 
@@ -419,7 +447,9 @@ public class Tests extends BrowserConfig {
         String CommunityName ="Youth & Family";
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Once user will click on 'View More' link then same event photo should display.");
 
@@ -443,7 +473,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String EventLocation ="15755 E Arapahoe Rd, Centennial, CO 80016";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Location address should display correct.");
         performAction.pause(10);
@@ -475,7 +507,9 @@ public class Tests extends BrowserConfig {
         String EventLocation ="15755 E Arapahoe Rd, Centennial, CO 80016";
 
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : Location pin should display as per defined address.");
 
@@ -512,7 +546,9 @@ public class Tests extends BrowserConfig {
         String RSVPButton ="RSVP";
 
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : RSVP button should display event detail screen.");
 
@@ -544,7 +580,9 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         String RSVPPage ="RSVP Event";
         VerifyCommunity verify = new VerifyCommunity(driver);
-        Steps step=new Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
         methods.log("Test Description : RSVP detail screen should display after clicking on RSVP button.");
 

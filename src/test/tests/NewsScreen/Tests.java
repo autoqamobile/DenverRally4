@@ -12,12 +12,17 @@ public class Tests extends BrowserConfig {
     public String FileName = "NewsScreen";
 
     public String MenuName = "News";
-
-
+    ExcelFileConfig excel = new ExcelFileConfig();
+    public String ExcelFilePath = "src\\resources\\TestData";
+    public String ExcelFileName = "TestData.xls";
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
     @Test
     public void TC_163() {
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : News icon should display on home screen");
 
         performAction.pause(10);
@@ -35,6 +40,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : News list Screen should open after clicking on 'News' icon");
 
         performAction.pause(10);
@@ -54,6 +62,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : All images should display to the news list");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -73,6 +84,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : News list should display.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -92,6 +106,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : News date should display like : July 04, 2017");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -111,6 +128,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : Search functionality should work fine after clikcing on search icon or during enter data in search text.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -137,6 +157,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : News should share after clicking on share icon.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
@@ -163,6 +186,9 @@ public class Tests extends BrowserConfig {
 
         VerifyNews verify = new VerifyNews(driver);
         Methods methods = new Methods(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should back to the news list screen");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);

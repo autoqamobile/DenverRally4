@@ -29,7 +29,7 @@ public class TestRunner {
 
         String ProjectKey = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",11,1).toString();
         String ReportDirectory = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",12,1).toString();
-        String Exit = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",13,1).toString();
+
 
         TestRunner runner = new TestRunner();
 
@@ -52,7 +52,7 @@ public class TestRunner {
         }
 
       StartVigo vigo = new StartVigo();
-        vigo.generateVigoReports(ProjectKey, ReportDirectory, Exit);
+        vigo.generateVigoReports(ProjectKey, ReportDirectory, "yes");
     }
 
     public void runByMethod(String Browser) {

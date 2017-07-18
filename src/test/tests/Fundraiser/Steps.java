@@ -144,4 +144,15 @@ public class Steps extends AbstractPage {
 
 
     }
+
+    public void startActivity(String AppVersion)
+        {
+            Methods method = new Methods(driver);
+
+            method.log("Application  Version : "+AppVersion);
+
+            performAction.pause(2);
+            driver.startActivity("com.rally4","com.rally4.MainActivity");
+        }
+
 }

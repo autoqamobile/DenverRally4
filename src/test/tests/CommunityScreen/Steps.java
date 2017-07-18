@@ -11,24 +11,25 @@ import java.util.List;
 /**
  * Created by dell on 7/5/2017.
  */
-public class Steps extends AbstractPage{
+public class Steps extends AbstractPage {
 
     public Steps(WebDriver driver) {
         super(driver);
     }
 
-    public String getSplitText(String propertyFileName, String elementName,int Index) {
+    public String getSplitText(String propertyFileName, String elementName, int Index) {
         Methods methods = new Methods(driver);
         String ElementText = methods.findElement(propertyFileName, elementName).getText();
         //System.out.println(ElementText);
 
 
-            String[] parts = ElementText.split(" ");
-            methods.log("Text : " + parts[Index]);
+        String[] parts = ElementText.split(" ");
+        methods.log("Text : " + parts[Index]);
 
         return ElementText;
     }
-    public String getSplitText1(String propertyFileName, String elementName,int Index) {
+
+    public String getSplitText1(String propertyFileName, String elementName, int Index) {
         Methods methods = new Methods(driver);
         String ElementText = methods.findElement(propertyFileName, elementName).getText();
         //System.out.println(ElementText);
@@ -40,76 +41,72 @@ public class Steps extends AbstractPage{
         return ElementText;
     }
 
-    public void Scroll()
-    {
+    public void Scroll() {
         Methods methods = new Methods(driver);
-        boolean Flag=false;
+        boolean Flag = false;
         String FileName = "CommunityScreen";
 
-        WebElement bottomElement=methods.getElement(FileName,"BottomElement");
+        WebElement bottomElement = methods.getElement(FileName, "BottomElement");
 
-        WebElement topElement= methods.getElement(FileName,"TopElement");
+        WebElement topElement = methods.getElement(FileName, "TopElement");
         TouchAction action = new TouchAction(driver);
         action.longPress(bottomElement).moveTo(topElement).release().perform();
 
     }
 
-    public void ScrollAndClick(String text)
-    {
+    public void ScrollAndClick(String text) {
         Methods methods = new Methods(driver);
-        boolean Flag=false;
+        boolean Flag = false;
         String FileName = "CommunityScreen";
 
-        WebElement bottomElement=methods.getElement(FileName,"BottomElement");
+        WebElement bottomElement = methods.getElement(FileName, "BottomElement");
 
-        WebElement topElement= methods.getElement(FileName,"TopElement");
+        WebElement topElement = methods.getElement(FileName, "TopElement");
 
         methods.pause(5);
-       // try {
+        // try {
 
-            for(int i=0; i<50;i++) {
-                TouchAction action = new TouchAction(driver);
+        for (int i = 0; i < 50; i++) {
+            TouchAction action = new TouchAction(driver);
 
-                if(i==0) {
-                    action.longPress(bottomElement).moveTo(topElement).release().perform();
-                    List<WebElement> list = methods.findElementList(FileName, "EventTextList");
+            if (i == 0) {
+                action.longPress(bottomElement).moveTo(topElement).release().perform();
+                List<WebElement> list = methods.findElementList(FileName, "EventTextList");
 
-                    for (WebElement el : list) {
-                        if (el.getText().equalsIgnoreCase(text)) {
-                            methods.log("Click on "+text+".");
-                            Flag=true;
-                            el.click();
+                for (WebElement el : list) {
+                    if (el.getText().equalsIgnoreCase(text)) {
+                        methods.log("Click on " + text + ".");
+                        Flag = true;
+                        el.click();
 
-                            break;
-                        }
-
-                    }
-                    if(Flag)
                         break;
+                    }
+
+                }
+                if (Flag)
+                    break;
                     /*String Text = methods.getText(FileName, "Community");
 
                     if (text.equalsIgnoreCase(Text)) {
                         System.out.println(text + "==" + Text);
                         break;
                     }*/
-                }
-                else
-                {
-                    WebElement bottomElement1=methods.getElement(FileName,"BottomElement1");
-                    WebElement bottomElement2=methods.getElement(FileName,"BottomElement2");
-                    action.longPress(bottomElement2).moveTo(bottomElement1).release().perform();
-                    List<WebElement> list = methods.findElementList(FileName, "EventTextList");
+            } else {
+                WebElement bottomElement1 = methods.getElement(FileName, "BottomElement1");
+                WebElement bottomElement2 = methods.getElement(FileName, "BottomElement2");
+                action.longPress(bottomElement2).moveTo(bottomElement1).release().perform();
+                List<WebElement> list = methods.findElementList(FileName, "EventTextList");
 
-                    for (WebElement el : list) {
-                        if (el.getText().equalsIgnoreCase(text)) {
-                            methods.log("Click on "+text+".");
-                            Flag=true;
-                            el.click();
-                            break;
-                        }
-                    }
-                    if(Flag)
+                for (WebElement el : list) {
+                    if (el.getText().equalsIgnoreCase(text)) {
+                        methods.log("Click on " + text + ".");
+                        Flag = true;
+                        el.click();
                         break;
+                    }
+                }
+                if (Flag)
+                    break;
                     /*String Text=methods.getText(FileName,"Community");
                    // System.out.println(Text);
                     //System.out.println(text+"=="+Text);
@@ -120,8 +117,8 @@ public class Steps extends AbstractPage{
                     }*/
 
 
-                }
             }
+        }
 
        /* }
         catch (Exception e) {
@@ -129,18 +126,17 @@ public class Steps extends AbstractPage{
         }*/
     }
 
-    public void ScrollCommunity()
-    {
+    public void ScrollCommunity() {
         Methods methods = new Methods(driver);
-        boolean Flag=false;
+        boolean Flag = false;
         String FileName = "CommunityScreen";
         methods.pause(5);
         //for(int i=0; i<50;i++) {
-            TouchAction action = new TouchAction(driver);
+        TouchAction action = new TouchAction(driver);
 
-                WebElement topElement=methods.getElement(FileName,"CommunityTop");
-                WebElement bottomElement=methods.getElement(FileName,"CommunityBottomt");
-                action.longPress(bottomElement).moveTo(topElement).release().perform();
+        WebElement topElement = methods.getElement(FileName, "CommunityTop");
+        WebElement bottomElement = methods.getElement(FileName, "CommunityBottomt");
+        action.longPress(bottomElement).moveTo(topElement).release().perform();
                 /*List<WebElement> list = methods.findElementList(FileName, "EventTextList");
 
                 for (WebElement el : list) {
@@ -157,41 +153,35 @@ public class Steps extends AbstractPage{
                 }*/
 
 
-
-
         //}
 
 
     }
 
-    public void ScrollCommunityEvent(String text)
-    {
+    public void ScrollCommunityEvent(String text) {
         Methods methods = new Methods(driver);
-        boolean Flag=false;
+        boolean Flag = false;
         String FileName = "CommunityScreen";
         methods.pause(5);
-        for(int i=0; i<50;i++) {
+        for (int i = 0; i < 50; i++) {
             TouchAction action = new TouchAction(driver);
 
-            WebElement topElement=methods.getElement(FileName,"CommunityTop");
-            WebElement bottomElement=methods.getElement(FileName,"CommunityBottomt");
+            WebElement topElement = methods.getElement(FileName, "CommunityTop");
+            WebElement bottomElement = methods.getElement(FileName, "CommunityBottomt");
             action.longPress(bottomElement).moveTo(topElement).release().perform();
             List<WebElement> list = methods.findElementList(FileName, "EventTextList");
 
             for (WebElement el : list) {
                 if (el.getText().equalsIgnoreCase(text)) {
-                    methods.log("Click on "+text+".");
-                    Flag=true;
-                     el.click();
+                    methods.log("Click on " + text + ".");
+                    Flag = true;
+                    el.click();
                     break;
                 }
             }
-            if(Flag)
-            {
+            if (Flag) {
                 break;
             }
-
-
 
 
         }
@@ -235,4 +225,16 @@ public class Steps extends AbstractPage{
 
 
    }*/
+
+
+    public void startActivity(String AppVersion) {
+        Methods method = new Methods(driver);
+
+        method.log("Application  Version : " + AppVersion);
+
+        performAction.pause(2);
+        driver.startActivity("com.rally4", "com.rally4.MainActivity");
+    }
+
+
 }

@@ -17,17 +17,26 @@ public class Steps extends AbstractPage {
         super(driver);
     }
 
-    public void Scroll()
-    {
+    public void Scroll() {
         Methods methods = new Methods(driver);
-        boolean Flag=false;
+        boolean Flag = false;
         String FileName = "LiveStreamScreen";
 
-        WebElement bottomElement=methods.getElement(FileName,"BottomElement");
+        WebElement bottomElement = methods.getElement(FileName, "BottomElement");
 
-        WebElement topElement= methods.getElement(FileName,"TopElement");
+        WebElement topElement = methods.getElement(FileName, "TopElement");
         TouchAction action = new TouchAction(driver);
         action.longPress(bottomElement).moveTo(topElement).release().perform();
 
     }
+
+    public void startActivity(String AppVersion) {
+        Methods method = new Methods(driver);
+
+        method.log("Application  Version : " + AppVersion);
+
+        performAction.pause(2);
+        driver.startActivity("com.rally4", "com.rally4.MainActivity");
+    }
+
 }

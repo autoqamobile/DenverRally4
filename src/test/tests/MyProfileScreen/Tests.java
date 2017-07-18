@@ -24,13 +24,16 @@ public class Tests extends BrowserConfig {
     public String PasswordUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",8,1).toString();
     public String PhoneNumberUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",9,1).toString();
     public String LocationUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",10,1).toString();
+    public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
 
     @Test
     public void TC_175() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : My Profile details screen should open after clicking on 'Settings' icon.");
 
         performAction.pause(10);
@@ -66,7 +69,9 @@ public class Tests extends BrowserConfig {
     public void TC_176() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update first name after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -116,7 +121,9 @@ public class Tests extends BrowserConfig {
     public void TC_177() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update last name after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -167,7 +174,9 @@ public class Tests extends BrowserConfig {
     public void TC_178() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update password after clicking on the update button");
 
         performAction.pause(10);
@@ -249,7 +258,9 @@ public class Tests extends BrowserConfig {
     public void TC_179() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update phone number after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -304,7 +315,9 @@ public class Tests extends BrowserConfig {
     public void TC_180() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update location after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -361,7 +374,9 @@ public class Tests extends BrowserConfig {
     public void TC_181() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should update privacy radio button field after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -416,7 +431,9 @@ public class Tests extends BrowserConfig {
     public void TC_182() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should redirect to my profile main page");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
@@ -458,7 +475,9 @@ public class Tests extends BrowserConfig {
     public void TC_183() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
         Methods methods = new Methods(driver);
-        test.tests.SignUpScreen.Steps step=new  test.tests.SignUpScreen.Steps(driver);
+        Steps step = new Steps(driver);
+
+        step.startActivity(AppVersion);
         methods.log("Test Description : The system should back to the profile main page screen");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
