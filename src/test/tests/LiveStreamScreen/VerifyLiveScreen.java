@@ -90,40 +90,53 @@ public class VerifyLiveScreen extends AbstractPage {
     public void verifyElementDisplayByIndex1(String propertyFileName, String elementName, int Index) {
         Methods methods = new Methods(driver);
         boolean flag=false;
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        try
+        {
 
-        String Text=list.get(Index).getText();
-        for (WebElement el : list) {
-            if (el.getText().equalsIgnoreCase(Text)) {
-                flag=true;
-                methods.log("Text "+el.getText());
-                //el.click();
-                break;
+
+            List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+            String Text=list.get(Index).getText();
+            for (WebElement el : list) {
+                if (el.getText().equalsIgnoreCase(Text)) {
+                    flag=true;
+                    methods.log("Text "+el.getText());
+                    //el.click();
+                    break;
+                }
+
             }
-
+            assertThat(!flag).isFalse();
         }
-        assertThat(!flag).isFalse();
-
+        catch (Exception e)
+        {
+            methods.log("");
+        }
 
     }
 
     public void verifyElementDisplayByIndex2(String propertyFileName, String elementName, int Index) {
         Methods methods = new Methods(driver);
         boolean flag=false;
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        try {
+            List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
-        String Text=list.get(Index).getText();
-        for (WebElement el : list) {
-            if (el.getText().equalsIgnoreCase(Text)) {
-                flag=true;
-                // methods.log("Text "+el.getText());
-                //el.click();
-                break;
+            String Text=list.get(Index).getText();
+            for (WebElement el : list) {
+                if (el.getText().equalsIgnoreCase(Text)) {
+                    flag=true;
+                    // methods.log("Text "+el.getText());
+                    //el.click();
+                    break;
+                }
+
             }
-
+            assertThat(!flag).isFalse();
         }
-        assertThat(!flag).isFalse();
-
+        catch (Exception e)
+        {
+            methods.log("");
+        }
 
     }
 

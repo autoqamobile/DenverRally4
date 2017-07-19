@@ -71,6 +71,54 @@ public class PerformAction extends AbstractPage {
         methods.findElement(propertyFileName, elementName).sendKeys(text);
     }
 
+    /**
+     * @param propertyFileName : name of file where element is declared
+     * @param elementName      : name of element defined into propertyfile
+     * @param text             : any text you want to entered into text fields
+      @param Index             : any Index you want to entered into text fields
+     */
+    public void sendKeysByIndex(String propertyFileName, String elementName,int Index, String text) {
+
+        Methods methods = new Methods(driver);
+
+        System.out.println(autoLog);
+
+        if (autoLog) {
+            methods.log("Enter Text " + text + " into " + elementName + " text fields");
+
+        }
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        list.get(Index).sendKeys(text);
+       // methods.findElement(propertyFileName, elementName).sendKeys(text);
+    }
+
+    /**
+     * @param propertyFileName : name of file where element is declared
+     * @param elementName      : name of element defined into propertyfile
+     * @param number             : any number you want to entered into text fields
+     @param Index             : any Index you want to entered into text fields
+     */
+    public void sendKeysByIndex1(String propertyFileName, String elementName,int Index, String number) {
+
+        Methods methods = new Methods(driver);
+
+        System.out.println(autoLog);
+
+       /* if (autoLog) {
+            methods.log("Enter Text " + number + " into " + elementName + " text fields");
+
+        }*/
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+        list.get(Index).click();
+        String Num[]=number.split("");
+        for(int i=Num.length-1; i>=0;i--)
+            driver.getKeyboard().pressKey(Num[i]);
+
+        // methods.findElement(propertyFileName, elementName).sendKeys(text);
+    }
+
     public void sendKeys(String fileName, String elementName) {
 
         Methods methods = new Methods(driver);
@@ -386,9 +434,17 @@ public class PerformAction extends AbstractPage {
 
     public void clickOnElementFromListIndex(String propertyFileName, String elementName, int index) {
         Methods methods = new Methods(driver);
-        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+        try
+        {
+            List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
-        list.get(index).click();
+            list.get(index).click();
+        }
+        catch (Exception e)
+        {
+            methods.log("Index Not Available....!!!!");
+        }
+
 
     }
 

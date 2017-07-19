@@ -17,7 +17,7 @@ public class Steps extends AbstractPage {
         super(driver);
     }
 
-    public void ScrollAndClick(String text)
+    public void Scroll()
     {
         Methods methods = new Methods(driver);
         boolean Flag=false;
@@ -26,10 +26,12 @@ public class Steps extends AbstractPage {
         WebElement bottomElement=methods.getElement(FileName,"BottomElement");
 
         WebElement topElement= methods.getElement(FileName,"TopElement");
+        TouchAction action = new TouchAction(driver);
+        action.longPress(bottomElement).moveTo(topElement).release().perform();
 
-        methods.pause(5);
+        //methods.pause(5);
 
-        for(int i=0; i<50;i++) {
+        /*for(int i=0; i<50;i++) {
             TouchAction action = new TouchAction(driver);
             inner:
             if(i==0) {
@@ -71,7 +73,7 @@ public class Steps extends AbstractPage {
                     break;
 
             }
-        }
+        }*/
 
     }
 
@@ -151,7 +153,7 @@ public class Steps extends AbstractPage {
 
             method.log("Application  Version : "+AppVersion);
 
-            performAction.pause(2);
+            method.pause(2);
             driver.startActivity("com.rally4","com.rally4.MainActivity");
         }
 

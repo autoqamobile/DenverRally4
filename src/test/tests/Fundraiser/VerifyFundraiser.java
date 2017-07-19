@@ -48,6 +48,7 @@ public class VerifyFundraiser extends AbstractPage {
         List<WebElement> list = methods.findElementList(propertyFileName, "CauseList");
 
         for (WebElement el : list) {
+            methods.log("Text "+el.getText());
             if (el.getText().equalsIgnoreCase(text)) {
                 flag=true;
                 methods.log("Text "+el.getText());
@@ -79,6 +80,59 @@ public class VerifyFundraiser extends AbstractPage {
         assertThat(!flag).isFalse();
 
         return Text;
+    }
+
+    public void verifyElementDisplayByIndex1(String propertyFileName, String elementName, int Index) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        try
+        {
+
+
+            List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+            String Text=list.get(Index).getText();
+            for (WebElement el : list) {
+                if (el.getText().equalsIgnoreCase(Text)) {
+                    flag=true;
+                    methods.log("Text "+el.getText());
+                    //el.click();
+                    break;
+                }
+
+            }
+            assertThat(!flag).isFalse();
+        }
+        catch (Exception e)
+        {
+            methods.log("");
+        }
+
+    }
+
+    public void verifyElementDisplayByIndex2(String propertyFileName, String elementName, int Index) {
+        Methods methods = new Methods(driver);
+        boolean flag=false;
+        try {
+            List<WebElement> list = methods.findElementList(propertyFileName, elementName);
+
+            String Text=list.get(Index).getText();
+            for (WebElement el : list) {
+                if (el.getText().equalsIgnoreCase(Text)) {
+                    flag=true;
+                    // methods.log("Text "+el.getText());
+                    //el.click();
+                    break;
+                }
+
+            }
+            assertThat(!flag).isFalse();
+        }
+        catch (Exception e)
+        {
+            methods.log("");
+        }
+
     }
 
 }
