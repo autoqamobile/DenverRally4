@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * Created by Viral on 12/11/2016.
  */
@@ -393,16 +395,18 @@ public class PerformAction extends AbstractPage {
 
     public void clickOnElementFromList(String propertyFileName, String elementName, String text) {
         Methods methods = new Methods(driver);
+        boolean flag=false;
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
         for (WebElement el : list) {
             if (el.getText().equals(text)) {
                 methods.log("Click on "+text+".");
                 el.click();
+                flag=true;
                 break;
             }
         }
-
+        assertThat(!flag).isFalse();
     }
 
     /**

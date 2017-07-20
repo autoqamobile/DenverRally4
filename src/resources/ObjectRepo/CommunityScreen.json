@@ -35,7 +35,7 @@
     "textType": "",
     "auto": false
   },
-  "ListOFText": {
+  "ListOFTextBox": {
     "locatorType": "className",
     "locatorValue": "android.widget.TextView",
     "default": "",

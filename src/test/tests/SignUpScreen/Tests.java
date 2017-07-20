@@ -43,7 +43,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should redirect on Sign Up screen.");
 
-        performAction.pause(10);
+        performAction.pause(15);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
 
         performAction.pause(3);

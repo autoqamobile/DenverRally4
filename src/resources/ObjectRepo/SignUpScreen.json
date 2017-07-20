@@ -6,6 +6,13 @@
     "textType": "",
     "auto": false
   },
+  "ListOFTextBox": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.EditText",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
   "ProfileLink":{
     "locatorType": "xpath",
     "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View[2]/android.view.View[3]",

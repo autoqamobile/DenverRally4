@@ -1,4 +1,4 @@
-package test.tests.Fundraiser;
+package test.tests.CreateGroupScreen;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
@@ -11,9 +11,9 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Created by dell on 7/14/2017.
+ * Created by dell on 7/20/2017.
  */
-public class VerifyFundraiser extends AbstractPage {
+public class VerifyCreateGroup extends AbstractPage {
 
 
 
@@ -22,7 +22,7 @@ public class VerifyFundraiser extends AbstractPage {
      *
      * @param driver .
      */
-    public VerifyFundraiser(AndroidDriver driver) {
+    public VerifyCreateGroup(AndroidDriver driver) {
         super(driver);
     }
 
@@ -45,10 +45,9 @@ public class VerifyFundraiser extends AbstractPage {
     public void verifyElementDisplayByText(String propertyFileName, String elementName, String text) {
         Methods methods = new Methods(driver);
         boolean flag=false;
-        List<WebElement> list = methods.findElementList(propertyFileName, "CauseList");
+        List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
         for (WebElement el : list) {
-            methods.log("Text "+el.getText());
             if (el.getText().equalsIgnoreCase(text)) {
                 flag=true;
                 methods.log("Text "+el.getText());
@@ -134,5 +133,4 @@ public class VerifyFundraiser extends AbstractPage {
         }
 
     }
-
 }

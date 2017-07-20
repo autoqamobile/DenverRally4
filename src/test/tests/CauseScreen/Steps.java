@@ -24,7 +24,7 @@ public class Steps extends AbstractPage {
 
         method.log("Application  Version : "+AppVersion);
 
-        performAction.pause(2);
+        method.pause(2);
         driver.startActivity("com.rally4","com.rally4.MainActivity");
     }
 

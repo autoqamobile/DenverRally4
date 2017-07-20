@@ -39,7 +39,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
 
-        performAction.pause(3);
+        performAction.pause(5);
         //String Email= "auto38183@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -75,7 +75,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : The system should update first name after clicking on the update button");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
-
+        performAction.pause(5);
         performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
         performAction.click(FileName,"MyProfileEmail");
@@ -128,7 +128,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
 
-        performAction.pause(3);
+        performAction.pause(5);
 
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);

@@ -1,4 +1,4 @@
-package test.tests.Fundraiser;
+package test.tests.FundraiserScreen;
 
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +21,7 @@ public class Steps extends AbstractPage {
     {
         Methods methods = new Methods(driver);
         boolean Flag=false;
-        String FileName = "Fundraiser";
+        String FileName = "CreateGroupScreen";
 
         WebElement bottomElement=methods.getElement(FileName,"BottomElement");
 
@@ -77,38 +77,59 @@ public class Steps extends AbstractPage {
 
     }
 
-    public void ScrollCommunity(String text)
+    public void findFundraiser(String text)
     {
         Methods methods = new Methods(driver);
         boolean Flag=false;
-        String FileName = "CommunityScreen";
-        methods.pause(5);
+        String FileName = "FundraiserScreen";
+
+        WebElement bottomElement=methods.getElement(FileName,"BottomElement11");
+
+        WebElement topElement= methods.getElement(FileName,"TopElement1");
+
         for(int i=0; i<50;i++) {
+            methods.pause(3);
             TouchAction action = new TouchAction(driver);
+            if(i==0) {
+                action.longPress(bottomElement).moveTo(topElement).release().perform();
+                List<WebElement> list = methods.findElementList(FileName, "TextList");
 
-            WebElement topElement=methods.getElement(FileName,"CommunityTop");
-            WebElement bottomElement=methods.getElement(FileName,"CommunityBottomt");
-            action.longPress(bottomElement).moveTo(topElement).release().perform();
-            List<WebElement> list = methods.findElementList(FileName, "EventTextList");
+                for (WebElement el : list) {
+                    if (el.getText().equalsIgnoreCase(text)) {
+                        methods.log("Text : "+text+".");
+                        Flag=true;
+                        //el.click();
 
-            for (WebElement el : list) {
-                if (el.getText().equalsIgnoreCase(text)) {
-                    //methods.log("Click on "+text+".");
-                    Flag=true;
-                    // el.click();
-                    break;
+                        break;
+                    }
+
                 }
+                if(Flag)
+                    break;
+
             }
-            if(Flag)
+            else
             {
-                break;
+
+                WebElement topElement2=methods.getElement(FileName,"TopElement2");
+                WebElement bottomElement2=methods.getElement(FileName,"BottomElement22");
+                action.longPress(bottomElement2).moveTo(topElement2).release().perform();
+                List<WebElement> list = methods.findElementList(FileName, "TextList");
+
+                for (WebElement el : list) {
+                    if (el.getText().equalsIgnoreCase(text)) {
+
+                        methods.log("Text : "+text+".");
+                        Flag=true;
+                        //el.click();
+                        break;
+                    }
+                }
+                if(Flag)
+                    break;
+
             }
-
-
-
-
         }
-
 
     }
 

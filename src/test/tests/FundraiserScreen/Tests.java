@@ -1,11 +1,9 @@
-package test.tests.Fundraiser;
+package test.tests.FundraiserScreen;
 
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import test.config.General.ExcelFileConfig;
 import test.config.General.Methods;
 import test.config.SeleniumConfig.BrowserConfig;
-import test.tests.CommunityScreen.*;
 
 /**
  * Created by dell on 7/14/2017.
@@ -18,7 +16,7 @@ public class Tests extends BrowserConfig {
 
     public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
 
-    public String FileName = "Fundraiser";
+    public String FileName = "FundraiserScreen";
     public String FileName1 = "LoginScreen";
 
     public String MenuText = "Give";
@@ -236,9 +234,6 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
-
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
         performAction.pause(3);
 
         methods.log("Verify Fundraiser Button is display.");
@@ -258,9 +253,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should able to enter valid data in fundraiser title text field.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -275,7 +270,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
@@ -285,8 +280,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
         performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
         performAction.pause(3);
@@ -313,9 +307,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should able to enter valid data in description text field.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -330,8 +324,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -340,8 +334,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
         performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
         performAction.pause(3);
@@ -368,9 +361,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should able to checked custom goal field.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -385,8 +378,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -395,15 +388,14 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
         methods.log("Verify to checked custom goal field");
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",8);
         performAction.pause(2);
 
 
-       // verify.verifyElementDisplayByText(FileName,"TextList","Fundraiser goal");
+       // verify.verifyElementDisplayByText(FileName,"TextList","FundraiserScreen goal");
 
 
     }
@@ -419,9 +411,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : If user checked custom goal then system should display new field Fundraiser goal TextBox");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -436,8 +428,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -446,8 +438,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
 
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",8);
@@ -471,9 +462,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should able to enter valid data in fundraiser goal text field.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -488,8 +479,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -498,8 +489,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
         performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
         performAction.pause(3);
@@ -540,9 +530,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should able to checked custom time field.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -557,8 +547,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -567,8 +557,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
         methods.log("Verify to checked custom time field");
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
@@ -587,9 +576,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : If user checked custom time then system should show new two field start date and stop date ");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -604,8 +593,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -614,8 +603,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
+
         performAction.pause(3);
 
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
@@ -638,9 +626,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description :Click on start date then system should open calendar popup.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -655,8 +643,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -665,8 +653,6 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
         performAction.pause(3);
 
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
@@ -692,9 +678,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description :Click on stop date then system should open calendar popup.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -709,8 +695,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(6);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -719,8 +705,6 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
         performAction.pause(3);
 
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
@@ -735,7 +719,7 @@ public class Tests extends BrowserConfig {
 
     }
 
-    //@Test
+    @Test
     public void TC_199() {
 
         VerifyFundraiser verify = new VerifyFundraiser(driver);
@@ -746,9 +730,9 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description :Click on start date ok button then system should redirect to clock popup");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",7);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
 
-        performAction.waitForElement(FileName1, "MyProfileEmail");
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
         performAction.sendKeys(FileName1, "MyProfileEmail", Email);
         performAction.pause(3);
         performAction.click(FileName1, "MyProfileText");
@@ -763,8 +747,8 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.click(FileName1, "SubmitButton1");
         performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
-        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
         performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
         performAction.pause(5);
         step.Scroll();
@@ -773,8 +757,6 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
 
-        performAction.pause(2);
-        performAction.clickOnElementFromList(FileName, "PopUpButton", GoToLoginButton);
         performAction.pause(3);
 
         performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
@@ -790,9 +772,413 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
 
         methods.log("Verify clock popup is display");
-        verify.verifyElementDisplay(FileName,"ClockTextAM");
+        verify.verifyElementDisplay(FileName,"CalendarElement");
+
+
+
+    }
+
+    @Test
+    public void TC_200() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Click on clock popup ok button");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
         performAction.pause(2);
-        verify.verifyElementDisplay(FileName,"ClockTextPM");
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(6);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+        performAction.pause(3);
+
+        performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
+        performAction.pause(2);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList",4);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "CalendarText","28");
+        performAction.pause(2);
+
+        performAction.clickOnElementFromList(FileName, "CalendarButton","OK");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "ClockText",5);
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "ClockText",6);
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "CalendarButton","OK");
+        performAction.pause(2);
+        methods.log("Verify date and time is display");
+        verify.verifyElementDisplayByIndex1(FileName,"TextList",4);
+
+
+
+    }
+
+    @Test
+    public void TC_201() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Verify selected date time is display in stop textbox.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(35);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(6);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+
+        performAction.pause(3);
+
+        performAction.clickOnElementFromListIndex(FileName, "CheckBoxList",9);
+        performAction.pause(2);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList",6);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "CalendarText","29");
+        performAction.pause(2);
+
+        performAction.clickOnElementFromList(FileName, "CalendarButton","OK");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "ClockText",5);
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "ClockText",6);
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "CalendarButton","OK");
+        performAction.pause(2);
+        methods.log("Verify date and time is display");
+        verify.verifyElementDisplayByIndex1(FileName,"TextList",6);
+
+
+
+    }
+
+    @Test
+    public void TC_202() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Verify selected date time is display in stop textbox.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+       /* performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+        performAction.pause(3);
+
+        performAction.androidScrollToElement(50);
+        performAction.pause(3);
+        methods.log("Verify date and time is display");
+        verify.verifyElementDisplayByText(FileName,"TextList","Next");
+
+
+
+    }
+
+    @Test
+    public void TC_203() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Click on next button.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",1, "Hello");
+        driver.hideKeyboard();
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.pause(3);
+        methods.log("Verify Cover photo screen is display.");
+        verify.verifyElementDisplayByText(FileName,"TextList","Cover photo");
+
+
+    }
+
+    @Test
+    public void TC_204() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Click on next button.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",1, "Hello");
+        driver.hideKeyboard();
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Upload an image");
+        performAction.pause(3);
+        methods.log("Verify Select image popup is display.");
+        verify.verifyElementDisplayByText(FileName,"TextList","Select image");
+
+
+    }
+
+    @Test
+    public void TC_205() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Click on next button.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(5);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test");
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",1, "Hello");
+        driver.hideKeyboard();
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ImageList", 1);
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Submit");
+        performAction.pause(3);
+        methods.log("Verify thank you screen is display.");
+        verify.verifyElementDisplayByIndex1(FileName,"TextList",2);
+
+
+    }
+
+    @Test
+    public void TC_206() {
+
+        VerifyFundraiser verify = new VerifyFundraiser(driver);
+        Methods methods = new Methods(driver);
+        Steps step=new Steps(driver);
+
+        step.startActivity(AppVersion);
+        methods.log("Test Description : Click on next button.");
+
+        performAction.pause(15);
+        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+
+        /*performAction.waitForElement(FileName1, "MyProfileEmail");
+        performAction.sendKeys(FileName1, "MyProfileEmail", Email);
+        performAction.pause(3);
+        performAction.click(FileName1, "MyProfileText");
+        performAction.pause(2);
+        performAction.click(FileName1, "PasswordBox");
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "PasswordBox");
+        performAction.sendKeys(FileName1, "PasswordBox", Password);
+        performAction.androidScrollToElementManually(550, 330);
+        performAction.waitForElement(FileName1, "SubmitButton");
+        performAction.click(FileName1, "SubmitButton");
+        performAction.pause(2);
+        performAction.click(FileName1, "SubmitButton1");
+        performAction.pause(5);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);*/
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "MenuTextList", MenuText);
+        performAction.pause(5);
+        step.Scroll();
+        performAction.pause(2);
+        performAction.clickOnElementFromListIndex(FileName, "TextList", 1);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName, "TextList", FundraiserButton);
+
+        performAction.pause(2);
+
+        performAction.sendKeysByIndex(FileName, "TextBoxList",0, "Test123456");
+        performAction.pause(3);
+        performAction.sendKeysByIndex(FileName, "TextBoxList",1, "Hello");
+        driver.hideKeyboard();
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.clickOnElementFromList(FileName, "TextList", "Next");
+        performAction.pause(3);
+        performAction.clickOnElementFromListIndex(FileName, "ImageList", 1);
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName, "TextList", "Submit");
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName, "TextList", "Back to causes");
+        //performAction.clickOnElementFromList(FileName, "TextList", "Back to causes");
+        performAction.pause(5);
+        methods.log("Verify New Created Fundraiser is display.");
+        step.findFundraiser("Test123456");
 
 
     }

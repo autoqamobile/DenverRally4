@@ -328,7 +328,7 @@ public class Tests extends BrowserConfig {
         Steps step = new Steps(driver);
 
         step.startActivity(AppVersion);
-        methods.log("Test Description : Fundraiser should display in the fundraiser list.");
+        methods.log("Test Description : FundraiserScreen should display in the fundraiser list.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 6);
         performAction.pause(3);
@@ -374,7 +374,7 @@ public class Tests extends BrowserConfig {
         Steps step = new Steps(driver);
 
         step.startActivity(AppVersion);
-        methods.log("Test Description : Fundraiser detail descrption screen should display after clicking on fundraiser name.");
+        methods.log("Test Description : FundraiserScreen detail descrption screen should display after clicking on fundraiser name.");
         performAction.pause(10);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 6);
         performAction.pause(3);
@@ -400,7 +400,7 @@ public class Tests extends BrowserConfig {
         Steps step = new Steps(driver);
 
         step.startActivity(AppVersion);
-        methods.log("Test Description : Fundraiser name and location name should display correct as per selected fundraiser.");
+        methods.log("Test Description : FundraiserScreen name and location name should display correct as per selected fundraiser.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 6);
         performAction.pause(3);
@@ -410,7 +410,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(5);
         performAction.androidScrollToElement(200);
         performAction.pause(5);
-        methods.log("Verify fundraiser Fundraiser name and location name is display.");
+        methods.log("Verify fundraiser FundraiserScreen name and location name is display.");
         verify.elementTextDisplay(FileName, "FundraiserLocation");
         String name = performAction.getText(FileName, "FundraiserName");
         performAction.click(FileName, "FirstFundraiser");
@@ -552,7 +552,7 @@ public class Tests extends BrowserConfig {
         Steps step = new Steps(driver);
 
         step.startActivity(AppVersion);
-        methods.log("Test Description : Fundraiser should share after clicking on share icon.");
+        methods.log("Test Description : FundraiserScreen should share after clicking on share icon.");
         performAction.pause(7);
         performAction.clickOnElementFromListIndex(FileName, "ListOFMenu", 6);
         performAction.pause(3);
