@@ -8,6 +8,7 @@ import test.config.General.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -22,6 +23,10 @@ public class BrowserConfig {
     protected Verify verify;
     protected String targetBrowser;
     JsonFileConfig fileConfig = new JsonFileConfig();
+    public ArrayList allclass;
+
+    String CulrrentClassNameAvaiable;
+
 
 
 /*@BeforeTest(alwaysRun = true)
@@ -83,7 +88,14 @@ public class BrowserConfig {
         }
         performAction = new PerformAction(driver);
         verify = new Verify(driver);
+        System.err.println("Class Name : "+getClass().getName());
 
+        performAction.pause(20);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", 17);
+        performAction.pause(10);
+
+        allclass =   performAction.getEveryElementtestIntoList("AudioScreen","ListOFMenu");
+        System.out.println("array : "+allclass);
     }
 
     @AfterClass

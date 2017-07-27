@@ -7,6 +7,7 @@
   },
   "class": [
 
+    "test.tests.ActivityScreen.Tests",
     "test.tests.NewsScreen.Tests",
     "test.tests.CommunityScreen.Tests",
     "test.tests.CauseScreen.Tests",
@@ -21,9 +22,10 @@
     "test.tests.LoginScreen.Tests",
     "test.tests.MyProfileScreen.Tests",
     "test.tests.MyEventScreen.Tests"
+
   ],
   "methods": {
-    "test.tests.LoginScreen.Tests": [
+    "test.tests.MyProfileScreen.Tests": [
       "TC_21"
     ]
   },

@@ -51,8 +51,8 @@ public class TestRunner {
             }
         }
 
-      StartVigo vigo = new StartVigo();
-        vigo.generateVigoReports(ProjectKey, ReportDirectory, "yes");
+     /* StartVigo vigo = new StartVigo();
+        vigo.generateVigoReports(ProjectKey, ReportDirectory, "yes");*/
     }
 
     public void runByMethod(String Browser) {

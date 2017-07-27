@@ -399,7 +399,7 @@ public class PerformAction extends AbstractPage {
         List<WebElement> list = methods.findElementList(propertyFileName, elementName);
 
         for (WebElement el : list) {
-            if (el.getText().equals(text)) {
+            if (el.getText().equalsIgnoreCase(text)) {
                 methods.log("Click on "+text+".");
                 el.click();
                 flag=true;
@@ -441,7 +441,7 @@ public class PerformAction extends AbstractPage {
         try
         {
             List<WebElement> list = methods.findElementList(propertyFileName, elementName);
-
+            methods.log("Click on index number "+index+" .");
             list.get(index).click();
         }
         catch (Exception e)
@@ -603,5 +603,24 @@ public class PerformAction extends AbstractPage {
 
     }
 
+    
+    public boolean classNameIsAvailable(String className, ArrayList<String> allAvailableClasses)
+    {
+        boolean bool = false;
+        for(String availableClass : allAvailableClasses)
+        {
+
+            if(availableClass.equalsIgnoreCase(className))
+            {
+                bool = true;
+                break;
+            }
+        }
+        
+        return  bool;
+    }
+    
+    
+    
 
 }

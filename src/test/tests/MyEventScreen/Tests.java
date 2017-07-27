@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Tests extends BrowserConfig {
     public String FileName = "MyEventScreen";
-
+    public int UserProfileIndex  = 18;
     ExcelFileConfig excel = new ExcelFileConfig();
     public String ExcelFilePath = "src\\resources\\TestData";
     public String ExcelFileName = "TestData.xls";
@@ -33,7 +33,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should get 'My Events' option on slider menu.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
 
         performAction.click(FileName,"MyProfileEmail");
@@ -68,7 +68,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Event listing screen should open after clicking on ''My Events'.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
 
         performAction.click(FileName,"MyProfileEmail");
@@ -106,7 +106,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : User should get 'Past' & 'Upcoming' tab on 'My Event' screen.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -146,7 +146,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : If 'Past' tab is empty' then 'No event avaiable' text should display.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -186,7 +186,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -384,7 +384,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : If 'Upcoming' tab is empty then 'No event avaiable' text should display.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -424,7 +424,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Correct event name should display on listing screen and name text should proper aligned into screen.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -463,7 +463,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Correct venue name should display as per associated events.");
 
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
        // String Email= "auto12345@mailinator.com";
         performAction.click(FileName,"MyProfileEmail");

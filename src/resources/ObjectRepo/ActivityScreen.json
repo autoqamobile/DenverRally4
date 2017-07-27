@@ -1,0 +1,23 @@
+{
+  "ListOFText": {
+  "locatorType": "className",
+  "locatorValue": "android.widget.TextView",
+  "default": "",
+  "textType": "",
+  "auto": false
+ },
+  "ListOFImage": {
+  "locatorType": "className",
+  "locatorValue": "android.widget.ImageView",
+  "default": "",
+  "textType": "",
+  "auto": false
+  },
+  "ListOFGroup": {
+    "locatorType": "className",
+    "locatorValue": "android.view.ViewGroup",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}

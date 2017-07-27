@@ -10,7 +10,8 @@ import test.config.SeleniumConfig.BrowserConfig;
  * Created by dell on 7/5/2017.
  */
 public class Tests extends BrowserConfig {
-
+    String className = "Community";
+    public int MenuIndex  = 17;
     ExcelFileConfig excel = new ExcelFileConfig();
     public String ExcelFilePath = "src\\resources\\TestData";
     public String ExcelFileName = "TestData.xls";
@@ -24,12 +25,13 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step = new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : All community list should display ");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -40,7 +42,10 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName,"CommunityGroupImage2");
       //  verify.verifyElementDisplay(FileName,"CommunityGroupImage3");
         performAction.pause(2);
-
+        }
+        else{
+            methods.log("This module is not available.");
+        }
 
     }
     @Test
@@ -48,12 +53,13 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step = new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         performAction.pause(10);
         methods.log("Test Description : Each Community design should not overlap.");
 
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -64,6 +70,10 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName,"CommunityGroupImage2");
         //  verify.verifyElementDisplay(FileName,"CommunityGroupImage3");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
     @Test
     public void TC_135() {
@@ -71,12 +81,13 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : After clicking on community group, group detail screen should display.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -88,7 +99,10 @@ public class Tests extends BrowserConfig {
         performAction.getText(FileName,"CommunityDetailPage");
 
         performAction.pause(2);
-
+        }
+        else{
+            methods.log("This module is not available.");
+        }
 
     }
 
@@ -100,11 +114,13 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : Group image should display as configured by admin manager.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -116,7 +132,10 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName,"CommunityDetailPageImage");
 
         performAction.pause(2);
-
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -125,12 +144,13 @@ public class Tests extends BrowserConfig {
         Steps step=new Steps(driver);
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : Group description should display as configured by admin manager.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -141,6 +161,10 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplay(FileName,"CommunityDetailPageDescription");
         performAction.getText(FileName,"CommunityDetailPageDescription");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -151,12 +175,13 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step=new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : Meeting date should display correct as configured by admin.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -170,6 +195,10 @@ public class Tests extends BrowserConfig {
         verify.verifyElementDisplayByIndex1(FileName,"MenuTextList",10);
         //performAction.getText(FileName,"UpcomingMeetingDate");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -179,13 +208,15 @@ public class Tests extends BrowserConfig {
         String Eventday ="Friday at 07:30 pm";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Meeting day should display correct.");
 
         performAction.pause(20);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(10);
@@ -200,6 +231,10 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingDay");
         //step.getSplitText(FileName,"UpcomingMeetingDay",0);
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
     @Test
     public void TC_140() {
@@ -208,13 +243,15 @@ public class Tests extends BrowserConfig {
         String EventTime ="Friday at 07:30 pm";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Meeting time should display correct.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -229,22 +266,28 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingDay");
         //step.getSplitText(FileName,"UpcomingMeetingDay",2);
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
     public void TC_141() {
         String CommunityName ="Youth & Family";
         String EventName ="Teens - Bowling Night";
+
         String EventGoingGembers ="0 going";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step = new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : Number of going members should display correct.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -260,6 +303,10 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"UpcomingMeetingGoingMemers");
         //performAction.getText(FileName,"UpcomingMeetingGoingMemers");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -269,12 +316,13 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step = new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : Check group event should display correct.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -289,6 +337,10 @@ public class Tests extends BrowserConfig {
 
         //verify.verifyElementDisplay(FileName,"GroupEvent");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     //Group Event
@@ -301,12 +353,13 @@ public class Tests extends BrowserConfig {
         VerifyCommunity verify = new VerifyCommunity(driver);
         Methods methods = new Methods(driver);
         Steps step = new Steps(driver);
-
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
         step.startActivity(AppVersion);
         methods.log("Test Description : After clicking on group event name, then group event detail scren should display.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -321,6 +374,10 @@ public class Tests extends BrowserConfig {
 
 
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -330,13 +387,15 @@ public class Tests extends BrowserConfig {
         String Eventday ="undefined, undefined undefined";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Event day should display as per calender date.");
 
-        performAction.pause(5);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.pause(7);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -351,6 +410,10 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"GroupEventDate");
         //step.getSplitText1(FileName,"GroupEventDate",0);
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -360,13 +423,15 @@ public class Tests extends BrowserConfig {
         String EventDate ="undefined, undefined undefined";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Event date should display correct and as per date day should display.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -383,6 +448,10 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"GroupEventDate");
         //step.getSplitText1(FileName,"GroupEventDate",1);
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -392,13 +461,15 @@ public class Tests extends BrowserConfig {
         String EventTime ="00:00 AM - 00:00 AM";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Event start and end time should display correct.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -409,10 +480,14 @@ public class Tests extends BrowserConfig {
         performAction.clickOnElementFromListIndex(FileName,"MenuTextList",9);
         performAction.pause(5);
         methods.log("Verify event time is display.");
-        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",6);
+        verify.verifyElementDisplayByIndex1(FileName,"EventDetailList",MenuIndex);
         // verify.verifyElementDisplay(FileName,"GroupEventTime");
        // performAction.getText(FileName,"GroupEventTime");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -421,13 +496,15 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Correct event photo should display.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -440,6 +517,10 @@ public class Tests extends BrowserConfig {
         methods.log("Verify event image is display.");
         verify.verifyElementDisplay(FileName,"GroupEventImage");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     //@Test
@@ -448,13 +529,15 @@ public class Tests extends BrowserConfig {
         String EventName ="Teens - Bowling Night";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Once user will click on 'View More' link then same event photo should display.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(10);
@@ -465,6 +548,10 @@ public class Tests extends BrowserConfig {
        // methods.log("Verify event image is display.");
        // verify.verifyElementDisplay(FileName,"GroupEventImage");
        // performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -474,12 +561,14 @@ public class Tests extends BrowserConfig {
         String EventLocation ="15755 E Arapahoe Rd, Centennial, CO 80016";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Location address should display correct.");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -499,6 +588,10 @@ public class Tests extends BrowserConfig {
         //verify.verifyElementDisplay(FileName,"GroupEventLocation");
         //performAction.getText(FileName,"GroupEventLocation");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -508,13 +601,15 @@ public class Tests extends BrowserConfig {
 
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : Location pin should display as per defined address.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -537,6 +632,10 @@ public class Tests extends BrowserConfig {
         methods.log("Verify event location pin is display.");
         verify.verifyEventPinDisplay(EventName1, EventLocation1);
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     @Test
@@ -547,13 +646,15 @@ public class Tests extends BrowserConfig {
 
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : RSVP button should display event detail screen.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -570,6 +671,10 @@ public class Tests extends BrowserConfig {
 
         //verify.verifyElementDisplay(FileName, "RSVPButton");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
     //Group Event RSVP
@@ -581,13 +686,15 @@ public class Tests extends BrowserConfig {
         String RSVPPage ="RSVP Event";
         VerifyCommunity verify = new VerifyCommunity(driver);
         Steps step = new Steps(driver);
-
-        step.startActivity(AppVersion);
         Methods methods = new Methods(driver);
+        if (performAction.classNameIsAvailable(className, allclass))
+        {
+        step.startActivity(AppVersion);
+
         methods.log("Test Description : RSVP detail screen should display after clicking on RSVP button.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"MenuTextList",6);
+            performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", MenuIndex);
         performAction.pause(3);
         performAction.clickOnElementFromList(FileName,"MenuTextList",MenuText);
         performAction.pause(5);
@@ -607,6 +714,10 @@ public class Tests extends BrowserConfig {
 
         //verify.verifyElementDisplay(FileName, "FreeRegistration");
         performAction.pause(2);
+        }
+        else{
+            methods.log("This module is not available.");
+        }
     }
 
 

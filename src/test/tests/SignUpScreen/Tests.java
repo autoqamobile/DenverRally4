@@ -11,10 +11,13 @@ import test.tests.EventModule.*;
  */
 public class Tests extends BrowserConfig {
     public String FileName = "SignUpScreen";
+    public int UserProfileIndex  = 18;
     ExcelFileConfig excel = new ExcelFileConfig();
     public String ExcelFilePath = "src\\resources\\TestData";
     public String ExcelFileName = "TestData.xls";
     public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
+
+
     @Test
     public void TC_091() {
         VerifyEvents verify = new VerifyEvents(driver);
@@ -24,7 +27,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should get Sign Up link on login screen.");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
        //String Email= step.RendomEmail();
@@ -44,7 +47,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify User should redirect on Sign Up screen.");
 
         performAction.pause(15);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -68,7 +71,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify User should able to enter valid data in name text field.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -88,32 +91,31 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LastNameField");
         performAction.sendKeys(FileName,"LastNameField","Test1");
         performAction.pause(2);
-        performAction.waitForElement(FileName, "LastNameText");
-        //performAction.click(FileName,"LastNameText");
-        driver.hideKeyboard();
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.waitForElement(FileName, "PasswordField");
-        performAction.click(FileName,"PasswordField");
+        performAction.pause(2);
         performAction.sendKeys(FileName,"PasswordField","123456");
         performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
-        performAction.waitForElement(FileName, "ConfirmPasswordField");
-        performAction.click(FileName,"ConfirmPasswordField");
+        step.Scroll(FileName,"FirstNameField","LastNameField");
 
+        performAction.waitForElement(FileName, "ConfirmPasswordField");
         performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
+        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton1");
-        performAction.pause(15);
-
-        methods.log("Verify user name is display.");
-        verify.verifyText(FileName,"VerifyUserName","Test Test1");
         performAction.pause(5);
 
-
+        methods.log("Verify user name is display.");
+        verify.verifyElementDisplayByText(FileName,"ListOFMenu","Test Test1");
+        performAction.pause(3);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Settings");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Logout");
     }
 
     //@Test
@@ -126,7 +128,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify name field and should not accept any special character with space and dash and dots.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -182,7 +184,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify email with valid data like : <name>@domain.com");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -191,7 +193,7 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
         methods.log("Verify valid email format.");
-        verify.verifyText(FileName,"SignUpText","Please create an Account");
+        verify.verifyElementDisplayByText(FileName,"ListOFMenu","Please create an Account");
         performAction.pause(10);
 
 
@@ -207,7 +209,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify space used in initial of email like : (space given) name@gmail.com.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -229,7 +231,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify space used in the end of email like : name@gmail.com (space given).");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");
@@ -253,7 +255,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Verify User should able to enter valid \"Minimum 6 characters\" password ");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
         String Email= step.RendomEmail();
@@ -272,53 +274,53 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LastNameField");
         performAction.sendKeys(FileName,"LastNameField","Test1");
         performAction.pause(2);
-        performAction.waitForElement(FileName, "LastNameText");
-        //performAction.click(FileName,"LastNameText");
-        driver.hideKeyboard();
+
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.waitForElement(FileName, "PasswordField");
-        performAction.click(FileName,"PasswordField");
+        performAction.pause(2);
         performAction.sendKeys(FileName,"PasswordField","12345");
         performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
+
         performAction.waitForElement(FileName, "ConfirmPasswordField");
-        performAction.click(FileName,"ConfirmPasswordField");
-        performAction.pause(2);
         performAction.sendKeys(FileName,"ConfirmPasswordField","12345");
+        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
         performAction.pause(2);
-
-
         performAction.tap(FileName,"SubmitButton1");
-        performAction.pause(15);
+        performAction.pause(5);
 
         methods.log("Verify Password validation message is display.");
-        verify.verifyText(FileName,"PasswordValidationText","Password should be atleast 6 character long.");
+        verify.verifyElementDisplayByText(FileName,"ListOFMenu","Password should be atleast 6 character long.");
         performAction.pause(5);
 
         methods.log("Enter 6 Character in password");
-        performAction.clear(FileName, "PasswordField");
+        performAction.clear(FileName, "PasswordField1");
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.waitForElement(FileName, "PasswordField");
-        performAction.click(FileName,"PasswordField");
         performAction.sendKeys(FileName,"PasswordField","123456");
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
         performAction.androidScrollToElementManually(550,330);
         performAction.pause(2);
-        performAction.clear(FileName, "ConfirmPasswordField");
-        performAction.waitForElement(FileName, "ConfirmPasswordField");
-        performAction.click(FileName,"ConfirmPasswordField");
+        performAction.clear(FileName, "ConfirmPasswordField1");
+        performAction.waitForElement(FileName, "ConfirmPasswordField1");
+
         performAction.pause(2);
-        performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
+        performAction.sendKeys(FileName,"ConfirmPasswordField1","123456");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton1");
-        performAction.pause(15);
+        performAction.pause(5);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Settings");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Logout");
 
     }
 
@@ -332,7 +334,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify Once user will fill valid data  in all fileds and click on 'Sign Up' button then it should redirected on Thanks screen.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");
@@ -351,23 +353,20 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LastNameField");
         performAction.sendKeys(FileName,"LastNameField","Test1");
         performAction.pause(2);
-        performAction.waitForElement(FileName, "LastNameText");
-        //performAction.click(FileName,"LastNameText");
-        driver.hideKeyboard();
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.waitForElement(FileName, "PasswordField");
-        performAction.click(FileName,"PasswordField");
+        performAction.pause(2);
         performAction.sendKeys(FileName,"PasswordField","123456");
         performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
+
         performAction.waitForElement(FileName, "ConfirmPasswordField");
-        performAction.click(FileName,"ConfirmPasswordField");
-        performAction.pause(2);
         performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
         performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
+        performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
+        performAction.pause(2);
         performAction.tap(FileName,"SubmitButton1");
         performAction.pause(5);
         methods.log("Verify user profile image is display.");
@@ -375,6 +374,11 @@ public class Tests extends BrowserConfig {
         methods.log("Verify user name is display.");
         verify.verifyText(FileName,"VerifyUserName","Test Test1");
         performAction.pause(3);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Settings");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Logout");
 
     }
 
@@ -388,7 +392,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify Once user will sign up successfully then user should get confirmation email on registered email address.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");
@@ -445,7 +449,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify Email address should be validated before sending email under successful page.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");
@@ -518,7 +522,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : Verify After confirmation user should able to login to the application with valid credentials.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");
@@ -536,21 +540,17 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LastNameField");
         performAction.sendKeys(FileName,"LastNameField","Test1");
         performAction.pause(2);
-        performAction.waitForElement(FileName, "LastNameText");
-        //performAction.click(FileName,"LastNameText");
-        driver.hideKeyboard();
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.waitForElement(FileName, "PasswordField");
-        performAction.click(FileName,"PasswordField");
+        performAction.pause(2);
         performAction.sendKeys(FileName,"PasswordField","123456");
         performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
-        performAction.androidScrollToElementManually(550,330);
-        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
+
         performAction.waitForElement(FileName, "ConfirmPasswordField");
-        performAction.click(FileName,"ConfirmPasswordField");
-        performAction.pause(2);
         performAction.sendKeys(FileName,"ConfirmPasswordField","123456");
+        performAction.pause(2);
+        step.Scroll(FileName,"FirstNameField","LastNameField");
         performAction.pause(2);
         performAction.tap(FileName,"SubmitButton");
         performAction.pause(2);
@@ -581,6 +581,11 @@ public class Tests extends BrowserConfig {
         methods.log("Verify user name is display.");
         verify.verifyText(FileName,"VerifyUserName","Test Test1");
         performAction.pause(3);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Settings");
+        performAction.pause(5);
+        performAction.androidScrollToElement(50);
+        performAction.pause(2);
+        performAction.clickOnElementFromList(FileName,"ListOFMenu","Logout");
 
     }
 
@@ -593,7 +598,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("user entry should update in database before and after activate the account.");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(3);
         String Email= step.RendomEmail();
         performAction.click(FileName,"MyProfileEmail");

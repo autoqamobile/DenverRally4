@@ -18,15 +18,17 @@ public class Tests extends BrowserConfig {
 
     public String MenuName = "Settings";
     public String Email =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",4,1).toString();
-    public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",5,1).toString();
+    //public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",5,1).toString();
+    public String  Password="123456";
     public String FirstNameUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",6,1).toString();
     public String LastNameUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",7,1).toString();
     public String PasswordUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",8,1).toString();
     public String PhoneNumberUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",9,1).toString();
     public String LocationUpdate =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"My Profile",10,1).toString();
     public String AppVersion = excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"General",8,1).toString();
-
-
+    public int UserProfileIndex  = 18;
+    //String PassArre[] =Password1.split(".");
+    //String Password=PassArre[0];
     @Test
     public void TC_175() {
         VerifyMyProfile verify = new VerifyMyProfile(driver);
@@ -37,7 +39,7 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : My Profile details screen should open after clicking on 'Settings' icon.");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(5);
         //String Email= "auto38183@mailinator.com";
@@ -47,6 +49,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(3);
 
         performAction.androidScrollToElement(50);
+
         performAction.waitForElement(FileName, "LoginPassword");
         performAction.click(FileName,"LoginPassword");
         performAction.sendKeys(FileName,"LoginPassword",Password);
@@ -57,7 +60,7 @@ public class Tests extends BrowserConfig {
         performAction.click(FileName,"LoginButton");
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
-        performAction.pause(5);
+        performAction.pause(10);
         methods.log("Verify setting Page is display.");
         verify.verifyElementDisplayByText(FileName,"ListOFMenu","Setting");
         performAction.pause(2);
@@ -74,9 +77,9 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should update first name after clicking on the update button");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
-        performAction.click(FileName,"ProfileLink");
+       /* performAction.click(FileName,"ProfileLink");
         performAction.pause(3);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -92,7 +95,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
         performAction.click(FileName,"LoginButton");
-        performAction.pause(5);
+        performAction.pause(5);*/
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
         performAction.clear(FileName,"FirstName");
@@ -126,11 +129,11 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should update last name after clicking on the update button");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(5);
 
-        performAction.click(FileName,"MyProfileEmail");
+       /* performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
@@ -144,7 +147,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
         performAction.click(FileName,"LoginButton");
-        performAction.pause(5);
+        performAction.pause(5);*/
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
         performAction.click(FileName,"LastName");
@@ -180,11 +183,11 @@ public class Tests extends BrowserConfig {
         methods.log("Test Description : The system should update password after clicking on the update button");
 
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
-        performAction.pause(3);
+        performAction.pause(5);
 
-        performAction.click(FileName,"MyProfileEmail");
+        /*performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
         performAction.pause(3);
@@ -198,7 +201,7 @@ public class Tests extends BrowserConfig {
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
         performAction.click(FileName,"LoginButton");
-        performAction.pause(5);
+        performAction.pause(5);*/
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
         performAction.sendKeys(FileName,"Password",PasswordUpdate);
@@ -263,9 +266,9 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should update phone number after clicking on the update button");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
-        performAction.pause(3);
+/*        performAction.pause(3);
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
         performAction.click(FileName,"MyProfileText");
@@ -279,7 +282,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
-        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");*/
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
@@ -320,9 +323,9 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should update location after clicking on the update button");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
-        performAction.pause(3);
+        /*performAction.pause(3);
 
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -337,7 +340,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
-        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");*/
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
@@ -379,7 +382,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should update privacy radio button field after clicking on the update button");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
         performAction.pause(3);
 
@@ -436,9 +439,9 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should redirect to my profile main page");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
-        performAction.pause(3);
+        /*performAction.pause(3);
 
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -453,7 +456,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
-        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");*/
         performAction.pause(5);
         performAction.clickOnElementFromList(FileName,"ListOFMenu",MenuName);
         performAction.pause(5);
@@ -480,9 +483,9 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : The system should back to the profile main page screen");
         performAction.pause(10);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
 
-        performAction.pause(3);
+       /* performAction.pause(3);
 
         performAction.click(FileName,"MyProfileEmail");
         performAction.sendKeys(FileName,"MyProfileEmail",Email);
@@ -497,7 +500,7 @@ public class Tests extends BrowserConfig {
         driver.hideKeyboard();
         performAction.pause(2);
         performAction.click(FileName,"LoginButton");
-        performAction.click(FileName,"LoginButton");
+        performAction.click(FileName,"LoginButton");*/
         performAction.pause(5);
         performAction.click(FileName,"SettingIcon");
         performAction.pause(5);

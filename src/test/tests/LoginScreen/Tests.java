@@ -12,7 +12,7 @@ public class Tests extends BrowserConfig {
     ExcelFileConfig excel = new ExcelFileConfig();
     public String ExcelFilePath = "src\\resources\\TestData";
     public String ExcelFileName = "TestData.xls";
-
+    public int UserProfileIndex  = 18;
     public String Email =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",4,1).toString();
     public String EmailForRegistration =excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",5,1).toString();
     public String  Password=excel.getCellFromExcel(ExcelFilePath,ExcelFileName,"Login",6,1).toString();
@@ -28,7 +28,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check guest user get login screen.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(7);
         methods.log("Verify login screen display.");
         verify.verifyElementDisplayByText(FileName, "ListOFMenu", "MyProfileText");
@@ -44,7 +44,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check user get Email address text field.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", Email);
@@ -71,7 +71,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check registered email address.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", EmailForRegistration);
@@ -103,7 +103,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check email with valid data like : <name>@domain.com.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", Email);
@@ -125,7 +125,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check space used in initial of email like : (space given) name@gmail.com");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", " "+Email);
@@ -146,7 +146,7 @@ public class Tests extends BrowserConfig {
 
         methods.log("Test Description : Check space used in the end of email like : name@gmail.com (space given)");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", " "+Email);
@@ -166,7 +166,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Check user get password text field.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", Email);
@@ -197,7 +197,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", Email);
@@ -222,7 +222,7 @@ public class Tests extends BrowserConfig {
         step.startActivity(AppVersion);
         methods.log("Test Description : Check login button.");
         performAction.pause(7);
-        performAction.clickOnElementFromListIndex(FileName,"ListOFMenu",7);
+        performAction.clickOnElementFromListIndex("ActivityScreen", "ListOFGroup", UserProfileIndex);
         performAction.pause(5);
         performAction.waitForElement(FileName, "MyProfileEmail");
         performAction.sendKeys(FileName, "MyProfileEmail", Email);
