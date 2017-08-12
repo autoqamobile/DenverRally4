@@ -1,0 +1,55 @@
+{
+  "LogoImage": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.ImageView"
+  },
+  "ListOFMenu": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "EventPageHeader": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "GetDate": {
+    "locatorType": "className",
+    "locatorValue": "android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ListOfEvent": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "ListOfEventDateTime": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "EventDateTime": {
+    "locatorType": "xpath",
+    "locatorValue": "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.TextView",
+    "default": "",
+    "textType": "",
+    "auto": false
+  },
+  "MenuButton": {
+    "locatorType": "xpath",
+    "locatorValue":"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup[2]/android.view.ViewGroup[2]",
+    "default": "",
+    "textType": "",
+    "auto": false
+  }
+}

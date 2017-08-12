@@ -1,0 +1,17 @@
+{
+  "general": {
+    "HighightElement": true,
+    "AutoLog": true
+  },
+  "project": {
+    "url": "",
+    "browserName": "Android",
+    "saucelab": false
+  },
+  "saucelab": {
+    "userName": "",
+    "accessKey": "",
+    "platform": "linux",
+    "version": "48.0"
+  }
+}

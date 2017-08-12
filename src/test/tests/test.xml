@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" verbose="10" parallel="tests" thread-count="2">
+
+    <test name="tests">
+        <classes>
+            <class name="test.tests.SignUpScreen.Tests"/>
+            <class name="test.tests.LoginScreen.Tests"/>
+            <class name="test.tests.MyProfileScreen.Tests"/>
+            <class name="test.tests.MyEventScreen.Tests"/>
+            <class name="test.tests.NewsScreen.Tests"/>
+            <class name="test.tests.CommunityScreen.Tests"/>
+            <class name="test.tests.CauseScreen.Tests"/>
+            <class name="test.tests.AudioScreen.Tests"/>
+            <class name="test.tests.LiveStreamScreen.Tests"/>
+            <class name="test.tests.VideoScreen.Tests"/>
+            <class name="test.tests.CreateGroupScreen.Tests"/>
+            <class name="test.tests.FundraiserScreen.Tests"/>
+        </classes>
+    </test> <!-- tests -->
+
+</suite> <!-- Default Suite -->
